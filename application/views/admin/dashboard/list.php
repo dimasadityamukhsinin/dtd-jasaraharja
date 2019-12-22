@@ -518,11 +518,6 @@
           });
     </script>
 
-    <!-- SIAK -->
-    <script>
-        
-    </script>
-
     <!-- ROHUL -->
     <script>
         //-------------
