@@ -534,7 +534,7 @@
             label: "Belum Diproses"
           },
           {
-            value: <?php echo $sudah_siak ?>,
+            value: <?php echo $sudah_rohul ?>,
             color: "#FF7F00",
             highlight: "#FF7F00",
             label: "Sudah Diproses"
