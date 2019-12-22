@@ -105,6 +105,16 @@ class Dashboard extends CI_Controller {
                         ]);
     }
 
+    function get_meranti(){
+        $belum_meranti = $this->data_model->belum_diproses_meranti();
+        $sudah_meranti = $this->data_model->sudah_diproses_meranti();
+        $selesai_meranti = $this->data_model->selesai_meranti();
+        echo json_encode(['belum_meranti' => $belum_meranti,
+                          'sudah_meranti' => $sudah_meranti,
+                          'selesai_meranti' => $selesai_meranti
+                        ]);
+    }
+
     // Halaman Dashboard
     public function index()
     {
@@ -113,11 +123,6 @@ class Dashboard extends CI_Controller {
             $konfigurasi = $this->konfigurasi_model->listing();
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
-
-            //Data Meranti
-            $belum_meranti = $this->data_model->belum_diproses_meranti();
-            $sudah_meranti = $this->data_model->sudah_diproses_meranti();
-            $selesai_meranti = $this->data_model->selesai_meranti();
 
             //Data Kampar
             $belum_kampar = $this->data_model->belum_diproses_kampar();
@@ -143,10 +148,6 @@ class Dashboard extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'log'   =>  $log,
-                            // Data Meranti
-                            'belum_meranti' =>  $belum_meranti,
-                            'sudah_meranti' =>  $sudah_meranti,
-                            'selesai_meranti' =>  $selesai_meranti,
                             // Data Kampar
                             'belum_kampar'  =>  $belum_kampar,
                             'sudah_kampar'  =>  $sudah_kampar,
