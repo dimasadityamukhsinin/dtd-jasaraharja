@@ -1,4 +1,4 @@
-    <div class="row">
+<div class="row">
         <div class="col-lg-3 col-xs-6 show_total">
         </div><!-- ./col -->
         <div class="col-lg-3 col-xs-6 show_belum">
@@ -14,8 +14,7 @@
             <!-- DONUT CHART -->
             <div class="box box-danger">
                 <h3 class="box-title">DATA PEKANBARU</h3>
-                <div class="box-body">
-                    <canvas id="pieChart-pekanbaru" style="height:250px"></canvas>
+                <div class="box-body show_pekanbaru">
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
@@ -23,8 +22,7 @@
             <!-- DONUT CHART -->
             <div class="box box-danger">
                 <h3 class="box-title">DATA DUMAI</h3>
-                <div class="box-body">
-                    <canvas id="pieChart-dumai" style="height:250px"></canvas>
+                <div class="box-body show_dumai">
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
@@ -32,8 +30,7 @@
             <!-- DONUT CHART -->
             <div class="box box-danger">
                 <h3 class="box-title">DATA SIAK</h3>
-                <div class="box-body">
-                    <canvas id="pieChart-siak" style="height:250px"></canvas>
+                <div class="box-body show_siak">
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
@@ -41,8 +38,7 @@
             <!-- DONUT CHART -->
             <div class="box box-danger">
                 <h3 class="box-title">DATA ROKAN HULU</h3>
-                <div class="box-body">
-                    <canvas id="pieChart-rohul" style="height:250px"></canvas>
+                <div class="box-body show_rohul">
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
@@ -50,8 +46,7 @@
             <!-- DONUT CHART -->
             <div class="box box-danger">
                 <h3 class="box-title">DATA ROKAN HILIR</h3>
-                <div class="box-body">
-                    <canvas id="pieChart-rohil" style="height:250px"></canvas>
+                <div class="box-body show_rohil">
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
@@ -59,8 +54,7 @@
             <!-- DONUT CHART -->
             <div class="box box-danger">
                 <h3 class="box-title">DATA PELALAWAN</h3>
-                <div class="box-body">
-                    <canvas id="pieChart-pelalawan" style="height:250px"></canvas>
+                <div class="box-body show_pelalawan">
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
@@ -68,8 +62,7 @@
             <!-- DONUT CHART -->
             <div class="box box-danger">
                 <h3 class="box-title">DATA KUANTAN SINGINGI</h3>
-                <div class="box-body">
-                    <canvas id="pieChart-kuansing" style="height:250px"></canvas>
+                <div class="box-body show_kuansing">
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
@@ -77,8 +70,7 @@
             <!-- DONUT CHART -->
             <div class="box box-danger">
                 <h3 class="box-title">DATA KEPULAUAN MERANTI</h3>
-                <div class="box-body">
-                    <canvas id="pieChart-meranti" style="height:250px"></canvas>
+                <div class="box-body show_meranti">
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
@@ -86,8 +78,7 @@
             <!-- DONUT CHART -->
             <div class="box box-danger">
                 <h3 class="box-title">DATA KAMPAR</h3>
-                <div class="box-body">
-                    <canvas id="pieChart-kampar" style="height:250px"></canvas>
+                <div class="box-body show_kampar">
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
@@ -95,8 +86,7 @@
             <!-- DONUT CHART -->
             <div class="box box-danger">
                 <h3 class="box-title">DATA INDRAGIRI HULU</h3>
-                <div class="box-body">
-                    <canvas id="pieChart-inhu" style="height:250px"></canvas>
+                <div class="box-body show_inhu">
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
@@ -104,8 +94,7 @@
             <!-- DONUT CHART -->
             <div class="box box-danger">
                 <h3 class="box-title">DATA INDRAGIRI HILIR</h3>
-                <div class="box-body">
-                    <canvas id="pieChart-inhil" style="height:250px"></canvas>
+                <div class="box-body show_inhil">
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
@@ -113,8 +102,7 @@
             <!-- DONUT CHART -->
             <div class="box box-danger">
                 <h3 class="box-title">DATA BENGKALIS</h3>
-                <div class="box-body">
-                    <canvas id="pieChart-bengkalis" style="height:250px"></canvas>
+                <div class="box-body show_bengkalis">
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
@@ -140,6 +128,30 @@
             show_sudah();
             // CALL FUNCTION SHOW SELESAI
             show_selesai();
+            // CALL FUNCTION SHOW PEKANBARU
+            show_pekanbaru();
+            // CALL FUNCTION SHOW DUMAI
+            show_dumai();
+            // CALL FUNCTION SHOW SIAK
+            show_siak();
+            // CALL FUNCTION SHOW ROHUL
+            show_rohul();
+            // CALL FUNCTION SHOW ROHIL
+            show_rohil();
+            // CALL FUNCTION SHOW PELALAWAN
+            show_pelalawan();
+            // CALL FUNCTION SHOW KUANSING
+            show_kuansing();
+            // CALL FUNCTION SHOW MERANTI
+            show_meranti();
+            // CALL FUNCTION SHOW KAMPAR
+            show_kampar();
+            // CALL FUNCTION SHOW INHU
+            show_inhu();
+            // CALL FUNCTION SHOW INHIL
+            show_inhil();
+            // CALL FUNCTION SHOW BENGKALIS
+            show_bengkalis();
  
             // Enable pusher logging - don't include this in production
             Pusher.logToConsole = true;
@@ -156,6 +168,18 @@
                     show_belum();
                     show_sudah();
                     show_selesai();
+                    show_pekanbaru();
+                    show_dumai();
+                    show_siak();
+                    show_rohul();
+                    show_rohil();
+                    show_pelalawan();
+                    show_kuansing();
+                    show_meranti();
+                    show_kampar();
+                    show_inhu();
+                    show_inhil();
+                    show_bengkalis();
                 }
             });
  
@@ -274,688 +298,834 @@
  
                 });
             }
+
+            // FUNCTION SHOW PEKANBARU
+            function show_pekanbaru(){
+                $.ajax({
+                    url   : '<?php echo base_url("kasubag/dashboard/get_pekanbaru");?>',
+                    type  : 'GET',
+                    async : true,
+                    dataType : 'json',
+                    success : function(pekanbaru){
+                        var html = '';
+                            html += '<canvas id="pieChart-pekanbaru" style="height:250px">' + '</canvas>';
+                        $('.show_pekanbaru').html(html);
+
+                        //-------------
+                        //- PIE CHART PEKANBARU -
+                        //-------------
+                        // Get context with jQuery - using jQuery's .get() method.
+                        var pieChartCanvas = $("#pieChart-pekanbaru").get(0).getContext("2d");
+                        var pieChart = new Chart(pieChartCanvas);
+                        var PieData = [
+                          {
+                            value: pekanbaru.belum_pekanbaru,
+                            color: "#f56954",
+                            highlight: "#f56954",
+                            label: "Belum Diproses"
+                          },
+                          {
+                            value: pekanbaru.sudah_pekanbaru,
+                            color: "#FF7F00",
+                            highlight: "#FF7F00",
+                            label: "Sudah Diproses"
+                          },
+                          {
+                            value: pekanbaru.selesai_pekanbaru,
+                            color: "#00a65a",
+                            highlight: "#00a65a",
+                            label: "Selesai"
+                          },
+                        ];
+                        var pieOptions = {
+                          //Boolean - Whether we should show a stroke on each segment
+                          segmentShowStroke: true,
+                          //String - The colour of each segment stroke
+                          segmentStrokeColor: "#fff",
+                          //Number - The width of each segment stroke
+                          segmentStrokeWidth: 2,
+                          //Number - The percentage of the chart that we cut out of the middle
+                          percentageInnerCutout: 50, // This is 0 for Pie charts
+                          //Number - Amount of animation steps
+                          animationSteps: 100,
+                          //String - Animation easing effect
+                          animationEasing: "easeOutBounce",
+                          //Boolean - Whether we animate the rotation of the Doughnut
+                          animateRotate: true,
+                          //Boolean - Whether we animate scaling the Doughnut from the centre
+                          animateScale: false,
+                          //Boolean - whether to make the chart responsive to window resizing
+                          responsive: true,
+                          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                          maintainAspectRatio: true,
+                          //String - A legend template
+                          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+                        };
+                        //Create pie or douhnut chart
+                        // You can switch between pie and douhnut using the method below.
+                        pieChart.Doughnut(PieData, pieOptions);
+                    }
+ 
+                });
+            }
+
+            // FUNCTION SHOW DUMAI
+            function show_dumai(){
+                $.ajax({
+                    url   : '<?php echo base_url("kasubag/dashboard/get_dumai");?>',
+                    type  : 'GET',
+                    async : true,
+                    dataType : 'json',
+                    success : function(dumai){
+                        var html = '';
+                            html += '<canvas id="pieChart-dumai" style="height:250px">' + '</canvas>';
+                        $('.show_dumai').html(html);
+
+                        //-------------
+                        //- PIE CHART-
+                        //-------------
+                        // Get context with jQuery - using jQuery's .get() method.
+                        var pieChartCanvas = $("#pieChart-dumai").get(0).getContext("2d");
+                        var pieChart = new Chart(pieChartCanvas);
+                        var PieData = [
+                          {
+                            value: dumai.belum_dumai,
+                            color: "#f56954",
+                            highlight: "#f56954",
+                            label: "Belum Diproses"
+                          },
+                          {
+                            value: dumai.sudah_dumai,
+                            color: "#FF7F00",
+                            highlight: "#FF7F00",
+                            label: "Sudah Diproses"
+                          },
+                          {
+                            value: dumai.selesai_dumai,
+                            color: "#00a65a",
+                            highlight: "#00a65a",
+                            label: "Selesai"
+                          },
+                        ];
+                        var pieOptions = {
+                          //Boolean - Whether we should show a stroke on each segment
+                          segmentShowStroke: true,
+                          //String - The colour of each segment stroke
+                          segmentStrokeColor: "#fff",
+                          //Number - The width of each segment stroke
+                          segmentStrokeWidth: 2,
+                          //Number - The percentage of the chart that we cut out of the middle
+                          percentageInnerCutout: 50, // This is 0 for Pie charts
+                          //Number - Amount of animation steps
+                          animationSteps: 100,
+                          //String - Animation easing effect
+                          animationEasing: "easeOutBounce",
+                          //Boolean - Whether we animate the rotation of the Doughnut
+                          animateRotate: true,
+                          //Boolean - Whether we animate scaling the Doughnut from the centre
+                          animateScale: false,
+                          //Boolean - whether to make the chart responsive to window resizing
+                          responsive: true,
+                          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                          maintainAspectRatio: true,
+                          //String - A legend template
+                          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+                        };
+                        //Create pie or douhnut chart
+                        // You can switch between pie and douhnut using the method below.
+                        pieChart.Doughnut(PieData, pieOptions);
+                    }
+                });
+            }
+
+            // FUNCTION SHOW SIAK
+            function show_siak(){
+                $.ajax({
+                    url   : '<?php echo base_url("kasubag/dashboard/get_siak");?>',
+                    type  : 'GET',
+                    async : true,
+                    dataType : 'json',
+                    success : function(siak){
+                        var html = '';
+                            html += '<canvas id="pieChart-siak" style="height:250px">' + '</canvas>';
+                        $('.show_siak').html(html);
+
+                        //-------------
+                        //- PIE CHART-
+                        //-------------
+                        // Get context with jQuery - using jQuery's .get() method.
+                        var pieChartCanvas = $("#pieChart-siak").get(0).getContext("2d");
+                        var pieChart = new Chart(pieChartCanvas);
+                        var PieData = [
+                          {
+                            value: siak.belum_siak,
+                            color: "#f56954",
+                            highlight: "#f56954",
+                            label: "Belum Diproses"
+                          },
+                          {
+                            value: siak.sudah_siak,
+                            color: "#FF7F00",
+                            highlight: "#FF7F00",
+                            label: "Sudah Diproses"
+                          },
+                          {
+                            value: siak.selesai_siak,
+                            color: "#00a65a",
+                            highlight: "#00a65a",
+                            label: "Selesai"
+                          },
+                        ];
+                        var pieOptions = {
+                          //Boolean - Whether we should show a stroke on each segment
+                          segmentShowStroke: true,
+                          //String - The colour of each segment stroke
+                          segmentStrokeColor: "#fff",
+                          //Number - The width of each segment stroke
+                          segmentStrokeWidth: 2,
+                          //Number - The percentage of the chart that we cut out of the middle
+                          percentageInnerCutout: 50, // This is 0 for Pie charts
+                          //Number - Amount of animation steps
+                          animationSteps: 100,
+                          //String - Animation easing effect
+                          animationEasing: "easeOutBounce",
+                          //Boolean - Whether we animate the rotation of the Doughnut
+                          animateRotate: true,
+                          //Boolean - Whether we animate scaling the Doughnut from the centre
+                          animateScale: false,
+                          //Boolean - whether to make the chart responsive to window resizing
+                          responsive: true,
+                          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                          maintainAspectRatio: true,
+                          //String - A legend template
+                          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+                        };
+                        //Create pie or douhnut chart
+                        // You can switch between pie and douhnut using the method below.
+                        pieChart.Doughnut(PieData, pieOptions);
+                    }
+                });
+            }
+
+            // FUNCTION SHOW ROHUL
+            function show_rohul(){
+                $.ajax({
+                    url   : '<?php echo base_url("kasubag/dashboard/get_rohul");?>',
+                    type  : 'GET',
+                    async : true,
+                    dataType : 'json',
+                    success : function(rohul){
+                        var html = '';
+                            html += '<canvas id="pieChart-rohul" style="height:250px">' + '</canvas>';
+                        $('.show_rohul').html(html);
+
+                        //-------------
+                        //- PIE CHART-
+                        //-------------
+                        // Get context with jQuery - using jQuery's .get() method.
+                        var pieChartCanvas = $("#pieChart-rohul").get(0).getContext("2d");
+                        var pieChart = new Chart(pieChartCanvas);
+                        var PieData = [
+                          {
+                            value: rohul.belum_rohul,
+                            color: "#f56954",
+                            highlight: "#f56954",
+                            label: "Belum Diproses"
+                          },
+                          {
+                            value: rohul.sudah_rohul,
+                            color: "#FF7F00",
+                            highlight: "#FF7F00",
+                            label: "Sudah Diproses"
+                          },
+                          {
+                            value: rohul.selesai_rohul,
+                            color: "#00a65a",
+                            highlight: "#00a65a",
+                            label: "Selesai"
+                          },
+                        ];
+                        var pieOptions = {
+                          //Boolean - Whether we should show a stroke on each segment
+                          segmentShowStroke: true,
+                          //String - The colour of each segment stroke
+                          segmentStrokeColor: "#fff",
+                          //Number - The width of each segment stroke
+                          segmentStrokeWidth: 2,
+                          //Number - The percentage of the chart that we cut out of the middle
+                          percentageInnerCutout: 50, // This is 0 for Pie charts
+                          //Number - Amount of animation steps
+                          animationSteps: 100,
+                          //String - Animation easing effect
+                          animationEasing: "easeOutBounce",
+                          //Boolean - Whether we animate the rotation of the Doughnut
+                          animateRotate: true,
+                          //Boolean - Whether we animate scaling the Doughnut from the centre
+                          animateScale: false,
+                          //Boolean - whether to make the chart responsive to window resizing
+                          responsive: true,
+                          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                          maintainAspectRatio: true,
+                          //String - A legend template
+                          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+                        };
+                        //Create pie or douhnut chart
+                        // You can switch between pie and douhnut using the method below.
+                        pieChart.Doughnut(PieData, pieOptions);
+                    }
+                });
+            }
+
+            // FUNCTION SHOW ROHIL
+            function show_rohil(){
+                $.ajax({
+                    url   : '<?php echo base_url("kasubag/dashboard/get_rohil");?>',
+                    type  : 'GET',
+                    async : true,
+                    dataType : 'json',
+                    success : function(rohil){
+                        var html = '';
+                            html += '<canvas id="pieChart-rohil" style="height:250px">' + '</canvas>';
+                        $('.show_rohil').html(html);
+
+                        //-------------
+                        //- PIE CHART-
+                        //-------------
+                        // Get context with jQuery - using jQuery's .get() method.
+                        var pieChartCanvas = $("#pieChart-rohil").get(0).getContext("2d");
+                        var pieChart = new Chart(pieChartCanvas);
+                        var PieData = [
+                          {
+                            value: rohil.belum_rohil,
+                            color: "#f56954",
+                            highlight: "#f56954",
+                            label: "Belum Diproses"
+                          },
+                          {
+                            value: rohil.sudah_rohil,
+                            color: "#FF7F00",
+                            highlight: "#FF7F00",
+                            label: "Sudah Diproses"
+                          },
+                          {
+                            value: rohil.selesai_rohil,
+                            color: "#00a65a",
+                            highlight: "#00a65a",
+                            label: "Selesai"
+                          },
+                        ];
+                        var pieOptions = {
+                          //Boolean - Whether we should show a stroke on each segment
+                          segmentShowStroke: true,
+                          //String - The colour of each segment stroke
+                          segmentStrokeColor: "#fff",
+                          //Number - The width of each segment stroke
+                          segmentStrokeWidth: 2,
+                          //Number - The percentage of the chart that we cut out of the middle
+                          percentageInnerCutout: 50, // This is 0 for Pie charts
+                          //Number - Amount of animation steps
+                          animationSteps: 100,
+                          //String - Animation easing effect
+                          animationEasing: "easeOutBounce",
+                          //Boolean - Whether we animate the rotation of the Doughnut
+                          animateRotate: true,
+                          //Boolean - Whether we animate scaling the Doughnut from the centre
+                          animateScale: false,
+                          //Boolean - whether to make the chart responsive to window resizing
+                          responsive: true,
+                          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                          maintainAspectRatio: true,
+                          //String - A legend template
+                          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+                        };
+                        //Create pie or douhnut chart
+                        // You can switch between pie and douhnut using the method below.
+                        pieChart.Doughnut(PieData, pieOptions);
+                    }
+                });
+            }
+
+            // FUNCTION SHOW PELALAWAN
+            function show_pelalawan(){
+                $.ajax({
+                    url   : '<?php echo base_url("kasubag/dashboard/get_pelalawan");?>',
+                    type  : 'GET',
+                    async : true,
+                    dataType : 'json',
+                    success : function(pelalawan){
+                        var html = '';
+                            html += '<canvas id="pieChart-pelalawan" style="height:250px">' + '</canvas>';
+                        $('.show_pelalawan').html(html);
+
+                        //-------------
+                        //- PIE CHART-
+                        //-------------
+                        // Get context with jQuery - using jQuery's .get() method.
+                        var pieChartCanvas = $("#pieChart-pelalawan").get(0).getContext("2d");
+                        var pieChart = new Chart(pieChartCanvas);
+                        var PieData = [
+                          {
+                            value: pelalawan.belum_pelalawan,
+                            color: "#f56954",
+                            highlight: "#f56954",
+                            label: "Belum Diproses"
+                          },
+                          {
+                            value: pelalawan.sudah_pelalawan,
+                            color: "#FF7F00",
+                            highlight: "#FF7F00",
+                            label: "Sudah Diproses"
+                          },
+                          {
+                            value: pelalawan.selesai_pelalawan,
+                            color: "#00a65a",
+                            highlight: "#00a65a",
+                            label: "Selesai"
+                          },
+                        ];
+                        var pieOptions = {
+                          //Boolean - Whether we should show a stroke on each segment
+                          segmentShowStroke: true,
+                          //String - The colour of each segment stroke
+                          segmentStrokeColor: "#fff",
+                          //Number - The width of each segment stroke
+                          segmentStrokeWidth: 2,
+                          //Number - The percentage of the chart that we cut out of the middle
+                          percentageInnerCutout: 50, // This is 0 for Pie charts
+                          //Number - Amount of animation steps
+                          animationSteps: 100,
+                          //String - Animation easing effect
+                          animationEasing: "easeOutBounce",
+                          //Boolean - Whether we animate the rotation of the Doughnut
+                          animateRotate: true,
+                          //Boolean - Whether we animate scaling the Doughnut from the centre
+                          animateScale: false,
+                          //Boolean - whether to make the chart responsive to window resizing
+                          responsive: true,
+                          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                          maintainAspectRatio: true,
+                          //String - A legend template
+                          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+                        };
+                        //Create pie or douhnut chart
+                        // You can switch between pie and douhnut using the method below.
+                        pieChart.Doughnut(PieData, pieOptions);
+                    }
+                });
+            }
+
+            // FUNCTION SHOW KUANSING
+            function show_kuansing(){
+                $.ajax({
+                    url   : '<?php echo base_url("kasubag/dashboard/get_kuansing");?>',
+                    type  : 'GET',
+                    async : true,
+                    dataType : 'json',
+                    success : function(kuansing){
+                        var html = '';
+                            html += '<canvas id="pieChart-kuansing" style="height:250px">' + '</canvas>';
+                        $('.show_kuansing').html(html);
+
+                        //-------------
+                        //- PIE CHART-
+                        //-------------
+                        // Get context with jQuery - using jQuery's .get() method.
+                        var pieChartCanvas = $("#pieChart-kuansing").get(0).getContext("2d");
+                        var pieChart = new Chart(pieChartCanvas);
+                        var PieData = [
+                          {
+                            value: kuansing.belum_kuansing,
+                            color: "#f56954",
+                            highlight: "#f56954",
+                            label: "Belum Diproses"
+                          },
+                          {
+                            value: kuansing.sudah_kuansing,
+                            color: "#FF7F00",
+                            highlight: "#FF7F00",
+                            label: "Sudah Diproses"
+                          },
+                          {
+                            value: kuansing.selesai_kuansing,
+                            color: "#00a65a",
+                            highlight: "#00a65a",
+                            label: "Selesai"
+                          },
+                        ];
+                        var pieOptions = {
+                          //Boolean - Whether we should show a stroke on each segment
+                          segmentShowStroke: true,
+                          //String - The colour of each segment stroke
+                          segmentStrokeColor: "#fff",
+                          //Number - The width of each segment stroke
+                          segmentStrokeWidth: 2,
+                          //Number - The percentage of the chart that we cut out of the middle
+                          percentageInnerCutout: 50, // This is 0 for Pie charts
+                          //Number - Amount of animation steps
+                          animationSteps: 100,
+                          //String - Animation easing effect
+                          animationEasing: "easeOutBounce",
+                          //Boolean - Whether we animate the rotation of the Doughnut
+                          animateRotate: true,
+                          //Boolean - Whether we animate scaling the Doughnut from the centre
+                          animateScale: false,
+                          //Boolean - whether to make the chart responsive to window resizing
+                          responsive: true,
+                          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                          maintainAspectRatio: true,
+                          //String - A legend template
+                          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+                        };
+                        //Create pie or douhnut chart
+                        // You can switch between pie and douhnut using the method below.
+                        pieChart.Doughnut(PieData, pieOptions);
+                    }
+                });
+            }
+
+            // FUNCTION SHOW MERANTI
+            function show_meranti(){
+                $.ajax({
+                    url   : '<?php echo base_url("kasubag/dashboard/get_meranti");?>',
+                    type  : 'GET',
+                    async : true,
+                    dataType : 'json',
+                    success : function(meranti){
+                        var html = '';
+                            html += '<canvas id="pieChart-meranti" style="height:250px">' + '</canvas>';
+                        $('.show_meranti').html(html);
+
+                        //-------------
+                        //- PIE CHART-
+                        //-------------
+                        // Get context with jQuery - using jQuery's .get() method.
+                        var pieChartCanvas = $("#pieChart-meranti").get(0).getContext("2d");
+                        var pieChart = new Chart(pieChartCanvas);
+                        var PieData = [
+                          {
+                            value: meranti.belum_meranti,
+                            color: "#f56954",
+                            highlight: "#f56954",
+                            label: "Belum Diproses"
+                          },
+                          {
+                            value: meranti.sudah_meranti,
+                            color: "#FF7F00",
+                            highlight: "#FF7F00",
+                            label: "Sudah Diproses"
+                          },
+                          {
+                            value: meranti.selesai_meranti,
+                            color: "#00a65a",
+                            highlight: "#00a65a",
+                            label: "Selesai"
+                          },
+                        ];
+                        var pieOptions = {
+                          //Boolean - Whether we should show a stroke on each segment
+                          segmentShowStroke: true,
+                          //String - The colour of each segment stroke
+                          segmentStrokeColor: "#fff",
+                          //Number - The width of each segment stroke
+                          segmentStrokeWidth: 2,
+                          //Number - The percentage of the chart that we cut out of the middle
+                          percentageInnerCutout: 50, // This is 0 for Pie charts
+                          //Number - Amount of animation steps
+                          animationSteps: 100,
+                          //String - Animation easing effect
+                          animationEasing: "easeOutBounce",
+                          //Boolean - Whether we animate the rotation of the Doughnut
+                          animateRotate: true,
+                          //Boolean - Whether we animate scaling the Doughnut from the centre
+                          animateScale: false,
+                          //Boolean - whether to make the chart responsive to window resizing
+                          responsive: true,
+                          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                          maintainAspectRatio: true,
+                          //String - A legend template
+                          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+                        };
+                        //Create pie or douhnut chart
+                        // You can switch between pie and douhnut using the method below.
+                        pieChart.Doughnut(PieData, pieOptions);
+                    }
+                });
+            }
+
+            // FUNCTION SHOW KAMPAR
+            function show_kampar(){
+                $.ajax({
+                    url   : '<?php echo base_url("kasubag/dashboard/get_kampar");?>',
+                    type  : 'GET',
+                    async : true,
+                    dataType : 'json',
+                    success : function(kampar){
+                        var html = '';
+                            html += '<canvas id="pieChart-kampar" style="height:250px">' + '</canvas>';
+                        $('.show_kampar').html(html);
+
+                        //-------------
+                        //- PIE CHART-
+                        //-------------
+                        // Get context with jQuery - using jQuery's .get() method.
+                        var pieChartCanvas = $("#pieChart-kampar").get(0).getContext("2d");
+                        var pieChart = new Chart(pieChartCanvas);
+                        var PieData = [
+                          {
+                            value: kampar.belum_kampar,
+                            color: "#f56954",
+                            highlight: "#f56954",
+                            label: "Belum Diproses"
+                          },
+                          {
+                            value: kampar.sudah_kampar,
+                            color: "#FF7F00",
+                            highlight: "#FF7F00",
+                            label: "Sudah Diproses"
+                          },
+                          {
+                            value: kampar.selesai_kampar,
+                            color: "#00a65a",
+                            highlight: "#00a65a",
+                            label: "Selesai"
+                          },
+                        ];
+                        var pieOptions = {
+                          //Boolean - Whether we should show a stroke on each segment
+                          segmentShowStroke: true,
+                          //String - The colour of each segment stroke
+                          segmentStrokeColor: "#fff",
+                          //Number - The width of each segment stroke
+                          segmentStrokeWidth: 2,
+                          //Number - The percentage of the chart that we cut out of the middle
+                          percentageInnerCutout: 50, // This is 0 for Pie charts
+                          //Number - Amount of animation steps
+                          animationSteps: 100,
+                          //String - Animation easing effect
+                          animationEasing: "easeOutBounce",
+                          //Boolean - Whether we animate the rotation of the Doughnut
+                          animateRotate: true,
+                          //Boolean - Whether we animate scaling the Doughnut from the centre
+                          animateScale: false,
+                          //Boolean - whether to make the chart responsive to window resizing
+                          responsive: true,
+                          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                          maintainAspectRatio: true,
+                          //String - A legend template
+                          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+                        };
+                        //Create pie or douhnut chart
+                        // You can switch between pie and douhnut using the method below.
+                        pieChart.Doughnut(PieData, pieOptions);
+                    }
+                });
+            }
+
+            // FUNCTION SHOW INHU
+            function show_inhu(){
+                $.ajax({
+                    url   : '<?php echo base_url("kasubag/dashboard/get_inhu");?>',
+                    type  : 'GET',
+                    async : true,
+                    dataType : 'json',
+                    success : function(inhu){
+                        var html = '';
+                            html += '<canvas id="pieChart-inhu" style="height:250px">' + '</canvas>';
+                        $('.show_inhu').html(html);
+
+                        //-------------
+                        //- PIE CHART-
+                        //-------------
+                        // Get context with jQuery - using jQuery's .get() method.
+                        var pieChartCanvas = $("#pieChart-inhu").get(0).getContext("2d");
+                        var pieChart = new Chart(pieChartCanvas);
+                        var PieData = [
+                          {
+                            value: inhu.belum_inhu,
+                            color: "#f56954",
+                            highlight: "#f56954",
+                            label: "Belum Diproses"
+                          },
+                          {
+                            value: inhu.sudah_inhu,
+                            color: "#FF7F00",
+                            highlight: "#FF7F00",
+                            label: "Sudah Diproses"
+                          },
+                          {
+                            value: inhu.selesai_inhu,
+                            color: "#00a65a",
+                            highlight: "#00a65a",
+                            label: "Selesai"
+                          },
+                        ];
+                        var pieOptions = {
+                          //Boolean - Whether we should show a stroke on each segment
+                          segmentShowStroke: true,
+                          //String - The colour of each segment stroke
+                          segmentStrokeColor: "#fff",
+                          //Number - The width of each segment stroke
+                          segmentStrokeWidth: 2,
+                          //Number - The percentage of the chart that we cut out of the middle
+                          percentageInnerCutout: 50, // This is 0 for Pie charts
+                          //Number - Amount of animation steps
+                          animationSteps: 100,
+                          //String - Animation easing effect
+                          animationEasing: "easeOutBounce",
+                          //Boolean - Whether we animate the rotation of the Doughnut
+                          animateRotate: true,
+                          //Boolean - Whether we animate scaling the Doughnut from the centre
+                          animateScale: false,
+                          //Boolean - whether to make the chart responsive to window resizing
+                          responsive: true,
+                          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                          maintainAspectRatio: true,
+                          //String - A legend template
+                          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+                        };
+                        //Create pie or douhnut chart
+                        // You can switch between pie and douhnut using the method below.
+                        pieChart.Doughnut(PieData, pieOptions);
+                    }
+                });
+            }
+
+            // FUNCTION SHOW INHIL
+            function show_inhil(){
+                $.ajax({
+                    url   : '<?php echo base_url("kasubag/dashboard/get_inhil");?>',
+                    type  : 'GET',
+                    async : true,
+                    dataType : 'json',
+                    success : function(inhil){
+                        var html = '';
+                            html += '<canvas id="pieChart-inhil" style="height:250px">' + '</canvas>';
+                        $('.show_inhil').html(html);
+
+                        //-------------
+                        //- PIE CHART-
+                        //-------------
+                        // Get context with jQuery - using jQuery's .get() method.
+                        var pieChartCanvas = $("#pieChart-inhil").get(0).getContext("2d");
+                        var pieChart = new Chart(pieChartCanvas);
+                        var PieData = [
+                          {
+                            value: inhil.belum_inhil,
+                            color: "#f56954",
+                            highlight: "#f56954",
+                            label: "Belum Diproses"
+                          },
+                          {
+                            value: inhil.sudah_inhil,
+                            color: "#FF7F00",
+                            highlight: "#FF7F00",
+                            label: "Sudah Diproses"
+                          },
+                          {
+                            value: inhil.selesai_inhil,
+                            color: "#00a65a",
+                            highlight: "#00a65a",
+                            label: "Selesai"
+                          },
+                        ];
+                        var pieOptions = {
+                          //Boolean - Whether we should show a stroke on each segment
+                          segmentShowStroke: true,
+                          //String - The colour of each segment stroke
+                          segmentStrokeColor: "#fff",
+                          //Number - The width of each segment stroke
+                          segmentStrokeWidth: 2,
+                          //Number - The percentage of the chart that we cut out of the middle
+                          percentageInnerCutout: 50, // This is 0 for Pie charts
+                          //Number - Amount of animation steps
+                          animationSteps: 100,
+                          //String - Animation easing effect
+                          animationEasing: "easeOutBounce",
+                          //Boolean - Whether we animate the rotation of the Doughnut
+                          animateRotate: true,
+                          //Boolean - Whether we animate scaling the Doughnut from the centre
+                          animateScale: false,
+                          //Boolean - whether to make the chart responsive to window resizing
+                          responsive: true,
+                          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                          maintainAspectRatio: true,
+                          //String - A legend template
+                          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+                        };
+                        //Create pie or douhnut chart
+                        // You can switch between pie and douhnut using the method below.
+                        pieChart.Doughnut(PieData, pieOptions);
+                    }
+                });
+            }
+
+            // FUNCTION SHOW BENGKALIS
+            function show_bengkalis(){
+                $.ajax({
+                    url   : '<?php echo base_url("kasubag/dashboard/get_bengkalis");?>',
+                    type  : 'GET',
+                    async : true,
+                    dataType : 'json',
+                    success : function(bengkalis){
+                        var html = '';
+                            html += '<canvas id="pieChart-bengkalis" style="height:250px">' + '</canvas>';
+                        $('.show_bengkalis').html(html);
+
+                        //-------------
+                        //- PIE CHART-
+                        //-------------
+                        // Get context with jQuery - using jQuery's .get() method.
+                        var pieChartCanvas = $("#pieChart-bengkalis").get(0).getContext("2d");
+                        var pieChart = new Chart(pieChartCanvas);
+                        var PieData = [
+                          {
+                            value: bengkalis.belum_bengkalis,
+                            color: "#f56954",
+                            highlight: "#f56954",
+                            label: "Belum Diproses"
+                          },
+                          {
+                            value: bengkalis.sudah_bengkalis,
+                            color: "#FF7F00",
+                            highlight: "#FF7F00",
+                            label: "Sudah Diproses"
+                          },
+                          {
+                            value: bengkalis.selesai_bengkalis,
+                            color: "#00a65a",
+                            highlight: "#00a65a",
+                            label: "Selesai"
+                          },
+                        ];
+                        var pieOptions = {
+                          //Boolean - Whether we should show a stroke on each segment
+                          segmentShowStroke: true,
+                          //String - The colour of each segment stroke
+                          segmentStrokeColor: "#fff",
+                          //Number - The width of each segment stroke
+                          segmentStrokeWidth: 2,
+                          //Number - The percentage of the chart that we cut out of the middle
+                          percentageInnerCutout: 50, // This is 0 for Pie charts
+                          //Number - Amount of animation steps
+                          animationSteps: 100,
+                          //String - Animation easing effect
+                          animationEasing: "easeOutBounce",
+                          //Boolean - Whether we animate the rotation of the Doughnut
+                          animateRotate: true,
+                          //Boolean - Whether we animate scaling the Doughnut from the centre
+                          animateScale: false,
+                          //Boolean - whether to make the chart responsive to window resizing
+                          responsive: true,
+                          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                          maintainAspectRatio: true,
+                          //String - A legend template
+                          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+                        };
+                        //Create pie or douhnut chart
+                        // You can switch between pie and douhnut using the method below.
+                        pieChart.Doughnut(PieData, pieOptions);
+                    }
+                });
+            }
           });
-    </script>
-    <script>
-        //-------------
-        //- PIE CHART PEKANBARU -
-        //-------------
-        // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $("#pieChart-pekanbaru").get(0).getContext("2d");
-        var pieChart = new Chart(pieChartCanvas);
-        var PieData = [
-          {
-            value: <?php echo $belum_pekanbaru ?>,
-            color: "#f56954",
-            highlight: "#f56954",
-            label: "Belum Diproses"
-          },
-          {
-            value: <?php echo $sudah_pekanbaru ?>,
-            color: "#FF7F00",
-            highlight: "#FF7F00",
-            label: "Sudah Diproses"
-          },
-          {
-            value: <?php echo $selesai_pekanbaru ?>,
-            color: "#00a65a",
-            highlight: "#00a65a",
-            label: "Selesai"
-          },
-        ];
-        var pieOptions = {
-          //Boolean - Whether we should show a stroke on each segment
-          segmentShowStroke: true,
-          //String - The colour of each segment stroke
-          segmentStrokeColor: "#fff",
-          //Number - The width of each segment stroke
-          segmentStrokeWidth: 2,
-          //Number - The percentage of the chart that we cut out of the middle
-          percentageInnerCutout: 50, // This is 0 for Pie charts
-          //Number - Amount of animation steps
-          animationSteps: 100,
-          //String - Animation easing effect
-          animationEasing: "easeOutBounce",
-          //Boolean - Whether we animate the rotation of the Doughnut
-          animateRotate: true,
-          //Boolean - Whether we animate scaling the Doughnut from the centre
-          animateScale: false,
-          //Boolean - whether to make the chart responsive to window resizing
-          responsive: true,
-          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-          maintainAspectRatio: true,
-          //String - A legend template
-          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        pieChart.Doughnut(PieData, pieOptions);
-
-    </script>
-
-    <!-- DUMAI -->
-    <script>
-        //-------------
-        //- PIE CHART-
-        //-------------
-        // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $("#pieChart-dumai").get(0).getContext("2d");
-        var pieChart = new Chart(pieChartCanvas);
-        var PieData = [
-          {
-            value: <?php echo $belum_dumai ?>,
-            color: "#f56954",
-            highlight: "#f56954",
-            label: "Belum Diproses"
-          },
-          {
-            value: <?php echo $sudah_dumai ?>,
-            color: "#FF7F00",
-            highlight: "#FF7F00",
-            label: "Sudah Diproses"
-          },
-          {
-            value: <?php echo $selesai_dumai ?>,
-            color: "#00a65a",
-            highlight: "#00a65a",
-            label: "Selesai"
-          },
-        ];
-        var pieOptions = {
-          //Boolean - Whether we should show a stroke on each segment
-          segmentShowStroke: true,
-          //String - The colour of each segment stroke
-          segmentStrokeColor: "#fff",
-          //Number - The width of each segment stroke
-          segmentStrokeWidth: 2,
-          //Number - The percentage of the chart that we cut out of the middle
-          percentageInnerCutout: 50, // This is 0 for Pie charts
-          //Number - Amount of animation steps
-          animationSteps: 100,
-          //String - Animation easing effect
-          animationEasing: "easeOutBounce",
-          //Boolean - Whether we animate the rotation of the Doughnut
-          animateRotate: true,
-          //Boolean - Whether we animate scaling the Doughnut from the centre
-          animateScale: false,
-          //Boolean - whether to make the chart responsive to window resizing
-          responsive: true,
-          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-          maintainAspectRatio: true,
-          //String - A legend template
-          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        pieChart.Doughnut(PieData, pieOptions);
-    </script>
-
-    <!-- SIAK -->
-    <script>
-        //-------------
-        //- PIE CHART-
-        //-------------
-        // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $("#pieChart-siak").get(0).getContext("2d");
-        var pieChart = new Chart(pieChartCanvas);
-        var PieData = [
-          {
-            value: <?php echo $belum_siak ?>,
-            color: "#f56954",
-            highlight: "#f56954",
-            label: "Belum Diproses"
-          },
-          {
-            value: <?php echo $sudah_siak ?>,
-            color: "#FF7F00",
-            highlight: "#FF7F00",
-            label: "Sudah Diproses"
-          },
-          {
-            value: <?php echo $selesai_siak ?>,
-            color: "#00a65a",
-            highlight: "#00a65a",
-            label: "Selesai"
-          },
-        ];
-        var pieOptions = {
-          //Boolean - Whether we should show a stroke on each segment
-          segmentShowStroke: true,
-          //String - The colour of each segment stroke
-          segmentStrokeColor: "#fff",
-          //Number - The width of each segment stroke
-          segmentStrokeWidth: 2,
-          //Number - The percentage of the chart that we cut out of the middle
-          percentageInnerCutout: 50, // This is 0 for Pie charts
-          //Number - Amount of animation steps
-          animationSteps: 100,
-          //String - Animation easing effect
-          animationEasing: "easeOutBounce",
-          //Boolean - Whether we animate the rotation of the Doughnut
-          animateRotate: true,
-          //Boolean - Whether we animate scaling the Doughnut from the centre
-          animateScale: false,
-          //Boolean - whether to make the chart responsive to window resizing
-          responsive: true,
-          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-          maintainAspectRatio: true,
-          //String - A legend template
-          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        pieChart.Doughnut(PieData, pieOptions);
-    </script>
-
-    <!-- ROHUL -->
-    <script>
-        //-------------
-        //- PIE CHART-
-        //-------------
-        // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $("#pieChart-rohul").get(0).getContext("2d");
-        var pieChart = new Chart(pieChartCanvas);
-        var PieData = [
-          {
-            value: <?php echo $belum_rohul ?>,
-            color: "#f56954",
-            highlight: "#f56954",
-            label: "Belum Diproses"
-          },
-          {
-            value: <?php echo $sudah_siak ?>,
-            color: "#FF7F00",
-            highlight: "#FF7F00",
-            label: "Sudah Diproses"
-          },
-          {
-            value: <?php echo $selesai_rohul ?>,
-            color: "#00a65a",
-            highlight: "#00a65a",
-            label: "Selesai"
-          },
-        ];
-        var pieOptions = {
-          //Boolean - Whether we should show a stroke on each segment
-          segmentShowStroke: true,
-          //String - The colour of each segment stroke
-          segmentStrokeColor: "#fff",
-          //Number - The width of each segment stroke
-          segmentStrokeWidth: 2,
-          //Number - The percentage of the chart that we cut out of the middle
-          percentageInnerCutout: 50, // This is 0 for Pie charts
-          //Number - Amount of animation steps
-          animationSteps: 100,
-          //String - Animation easing effect
-          animationEasing: "easeOutBounce",
-          //Boolean - Whether we animate the rotation of the Doughnut
-          animateRotate: true,
-          //Boolean - Whether we animate scaling the Doughnut from the centre
-          animateScale: false,
-          //Boolean - whether to make the chart responsive to window resizing
-          responsive: true,
-          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-          maintainAspectRatio: true,
-          //String - A legend template
-          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        pieChart.Doughnut(PieData, pieOptions);
-    </script>
-
-    <!-- ROHIL -->
-    <script>
-        //-------------
-        //- PIE CHART-
-        //-------------
-        // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $("#pieChart-rohil").get(0).getContext("2d");
-        var pieChart = new Chart(pieChartCanvas);
-        var PieData = [
-          {
-            value: <?php echo $belum_rohil ?>,
-            color: "#f56954",
-            highlight: "#f56954",
-            label: "Belum Diproses"
-          },
-          {
-            value: <?php echo $sudah_rohil ?>,
-            color: "#FF7F00",
-            highlight: "#FF7F00",
-            label: "Sudah Diproses"
-          },
-          {
-            value: <?php echo $selesai_rohil ?>,
-            color: "#00a65a",
-            highlight: "#00a65a",
-            label: "Selesai"
-          },
-        ];
-        var pieOptions = {
-          //Boolean - Whether we should show a stroke on each segment
-          segmentShowStroke: true,
-          //String - The colour of each segment stroke
-          segmentStrokeColor: "#fff",
-          //Number - The width of each segment stroke
-          segmentStrokeWidth: 2,
-          //Number - The percentage of the chart that we cut out of the middle
-          percentageInnerCutout: 50, // This is 0 for Pie charts
-          //Number - Amount of animation steps
-          animationSteps: 100,
-          //String - Animation easing effect
-          animationEasing: "easeOutBounce",
-          //Boolean - Whether we animate the rotation of the Doughnut
-          animateRotate: true,
-          //Boolean - Whether we animate scaling the Doughnut from the centre
-          animateScale: false,
-          //Boolean - whether to make the chart responsive to window resizing
-          responsive: true,
-          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-          maintainAspectRatio: true,
-          //String - A legend template
-          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        pieChart.Doughnut(PieData, pieOptions);
-    </script>
-
-    <!-- PELALAWAN -->
-    <script>
-        //-------------
-        //- PIE CHART-
-        //-------------
-        // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $("#pieChart-pelalawan").get(0).getContext("2d");
-        var pieChart = new Chart(pieChartCanvas);
-        var PieData = [
-          {
-            value: <?php echo $belum_pelalawan ?>,
-            color: "#f56954",
-            highlight: "#f56954",
-            label: "Belum Diproses"
-          },
-          {
-            value: <?php echo $sudah_pelalawan ?>,
-            color: "#FF7F00",
-            highlight: "#FF7F00",
-            label: "Sudah Diproses"
-          },
-          {
-            value: <?php echo $selesai_pelalawan ?>,
-            color: "#00a65a",
-            highlight: "#00a65a",
-            label: "Selesai"
-          },
-        ];
-        var pieOptions = {
-          //Boolean - Whether we should show a stroke on each segment
-          segmentShowStroke: true,
-          //String - The colour of each segment stroke
-          segmentStrokeColor: "#fff",
-          //Number - The width of each segment stroke
-          segmentStrokeWidth: 2,
-          //Number - The percentage of the chart that we cut out of the middle
-          percentageInnerCutout: 50, // This is 0 for Pie charts
-          //Number - Amount of animation steps
-          animationSteps: 100,
-          //String - Animation easing effect
-          animationEasing: "easeOutBounce",
-          //Boolean - Whether we animate the rotation of the Doughnut
-          animateRotate: true,
-          //Boolean - Whether we animate scaling the Doughnut from the centre
-          animateScale: false,
-          //Boolean - whether to make the chart responsive to window resizing
-          responsive: true,
-          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-          maintainAspectRatio: true,
-          //String - A legend template
-          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        pieChart.Doughnut(PieData, pieOptions);
-    </script>
-
-    <!-- KUANSING -->
-    <script>
-        //-------------
-        //- PIE CHART-
-        //-------------
-        // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $("#pieChart-kuansing").get(0).getContext("2d");
-        var pieChart = new Chart(pieChartCanvas);
-        var PieData = [
-          {
-            value: <?php echo $belum_kuansing ?>,
-            color: "#f56954",
-            highlight: "#f56954",
-            label: "Belum Diproses"
-          },
-          {
-            value: <?php echo $sudah_kuansing ?>,
-            color: "#FF7F00",
-            highlight: "#FF7F00",
-            label: "Sudah Diproses"
-          },
-          {
-            value: <?php echo $selesai_kuansing ?>,
-            color: "#00a65a",
-            highlight: "#00a65a",
-            label: "Selesai"
-          },
-        ];
-        var pieOptions = {
-          //Boolean - Whether we should show a stroke on each segment
-          segmentShowStroke: true,
-          //String - The colour of each segment stroke
-          segmentStrokeColor: "#fff",
-          //Number - The width of each segment stroke
-          segmentStrokeWidth: 2,
-          //Number - The percentage of the chart that we cut out of the middle
-          percentageInnerCutout: 50, // This is 0 for Pie charts
-          //Number - Amount of animation steps
-          animationSteps: 100,
-          //String - Animation easing effect
-          animationEasing: "easeOutBounce",
-          //Boolean - Whether we animate the rotation of the Doughnut
-          animateRotate: true,
-          //Boolean - Whether we animate scaling the Doughnut from the centre
-          animateScale: false,
-          //Boolean - whether to make the chart responsive to window resizing
-          responsive: true,
-          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-          maintainAspectRatio: true,
-          //String - A legend template
-          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        pieChart.Doughnut(PieData, pieOptions);
-    </script>
-
-    <!-- MERANTI -->
-    <script>
-        //-------------
-        //- PIE CHART-
-        //-------------
-        // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $("#pieChart-meranti").get(0).getContext("2d");
-        var pieChart = new Chart(pieChartCanvas);
-        var PieData = [
-          {
-            value: <?php echo $belum_meranti ?>,
-            color: "#f56954",
-            highlight: "#f56954",
-            label: "Belum Diproses"
-          },
-          {
-            value: <?php echo $sudah_meranti ?>,
-            color: "#FF7F00",
-            highlight: "#FF7F00",
-            label: "Sudah Diproses"
-          },
-          {
-            value: <?php echo $selesai_meranti ?>,
-            color: "#00a65a",
-            highlight: "#00a65a",
-            label: "Selesai"
-          },
-        ];
-        var pieOptions = {
-          //Boolean - Whether we should show a stroke on each segment
-          segmentShowStroke: true,
-          //String - The colour of each segment stroke
-          segmentStrokeColor: "#fff",
-          //Number - The width of each segment stroke
-          segmentStrokeWidth: 2,
-          //Number - The percentage of the chart that we cut out of the middle
-          percentageInnerCutout: 50, // This is 0 for Pie charts
-          //Number - Amount of animation steps
-          animationSteps: 100,
-          //String - Animation easing effect
-          animationEasing: "easeOutBounce",
-          //Boolean - Whether we animate the rotation of the Doughnut
-          animateRotate: true,
-          //Boolean - Whether we animate scaling the Doughnut from the centre
-          animateScale: false,
-          //Boolean - whether to make the chart responsive to window resizing
-          responsive: true,
-          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-          maintainAspectRatio: true,
-          //String - A legend template
-          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        pieChart.Doughnut(PieData, pieOptions);
-    </script>
-
-    <!-- KAMPAR -->
-    <script>
-        //-------------
-        //- PIE CHART-
-        //-------------
-        // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $("#pieChart-kampar").get(0).getContext("2d");
-        var pieChart = new Chart(pieChartCanvas);
-        var PieData = [
-          {
-            value: <?php echo $belum_kampar ?>,
-            color: "#f56954",
-            highlight: "#f56954",
-            label: "Belum Diproses"
-          },
-          {
-            value: <?php echo $sudah_kampar ?>,
-            color: "#FF7F00",
-            highlight: "#FF7F00",
-            label: "Sudah Diproses"
-          },
-          {
-            value: <?php echo $selesai_kampar ?>,
-            color: "#00a65a",
-            highlight: "#00a65a",
-            label: "Selesai"
-          },
-        ];
-        var pieOptions = {
-          //Boolean - Whether we should show a stroke on each segment
-          segmentShowStroke: true,
-          //String - The colour of each segment stroke
-          segmentStrokeColor: "#fff",
-          //Number - The width of each segment stroke
-          segmentStrokeWidth: 2,
-          //Number - The percentage of the chart that we cut out of the middle
-          percentageInnerCutout: 50, // This is 0 for Pie charts
-          //Number - Amount of animation steps
-          animationSteps: 100,
-          //String - Animation easing effect
-          animationEasing: "easeOutBounce",
-          //Boolean - Whether we animate the rotation of the Doughnut
-          animateRotate: true,
-          //Boolean - Whether we animate scaling the Doughnut from the centre
-          animateScale: false,
-          //Boolean - whether to make the chart responsive to window resizing
-          responsive: true,
-          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-          maintainAspectRatio: true,
-          //String - A legend template
-          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        pieChart.Doughnut(PieData, pieOptions);
-    </script>
-
-    <!-- INHU -->
-    <script>
-        //-------------
-        //- PIE CHART-
-        //-------------
-        // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $("#pieChart-inhu").get(0).getContext("2d");
-        var pieChart = new Chart(pieChartCanvas);
-        var PieData = [
-          {
-            value: <?php echo $belum_inhu ?>,
-            color: "#f56954",
-            highlight: "#f56954",
-            label: "Belum Diproses"
-          },
-          {
-            value: <?php echo $sudah_inhu ?>,
-            color: "#FF7F00",
-            highlight: "#FF7F00",
-            label: "Sudah Diproses"
-          },
-          {
-            value: <?php echo $selesai_inhu ?>,
-            color: "#00a65a",
-            highlight: "#00a65a",
-            label: "Selesai"
-          },
-        ];
-        var pieOptions = {
-          //Boolean - Whether we should show a stroke on each segment
-          segmentShowStroke: true,
-          //String - The colour of each segment stroke
-          segmentStrokeColor: "#fff",
-          //Number - The width of each segment stroke
-          segmentStrokeWidth: 2,
-          //Number - The percentage of the chart that we cut out of the middle
-          percentageInnerCutout: 50, // This is 0 for Pie charts
-          //Number - Amount of animation steps
-          animationSteps: 100,
-          //String - Animation easing effect
-          animationEasing: "easeOutBounce",
-          //Boolean - Whether we animate the rotation of the Doughnut
-          animateRotate: true,
-          //Boolean - Whether we animate scaling the Doughnut from the centre
-          animateScale: false,
-          //Boolean - whether to make the chart responsive to window resizing
-          responsive: true,
-          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-          maintainAspectRatio: true,
-          //String - A legend template
-          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        pieChart.Doughnut(PieData, pieOptions);
-    </script>
-
-    <!-- INHIL -->
-    <script>
-        //-------------
-        //- PIE CHART-
-        //-------------
-        // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $("#pieChart-inhil").get(0).getContext("2d");
-        var pieChart = new Chart(pieChartCanvas);
-        var PieData = [
-          {
-            value: <?php echo $belum_inhil ?>,
-            color: "#f56954",
-            highlight: "#f56954",
-            label: "Belum Diproses"
-          },
-          {
-            value: <?php echo $sudah_inhil ?>,
-            color: "#FF7F00",
-            highlight: "#FF7F00",
-            label: "Sudah Diproses"
-          },
-          {
-            value: <?php echo $selesai_inhil ?>,
-            color: "#00a65a",
-            highlight: "#00a65a",
-            label: "Selesai"
-          },
-        ];
-        var pieOptions = {
-          //Boolean - Whether we should show a stroke on each segment
-          segmentShowStroke: true,
-          //String - The colour of each segment stroke
-          segmentStrokeColor: "#fff",
-          //Number - The width of each segment stroke
-          segmentStrokeWidth: 2,
-          //Number - The percentage of the chart that we cut out of the middle
-          percentageInnerCutout: 50, // This is 0 for Pie charts
-          //Number - Amount of animation steps
-          animationSteps: 100,
-          //String - Animation easing effect
-          animationEasing: "easeOutBounce",
-          //Boolean - Whether we animate the rotation of the Doughnut
-          animateRotate: true,
-          //Boolean - Whether we animate scaling the Doughnut from the centre
-          animateScale: false,
-          //Boolean - whether to make the chart responsive to window resizing
-          responsive: true,
-          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-          maintainAspectRatio: true,
-          //String - A legend template
-          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        pieChart.Doughnut(PieData, pieOptions);
-    </script>
-
-    <!-- BENGKALIS -->
-    <script>
-        //-------------
-        //- PIE CHART-
-        //-------------
-        // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $("#pieChart-bengkalis").get(0).getContext("2d");
-        var pieChart = new Chart(pieChartCanvas);
-        var PieData = [
-          {
-            value: <?php echo $belum_bengkalis ?>,
-            color: "#f56954",
-            highlight: "#f56954",
-            label: "Belum Diproses"
-          },
-          {
-            value: <?php echo $sudah_bengkalis ?>,
-            color: "#FF7F00",
-            highlight: "#FF7F00",
-            label: "Sudah Diproses"
-          },
-          {
-            value: <?php echo $selesai_bengkalis ?>,
-            color: "#00a65a",
-            highlight: "#00a65a",
-            label: "Selesai"
-          },
-        ];
-        var pieOptions = {
-          //Boolean - Whether we should show a stroke on each segment
-          segmentShowStroke: true,
-          //String - The colour of each segment stroke
-          segmentStrokeColor: "#fff",
-          //Number - The width of each segment stroke
-          segmentStrokeWidth: 2,
-          //Number - The percentage of the chart that we cut out of the middle
-          percentageInnerCutout: 50, // This is 0 for Pie charts
-          //Number - Amount of animation steps
-          animationSteps: 100,
-          //String - Animation easing effect
-          animationEasing: "easeOutBounce",
-          //Boolean - Whether we animate the rotation of the Doughnut
-          animateRotate: true,
-          //Boolean - Whether we animate scaling the Doughnut from the centre
-          animateScale: false,
-          //Boolean - whether to make the chart responsive to window resizing
-          responsive: true,
-          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-          maintainAspectRatio: true,
-          //String - A legend template
-          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-        };
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        pieChart.Doughnut(PieData, pieOptions);
     </script>
