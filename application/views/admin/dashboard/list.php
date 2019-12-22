@@ -168,6 +168,8 @@
             show_pekanbaru();
             // CALL FUNCTION SHOW DUMAI
             show_dumai();
+            // CALL FUNCTION SHOW SIAK
+            show_siak();
  
             // Enable pusher logging - don't include this in production
             Pusher.logToConsole = true;
@@ -186,6 +188,7 @@
                     show_selesai();
                     show_pekanbaru();
                     show_dumai();
+                    show_siak();
                 }
             });
  
