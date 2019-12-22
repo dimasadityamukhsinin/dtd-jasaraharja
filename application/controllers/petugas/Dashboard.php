@@ -39,6 +39,17 @@ class Dashboard extends CI_Controller {
         echo json_encode($selesai);
     }
 
+    function get_regional(){
+        $regional = $this->session->userdata('regional');
+        $sudah_diproses = $this->data_model->sudah_diproses_user($regional);
+        $belum_diproses = $this->data_model->belum_diproses_user($regional);
+        $selesai = $this->data_model->selesai_user($regional);
+        echo json_encode(['sudah_diproses' => $sudah_diproses,
+                          'belum_diproses' => $belum_diproses,
+                          'selesai' => $selesai
+                        ]);
+    }
+
     // Halaman Dashboard
     public function index()
     {
