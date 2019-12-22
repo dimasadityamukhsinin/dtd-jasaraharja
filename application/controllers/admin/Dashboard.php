@@ -115,6 +115,16 @@ class Dashboard extends CI_Controller {
                         ]);
     }
 
+    function get_kampar(){
+        $belum_kampar = $this->data_model->belum_diproses_kampar();
+        $sudah_kampar = $this->data_model->sudah_diproses_kampar();
+        $selesai_kampar = $this->data_model->selesai_kampar();
+        echo json_encode(['belum_kampar' => $belum_kampar,
+                          'sudah_kampar' => $sudah_kampar,
+                          'selesai_kampar' => $selesai_kampar
+                        ]);
+    }
+
     // Halaman Dashboard
     public function index()
     {
@@ -123,11 +133,6 @@ class Dashboard extends CI_Controller {
             $konfigurasi = $this->konfigurasi_model->listing();
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
-
-            //Data Kampar
-            $belum_kampar = $this->data_model->belum_diproses_kampar();
-            $sudah_kampar = $this->data_model->sudah_diproses_kampar();
-            $selesai_kampar = $this->data_model->selesai_kampar();
 
             //Data Inhu
             $belum_inhu = $this->data_model->belum_diproses_inhu();
@@ -148,10 +153,6 @@ class Dashboard extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'log'   =>  $log,
-                            // Data Kampar
-                            'belum_kampar'  =>  $belum_kampar,
-                            'sudah_kampar'  =>  $sudah_kampar,
-                            'selesai_kampar'  =>  $selesai_kampar,
                             // Data Inhu
                             'belum_inhu'    =>  $belum_inhu,
                             'sudah_inhu'    =>  $sudah_inhu,
