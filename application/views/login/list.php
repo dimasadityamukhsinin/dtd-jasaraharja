@@ -31,7 +31,7 @@
         <img src="<?php echo base_url('assets/upload/image/'.$konfigurasi->gambar) ?>" width="300"><br>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Masukkan use dan password</p>
+        <p class="login-box-msg">Masukkan username dan password</p>
         <?php
           //Notifikasi error   
           echo validation_errors('<div class="alert alert-warning">','</div>');
