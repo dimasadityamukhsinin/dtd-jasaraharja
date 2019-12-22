@@ -158,7 +158,7 @@ class Dashboard extends CI_Controller {
     // Halaman Dashboard
     public function index()
     {
-        if($this->session->userdata('level') == '5') {
+        if($this->session->userdata('level') == '3') {
             $konfigurasi = $this->konfigurasi_model->listing();
             $username = $this->session->userdata('username');
             $staff = $this->user_model->listing($username);
