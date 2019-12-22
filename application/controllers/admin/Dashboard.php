@@ -135,6 +135,16 @@ class Dashboard extends CI_Controller {
                         ]);
     }
 
+    function get_inhil(){
+        $belum_inhil = $this->data_model->belum_diproses_inhil();
+        $sudah_inhil = $this->data_model->sudah_diproses_inhil();
+        $selesai_inhil = $this->data_model->selesai_inhil();
+        echo json_encode(['belum_inhil' => $belum_inhil,
+                          'sudah_inhil' => $sudah_inhil,
+                          'selesai_inhil' => $selesai_inhil
+                        ]);
+    }
+
     // Halaman Dashboard
     public function index()
     {
@@ -143,11 +153,6 @@ class Dashboard extends CI_Controller {
             $konfigurasi = $this->konfigurasi_model->listing();
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
-
-            // Data Inhil
-            $belum_inhil = $this->data_model->belum_diproses_inhil();
-            $sudah_inhil = $this->data_model->sudah_diproses_inhil();
-            $selesai_inhil = $this->data_model->selesai_inhil();
 
             // Data Bengkalis
             $belum_bengkalis = $this->data_model->belum_diproses_bengkalis();
@@ -158,10 +163,6 @@ class Dashboard extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'log'   =>  $log,
-                            // Data Inhil
-                            'belum_inhil'   =>  $belum_inhil,
-                            'sudah_inhil'   =>  $sudah_inhil,
-                            'selesai_inhil'   =>  $selesai_inhil,
                             // Data Bengkalis
                             'belum_bengkalis'   =>  $belum_bengkalis,
                             'sudah_bengkalis'   =>  $sudah_bengkalis,
