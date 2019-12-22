@@ -143,10 +143,6 @@ class Dashboard extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'log'   =>  $log,
-                            // Data Kuansing
-                            'belum_kuansing'    =>  $belum_kuansing,
-                            'sudah_kuansing'    =>  $sudah_kuansing,
-                            'selesai_kuansing'    =>  $selesai_kuansing,
                             // Data Meranti
                             'belum_meranti' =>  $belum_meranti,
                             'sudah_meranti' =>  $sudah_meranti,
