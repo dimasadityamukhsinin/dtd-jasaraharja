@@ -55,6 +55,16 @@ class Dashboard extends CI_Controller {
                         ]);
     }
 
+    function get_siak(){
+        $belum_siak = $this->data_model->belum_diproses_siak();
+        $sudah_siak = $this->data_model->sudah_diproses_siak();
+        $selesai_siak = $this->data_model->selesai_siak();
+        echo json_encode(['belum_siak' => $belum_siak,
+                          'sudah_siak' => $sudah_siak,
+                          'selesai_siak' => $selesai_siak
+                        ]);
+    }
+
     // Halaman Dashboard
     public function index()
     {
@@ -63,11 +73,6 @@ class Dashboard extends CI_Controller {
             $konfigurasi = $this->konfigurasi_model->listing();
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
-
-            //Data Siak
-            $belum_siak = $this->data_model->belum_diproses_siak();
-            $sudah_siak = $this->data_model->sudah_diproses_siak();
-            $selesai_siak = $this->data_model->selesai_siak();
 
             //Data Rohul
             $belum_rohul = $this->data_model->belum_diproses_rohul();
@@ -118,10 +123,6 @@ class Dashboard extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'log'   =>  $log,
-                            // Data Siak
-                            'belum_siak'    =>  $belum_siak,
-                            'sudah_siak'    =>  $sudah_siak,
-                            'selesai_siak'    =>  $selesai_siak,
                             // Data Rohul
                             'belum_rohul'   =>  $belum_rohul,
                             'sudah_rohul'   =>  $sudah_rohul,
