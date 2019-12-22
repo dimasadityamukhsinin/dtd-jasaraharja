@@ -57,7 +57,7 @@
             <!-- DONUT CHART -->
             <div class="box box-danger">
                 <h3 class="box-title">DATA SIAK</h3>
-                <div class="box-body show_sik">
+                <div class="box-body show_siak">
                 </div><!-- /.box-body -->
             </div><!-- /.box -->
         </div>
