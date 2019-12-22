@@ -145,6 +145,16 @@ class Dashboard extends CI_Controller {
                         ]);
     }
 
+    function get_bengkalis(){
+        $belum_bengkalis = $this->data_model->belum_diproses_bengkalis();
+        $sudah_bengkalis = $this->data_model->sudah_diproses_bengkalis();
+        $selesai_bengkalis = $this->data_model->selesai_bengkalis();
+        echo json_encode(['belum_bengkalis' => $belum_bengkalis,
+                          'sudah_bengkalis' => $sudah_bengkalis,
+                          'selesai_bengkalis' => $selesai_bengkalis
+                        ]);
+    }
+
     // Halaman Dashboard
     public function index()
     {
@@ -154,19 +164,10 @@ class Dashboard extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            // Data Bengkalis
-            $belum_bengkalis = $this->data_model->belum_diproses_bengkalis();
-            $sudah_bengkalis = $this->data_model->sudah_diproses_bengkalis();
-            $selesai_bengkalis = $this->data_model->selesai_bengkalis();
-
             $data = array(  'title' => 'Halaman Admin',
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'log'   =>  $log,
-                            // Data Bengkalis
-                            'belum_bengkalis'   =>  $belum_bengkalis,
-                            'sudah_bengkalis'   =>  $sudah_bengkalis,
-                            'selesai_bengkalis'   =>  $selesai_bengkalis,
                             'isi'   => 'admin/dashboard/list');
             $this->load->view('admin/layout/wrapper', $data, FALSE);
         }else{
