@@ -85,6 +85,16 @@ class Dashboard extends CI_Controller {
                         ]);
     }
 
+    function get_pelalawan(){
+        $belum_pelalawan = $this->data_model->belum_diproses_pelalawan();
+        $sudah_pelalawan = $this->data_model->sudah_diproses_pelalawan();
+        $selesai_pelalawan = $this->data_model->selesai_pelalawan();
+        echo json_encode(['belum_pelalawan' => $belum_pelalawan,
+                          'sudah_pelalawan' => $sudah_pelalawan,
+                          'selesai_pelalawan' => $selesai_pelalawan
+                        ]);
+    }
+
     // Halaman Dashboard
     public function index()
     {
@@ -93,11 +103,6 @@ class Dashboard extends CI_Controller {
             $konfigurasi = $this->konfigurasi_model->listing();
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
-
-            //Data Pelalawan
-            $belum_pelalawan = $this->data_model->belum_diproses_pelalawan();
-            $sudah_pelalawan = $this->data_model->sudah_diproses_pelalawan();
-            $selesai_pelalawan = $this->data_model->selesai_pelalawan();
 
             //Data Kuansing
             $belum_kuansing = $this->data_model->belum_diproses_kuansing();
@@ -133,10 +138,6 @@ class Dashboard extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'log'   =>  $log,
-                            // Data Pelalawan
-                            'belum_pelalawan'   =>  $belum_pelalawan,
-                            'sudah_pelalawan'   =>  $sudah_pelalawan,
-                            'selesai_pelalawan'   =>  $selesai_pelalawan,
                             // Data Kuansing
                             'belum_kuansing'    =>  $belum_kuansing,
                             'sudah_kuansing'    =>  $sudah_kuansing,
