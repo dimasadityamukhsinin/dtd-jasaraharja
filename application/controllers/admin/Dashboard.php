@@ -65,6 +65,16 @@ class Dashboard extends CI_Controller {
                         ]);
     }
 
+    function get_rohul(){
+        $belum_rohul = $this->data_model->belum_diproses_rohul();
+        $sudah_rohul = $this->data_model->sudah_diproses_rohul();
+        $selesai_rohul = $this->data_model->selesai_rohul();
+        echo json_encode(['belum_rohul' => $belum_rohul,
+                          'sudah_rohul' => $sudah_rohul,
+                          'selesai_rohul' => $selesai_rohul
+                        ]);
+    }
+
     // Halaman Dashboard
     public function index()
     {
