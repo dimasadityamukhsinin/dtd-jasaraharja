@@ -75,6 +75,16 @@ class Dashboard extends CI_Controller {
                         ]);
     }
 
+    function get_rohil(){
+        $belum_rohil = $this->data_model->belum_diproses_rohil();
+        $sudah_rohil = $this->data_model->sudah_diproses_rohil();
+        $selesai_rohil = $this->data_model->selesai_rohil();
+        echo json_encode(['belum_rohil' => $belum_rohil,
+                          'sudah_rohil' => $sudah_rohil,
+                          'selesai_rohil' => $selesai_rohil
+                        ]);
+    }
+
     // Halaman Dashboard
     public function index()
     {
@@ -83,11 +93,6 @@ class Dashboard extends CI_Controller {
             $konfigurasi = $this->konfigurasi_model->listing();
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
-
-            //Data Rohil
-            $belum_rohil = $this->data_model->belum_diproses_rohil();
-            $sudah_rohil = $this->data_model->sudah_diproses_rohil();
-            $selesai_rohil = $this->data_model->selesai_rohil();
 
             //Data Pelalawan
             $belum_pelalawan = $this->data_model->belum_diproses_pelalawan();
@@ -128,10 +133,6 @@ class Dashboard extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'log'   =>  $log,
-                            // Data Rohil
-                            'belum_rohil'   =>  $belum_rohil,
-                            'sudah_rohil'   =>  $sudah_rohil,
-                            'selesai_rohil'   =>  $selesai_rohil,
                             // Data Pelalawan
                             'belum_pelalawan'   =>  $belum_pelalawan,
                             'sudah_pelalawan'   =>  $sudah_pelalawan,
