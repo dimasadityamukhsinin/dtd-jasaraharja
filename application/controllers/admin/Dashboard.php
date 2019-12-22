@@ -14,7 +14,7 @@ class Dashboard extends CI_Controller {
         // Proteksi Halaman
         $this->simple_login->cek_login();
     }
-    
+
     function get_total(){
         $total_data = $this->data_model->total_data();
         echo json_encode($total_data);
@@ -35,28 +35,34 @@ class Dashboard extends CI_Controller {
         echo json_encode($selesai);
     }
 
+    function get_pekanbaru(){
+        $belum_pekanbaru = $this->data_model->belum_diproses_pekanbaru();
+        $sudah_pekanbaru = $this->data_model->sudah_diproses_pekanbaru();
+        $selesai_pekanbaru = $this->data_model->selesai_pekanbaru();
+        echo json_encode(['belum_pekanbaru' => $belum_pekanbaru,
+                          'sudah_pekanbaru' => $sudah_pekanbaru,
+                          'selesai_pekanbaru' => $selesai_pekanbaru
+                        ]);
+    }
+
+    function get_dumai(){
+        $belum_dumai = $this->data_model->belum_diproses_dumai();
+        $sudah_dumai = $this->data_model->sudah_diproses_dumai();
+        $selesai_dumai = $this->data_model->selesai_dumai();
+        echo json_encode(['belum_dumai' => $belum_dumai,
+                          'sudah_dumai' => $sudah_dumai,
+                          'selesai_dumai' => $selesai_dumai
+                        ]);
+    }
+
     // Halaman Dashboard
     public function index()
     {
         if($this->session->userdata('level') == '1') {
             $log = $this->log_model->listing();
-            $total_data = $this->data_model->total_data();
-            $belum_diproses = $this->data_model->belum_diproses();
-            $sudah_diproses = $this->data_model->sudah_diproses();
-            $selesai = $this->data_model->selesai();
             $konfigurasi = $this->konfigurasi_model->listing();
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
-
-            //Data Pekanbaru
-            $belum_pekanbaru = $this->data_model->belum_diproses_pekanbaru();
-            $sudah_pekanbaru = $this->data_model->sudah_diproses_pekanbaru();
-            $selesai_pekanbaru = $this->data_model->selesai_pekanbaru();
-
-            //Data Dumai
-            $belum_dumai = $this->data_model->belum_diproses_dumai();
-            $sudah_dumai = $this->data_model->sudah_diproses_dumai();
-            $selesai_dumai = $this->data_model->selesai_dumai();
 
             //Data Siak
             $belum_siak = $this->data_model->belum_diproses_siak();
@@ -112,18 +118,6 @@ class Dashboard extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'log'   =>  $log,
-                            'belum_diproses'    =>  $belum_diproses,
-                            'sudah_diproses' => $sudah_diproses,
-                            'selesai'    =>  $selesai,
-                            'total_data' => $total_data,
-                            // Data Pekanbaru
-                            'belum_pekanbaru'   =>  $belum_pekanbaru,
-                            'sudah_pekanbaru'   =>  $sudah_pekanbaru,
-                            'selesai_pekanbaru'   =>  $selesai_pekanbaru,
-                            // Data Dumai
-                            'belum_dumai'   =>  $belum_dumai,
-                            'sudah_dumai'   =>  $sudah_dumai,
-                            'selesai_dumai'   =>  $selesai_dumai,
                             // Data Siak
                             'belum_siak'    =>  $belum_siak,
                             'sudah_siak'    =>  $sudah_siak,
