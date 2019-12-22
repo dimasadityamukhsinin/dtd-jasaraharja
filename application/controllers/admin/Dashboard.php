@@ -84,11 +84,6 @@ class Dashboard extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            //Data Rohul
-            $belum_rohul = $this->data_model->belum_diproses_rohul();
-            $sudah_rohul = $this->data_model->sudah_diproses_rohul();
-            $selesai_rohul = $this->data_model->selesai_rohul();
-
             //Data Rohil
             $belum_rohil = $this->data_model->belum_diproses_rohil();
             $sudah_rohil = $this->data_model->sudah_diproses_rohil();
@@ -133,10 +128,6 @@ class Dashboard extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'log'   =>  $log,
-                            // Data Rohul
-                            'belum_rohul'   =>  $belum_rohul,
-                            'sudah_rohul'   =>  $sudah_rohul,
-                            'selesai_rohul'   =>  $selesai_rohul,
                             // Data Rohil
                             'belum_rohil'   =>  $belum_rohil,
                             'sudah_rohil'   =>  $sudah_rohil,
