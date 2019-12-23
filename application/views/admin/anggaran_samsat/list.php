@@ -37,6 +37,7 @@ if($this->session->flashdata('sukses')) {
                     <button type="submit" class="btn btn-primary pull-right" name="btn_search" id="btn_search">Cari</button>
                 </div>
             </form>
+        </div>
     </div>
 </div>
 
