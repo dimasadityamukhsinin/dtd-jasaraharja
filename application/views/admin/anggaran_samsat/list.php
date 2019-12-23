@@ -14,7 +14,7 @@ if($this->session->flashdata('sukses')) {
 ?>
 <div class="row">
     <div class="col-md-8">
-            <form method="post" action="http://teknik.jasaraharjariau.com/iw/halaman_anggaran_iw">
+            <form method="post" action="<?php echo base_url('admin/anggaran_iw') ?>">
                 <div class="box-body">
                     <div class="form-group">
                         <label>Tahun Anggaran :</label>
@@ -23,13 +23,17 @@ if($this->session->flashdata('sukses')) {
                                 <i class="fa fa-calendar"></i>
                             </div>
                             <select class="form-control" style="width: 100%;" name="tahun">
-                            
-                                
-                                <option >2017</option>
-                            
-                                
-                                <option selected>2018</option>
-                                
+                            <?php foreach ($tahunAnggaran as $row) {?>
+                                <?php 
+                                $selected = ''; 
+                                if ($tahun == $row->tahun){
+                                    $selected = 'selected';
+                                } else {
+                                    $selected = '';
+                                } 
+                                ?>
+                                <option <?php echo $selected ?>><?php echo $row->tahun; ?></option>
+                                <?php } ?> 
                             </select>
                         </div>
                     </div>
