@@ -12,6 +12,34 @@ if($this->session->flashdata('sukses')) {
     echo '</div>';
 }
 ?>
+<div class="row">
+    <div class="col-md-8">
+        <div class="box box-danger">
+            <form method="post" action="http://teknik.jasaraharjariau.com/iw/halaman_anggaran_iw">
+                <div class="box-body">
+                    <div class="form-group">
+                        <label>Tahun Anggaran :</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </div>
+                            <select class="form-control" style="width: 100%;" name="tahun">
+                            
+                                
+                                <option >2017</option>
+                            
+                                
+                                <option selected>2018</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right" name="btn_search" id="btn_search">Cari</button>
+                </div>
+            </form>
+    </div>
+</div>
+
 <div class="table-responsive">
     <table class="table table-bordered" id="example1">
         <thead>
