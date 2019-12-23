@@ -14,7 +14,6 @@ if($this->session->flashdata('sukses')) {
 ?>
 <div class="row">
     <div class="col-md-8">
-        <div class="box box-danger">
             <form method="post" action="http://teknik.jasaraharjariau.com/iw/halaman_anggaran_iw">
                 <div class="box-body">
                     <div class="form-group">
@@ -37,7 +36,6 @@ if($this->session->flashdata('sukses')) {
                     <button type="submit" class="btn btn-primary pull-right" name="btn_search" id="btn_search">Cari</button>
                 </div>
             </form>
-        </div>
     </div>
 </div>
 
