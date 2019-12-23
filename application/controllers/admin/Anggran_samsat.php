@@ -18,20 +18,21 @@ class Anggaran_samsat extends CI_Controller {
         }
     }
 
+    // Data Anggaran Samsat
     public function index()
     {
-        $konfigurasi = $this->konfigurasi_model->listing();
-        $username = $this->session->userdata('username');
-        $admin = $this->user_model->listing($username);
-        $anggaran = $this->samsat_model->listing();
+            $konfigurasi = $this->konfigurasi_model->listing();
+            $username = $this->session->userdata('username');
+            $admin = $this->user_model->listing($username);
 
-        $data = array(  'title'         =>  'Anggaran Tahunan Samsat',
-                        'konfigurasi'   =>  $konfigurasi,
-                        'admin'         =>  $admin,
-                        'anggaran'      =>  $anggaran,
-                        'isi'           =>  'admin/anggaran_samsat/list'
-                    );
-        $this->load->view('admin/layout/wrapper', $data, FALSE);
+            $anggaran = $this->samsat_model->listing();
+            $data = array(  'title'         =>  'Anggaran Tahunan Samsat',
+                            'admin'         =>  $admin,
+                            'konfigurasi'   =>  $konfigurasi,
+                            'anggaran'      =>  $anggaran,
+                            'isi'           =>  'admin/anggaran_samsat/list'
+                        );
+            $this->load->view('admin/layout/wrapper', $data, false);
     }
 }
 ?>
