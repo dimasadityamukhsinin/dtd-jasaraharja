@@ -14,7 +14,7 @@ if($this->session->flashdata('sukses')) {
 ?>
 <div class="row">
     <div class="col-md-8">
-            <form method="post" action="<?php echo base_url('admin/anggaran_iw') ?>">
+            <form method="post" action="<?php echo base_url('admin/anggaran_samsat') ?>">
                 <div class="box-body">
                     <div class="form-group">
                         <label>Tahun Anggaran :</label>
