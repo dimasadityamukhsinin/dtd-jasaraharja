@@ -31,9 +31,9 @@ if($this->session->flashdata('sukses')) {
                 <td><?php echo $anggaran->nama_samsat ?></td>
                 <td><?php echo $anggaran->iwkbu ?></td>
                 <td><?php echo $anggaran->iwkl ?></td>
-                <td><?php echo $anggaran->iwkbu +  $anggaran->iwkl?></td>
+                <td>Rp.<?php echo number_format($anggaran->iwkbu,'0',',','.') +  number_format($anggaran->iwkl,'0',',','.')?></td>
                 <td>
-                    <a href="<?php echo base_url('admin/belum_diproses/edit/'.$bengkalis->id) ?>" class="btn btn-warning btn-xs">
+                    <a href="<?php echo base_url('admin/belum_diproses/edit/') ?>" class="btn btn-warning btn-xs">
                     <i class="fa fa-edit"></i> Edit</a>
                 </td>
             </tr>
