@@ -30,7 +30,7 @@ class Anggaran_samsat extends CI_Controller {
 			$thn = $tahun;
 		}
 
-		$anggaran = $this->samsat_model->getAnggaranIW($thn);
+		$anggaran = $this->samsat_model->getAnggaran($thn);
         $tahunAnggaran = $this->samsat_model->tahun_anggaran();
         
         $konfigurasi = $this->konfigurasi_model->listing();
