@@ -33,7 +33,7 @@ if($this->session->flashdata('sukses')) {
                 <td><?php echo $anggaran->iwkl ?></td>
                 <td>Rp.<?php $hasil =
                         $anggaran->iwkbu + $anggaran->iwkl; 
-                        number_format($hasil,'0',',','.')
+                        echo number_format($hasil,'0',',','.')
                         ?></td>
                 <td>
                     <a href="<?php echo base_url('admin/belum_diproses/edit/') ?>" class="btn btn-warning btn-xs">
