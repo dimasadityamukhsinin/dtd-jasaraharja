@@ -33,6 +33,18 @@
                 <li><a href="<?php echo base_url('admin/petugas')?>"><i class="fa fa-angle-right"></i> Akun Petugas</a></li><li><a href="<?php echo base_url('admin/kepala_cabang')?>"><i class="fa fa-angle-right"></i> Akun Kepala Cabang</a></li>
               </ul>
             </li>
+
+            <!-- MENU MASTER SAMSAT -->
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-group"></i> <span>MASTER SAMSAT</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="<?php echo base_url('admin/grafik_pencapaian')?>"><i class="fa fa-angle-right"></i> Grafik Pencapaian</a></li>
+                <li><a href="<?php echo base_url('admin/anggaran_samsat')?>"><i class="fa fa-angle-right"></i> Anggaran Samsat</a></li>  
+                <li><a href="<?php echo base_url('admin/kategori_samsat')?>"><i class="fa fa-angle-right"></i> Kategori Samsat</a></li><li><a href="<?php echo base_url('admin/kepala_cabang')?>"><i class="fa fa-angle-right"></i> Akun Kepala Cabang</a></li>
+              </ul>
+            </li>
             
          
             <!-- MENU KONFIGURASI -->
