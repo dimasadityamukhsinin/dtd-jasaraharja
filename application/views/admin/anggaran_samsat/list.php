@@ -29,8 +29,8 @@ if($this->session->flashdata('sukses')) {
             <tr>
             <td><?php echo $no++ ?></td>
                 <td><?php echo $anggaran->nama_samsat ?></td>
-                <td><?php echo $anggaran->iwkbu ?></td>
-                <td><?php echo $anggaran->iwkl ?></td>
+                <td>Rp.<?php echo number_format($anggaran->iwkbu,'0',',','.')?></td>
+                <td>Rp.<?php echo number_format($anggaran->iwkl,'0',',','.')?></td>
                 <td>Rp.<?php $hasil =
                         $anggaran->iwkbu + $anggaran->iwkl; 
                         echo number_format($hasil,'0',',','.')
