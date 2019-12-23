@@ -31,8 +31,8 @@ if($this->session->flashdata('sukses')) {
                 <td><?php echo $anggaran->nama_samsat ?></td>
                 <td><?php echo $anggaran->iwkbu ?></td>
                 <td><?php echo $anggaran->iwkl ?></td>
-                <td>Rp.<?php 
-                        $anggaran->iwkbu + $anggaran->iwkl = $hasil; 
+                <td>Rp.<?php $hasil =
+                        $anggaran->iwkbu + $anggaran->iwkl; 
                         number_format($hasil,'0',',','.')
                         ?></td>
                 <td>
