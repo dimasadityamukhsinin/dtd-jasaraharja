@@ -19,12 +19,11 @@ class Samsat_model extends CI_Model {
 
     public function tahun_anggaran()
 	{
-        $this->db->select('DISTINCT tahun');
-        $this->db->from('jr_samsat');
+		$this->db->select('DISTINCT tahun');
 		$this->db->order_by('tahun', 'ASC');
-		$query = $this->db->get();
+		$query = $this->db->get('jr_samsat');
 		return $query->result();
-    }
+	}
     
     public function getAnggaran($tahun)
 	{
