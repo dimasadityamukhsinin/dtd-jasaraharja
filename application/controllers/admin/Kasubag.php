@@ -161,6 +161,7 @@ class Kasubag extends CI_Controller {
             
             $regional = $this->regional_model->listing();
             $level = $this->level_model->listing();
+            $samsat = $this->samsat_model->samsat();
 
             //Ambil data yg akan diedit
             $kasubag     = $this->kasubag_model->detail($id);
@@ -197,6 +198,7 @@ class Kasubag extends CI_Controller {
                             'admin'    =>  $admin,
                             'regional' => $regional,
                             'level'  => $level,
+                            'samsat'    =>  $samsat,
                             'isi'       =>  'admin/kasubag/edit'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
@@ -228,6 +230,7 @@ class Kasubag extends CI_Controller {
                             'admin'    =>  $admin,
                             'regional' => $regional,
                             'level'  => $level,
+                            'samsat'    =>  $samsat,
                             'isi'       =>  'admin/kasubag/edit'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
