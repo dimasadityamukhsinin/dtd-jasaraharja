@@ -56,5 +56,13 @@ class Samsat_model extends CI_Model {
     {
         $this->db->insert_batch('jr_samsat', $data);
     }
+
+    public function GrafikIW()
+	{
+		$this->db->select('tahun as tahun, SUM(iwkbu) as iwkbu, SUM(iwkl) as iwkl');
+		$this->db->from('jr_samsat');
+		$this->db->group_by('tahun');
+		return $this->db->get();
+	}
 }
 ?>
