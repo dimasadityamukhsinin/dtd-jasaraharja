@@ -61,6 +61,7 @@ if($this->session->flashdata('sukses')) {
                 <td>
                     <a href="<?php echo base_url('admin/anggaran_samsat/edit/'.$anggaran->id) ?>" class="btn btn-warning btn-xs">
                     <i class="fa fa-edit"></i> Edit</a>
+                    <?php include('delete.php') ?>
                 </td>
             </tr>
             <?php } ?>

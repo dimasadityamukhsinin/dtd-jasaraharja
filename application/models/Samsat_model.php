@@ -63,6 +63,13 @@ class Samsat_model extends CI_Model {
 		$this->db->from('jr_samsat');
 		$this->db->group_by('tahun');
 		return $this->db->get();
-	}
+    }
+    
+    // Delete
+    public function delete($data)
+    {
+        $this->db->where('id', $data['id']);
+        $this->db->delete('jr_samsat', $data);
+    }
 }
 ?>

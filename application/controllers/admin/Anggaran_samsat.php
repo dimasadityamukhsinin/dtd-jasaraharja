@@ -145,5 +145,23 @@ class Anggaran_samsat extends CI_Controller {
                     );
         $this->load->view('admin/anggaran_samsat/cetak', $data, false);
     }
+
+    // Delete
+    public function delete($id = null)
+    {
+        if (!isset($id)) show_404();
+
+        $data = array('id' => $id);
+        if (!$data) {
+            show_404();
+        }else{
+
+            $anggaran     = $this->samsat_model->detail($id);
+
+            $this->samsat_model->delete($data);
+            $this->session->set_flashdata('sukses', 'Data telah dihapus');
+            redirect(base_url('admin/anggaran_samsat'), 'refresh');
+        }
+    }
 }
 ?>
