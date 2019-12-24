@@ -24,7 +24,7 @@ echo form_open_multipart(base_url('admin/anggaran_samsat/edit/'.$anggaran->id), 
 <div class="form-group">
     <label class="col-md-2 control-label">Wilayah</label>
     <div class="col-md-5">
-        <input type="text" class="form-control" value="<?php echo $anggaran->wilayah ?>" readonly>
+        <input type="text" class="form-control" value="<?php echo $anggaran->nama_samsat ?>" readonly>
     </div>
 </div>
 

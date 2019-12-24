@@ -71,7 +71,7 @@ class Anggaran_samsat extends CI_Controller {
         if($valid->run()===false){
             //Akhir Validasi
         
-        $data = array(  'title'     =>  'Edit Anggaran Samsat'.$anggaran->wilayah,
+        $data = array(  'title'     =>  'Edit Anggaran Samsat'.$anggaran->nama_samsat,
                         'konfigurasi'   =>  $konfigurasi,
                         'admin'    =>  $admin,
                         'anggaran' => $anggaran,
@@ -93,7 +93,7 @@ class Anggaran_samsat extends CI_Controller {
         }
         //akhir masuk database
             
-        $data = array(  'title'     =>  'Edit Anggaran Samsat'.$anggaran->wilayah,
+        $data = array(  'title'     =>  'Edit Anggaran Samsat'.$anggaran->nama_samsat,
                         'konfigurasi'   =>  $konfigurasi,
                         'admin'    =>  $admin,
                         'anggaran' => $anggaran,
