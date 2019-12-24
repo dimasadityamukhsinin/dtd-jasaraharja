@@ -66,7 +66,7 @@ if($this->session->flashdata('sukses')) {
                         echo number_format($hasil,'0',',','.')
                         ?></td>
                 <td>
-                    <a href="<?php echo base_url('admin/belum_diproses/edit/') ?>" class="btn btn-warning btn-xs">
+                    <a href="<?php echo base_url('admin/anggaran_samsat/edit/'.$anggaran->id) ?>" class="btn btn-warning btn-xs">
                     <i class="fa fa-edit"></i> Edit</a>
                 </td>
             </tr>
