@@ -24,7 +24,13 @@ echo form_open_multipart(base_url('admin/kepala_cabang/tambah'), 'class="form-ho
 <div class="form-group">
     <label class="col-md-2 control-label">Cabang</label>
     <div class="col-md-5">
-        <input type="text" name="cabang" class="form-control" placeholder="Cabang" value="<?php echo set_value('cabang') ?>">
+        <select name="cabang" class="form-control">
+            <?php foreach($samsat as $samsat) { ?>
+            <option value="<?php echo $samsat->nama_samsat ?>">
+                <?php echo $samsat->nama_samsat ?>
+            </option>
+            <?php } ?>
+        </select>
     </div>
 </div>
 
