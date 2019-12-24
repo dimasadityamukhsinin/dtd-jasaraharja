@@ -1,5 +1,6 @@
 <p class="pull-right">
     <?php include('import.php')?>
+    <?php include('menu_cetak.php')?>
 </p>
 
 <?php
