@@ -50,6 +50,7 @@ class Staff extends CI_Controller {
 
             $level = $this->level_model->listing();
             $regional = $this->regional_model->listing();
+            $samsat = $this->samsat_model->samsat();
 
             //Validasi input
             $valid = $this->form_validation;
@@ -86,6 +87,7 @@ class Staff extends CI_Controller {
                             'level' =>  $level,
                             'regional'  =>  $regional,
                             'konfigurasi'   =>  $konfigurasi,
+                            'samsat'    =>  $samsat,
                             'isi'      => 'admin/staff/tambah');
             $this->load->view('admin/layout/wrapper',$data,FALSE);
             //Masuk Database
@@ -115,6 +117,7 @@ class Staff extends CI_Controller {
                             'admin'    =>  $admin,
                             'level' =>  $level,
                             'regional'  =>  $regional,
+                            'samsat'    =>  $samsat,
                             'isi'      => 'admin/staff/tambah');
             $this->load->view('admin/layout/wrapper',$data);
         }else{
@@ -135,6 +138,7 @@ class Staff extends CI_Controller {
             
             $regional = $this->regional_model->listing();
             $level = $this->level_model->listing();
+            $samsat = $this->samsat_model->samsat();
 
             //Ambil data yg akan diedit
             $staff     = $this->staff_model->detail($id);
@@ -171,6 +175,7 @@ class Staff extends CI_Controller {
                             'admin'    =>  $admin,
                             'regional' => $regional,
                             'level'  => $level,
+                            'samsat'    =>  $samsat,
                             'isi'       =>  'admin/staff/edit'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
@@ -202,6 +207,7 @@ class Staff extends CI_Controller {
                             'admin'    =>  $admin,
                             'regional' => $regional,
                             'level'  => $level,
+                            'samsat'    =>  $samsat,
                             'isi'       =>  'admin/staff/edit'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
