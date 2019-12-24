@@ -1,3 +1,7 @@
+<p class="pull-right">
+    <?php include('cetak.php')?>
+</p>
+
 <div id="chartContainer" style="height: 275px; width: 100%;"></div>
   <button id="printChart">Print Chart</button>
 
