@@ -10,6 +10,7 @@ class Anggaran_samsat extends CI_Controller {
         $this->load->model('konfigurasi_model');
         $this->load->model('user_model');
         $this->load->model('samsat_model');
+        $this->load->library('excel');
         //Proteksi Halaman
         $this->simple_login->cek_login();
         if($this->session->userdata('level') != '1') {
