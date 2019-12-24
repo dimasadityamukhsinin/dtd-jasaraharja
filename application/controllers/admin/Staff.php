@@ -14,6 +14,7 @@ class Staff extends CI_Controller {
         $this->load->model('status_model');
         $this->load->model('regional_model');
         $this->load->model('level_model');
+        $this->load->model('samsat_model');
         // Proteksi Halaman
         $this->simple_login->cek_login();
     }
