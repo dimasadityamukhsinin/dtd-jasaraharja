@@ -30,6 +30,7 @@ class Grafik_pencapaian extends CI_Controller {
         }
 
         $anggaran = $this->samsat_model->getAnggaran($thn);
+        $tahunAnggaran = $this->samsat_model->tahun_anggaran();
         $konfigurasi = $this->konfigurasi_model->listing();
         $username = $this->session->userdata('username');
         $admin = $this->user_model->listing($username);
@@ -38,6 +39,7 @@ class Grafik_pencapaian extends CI_Controller {
                         'konfigurasi'   =>  $konfigurasi,
                         'admin'         =>  $admin,
                         'anggaran'      =>  $anggaran,
+                        'tahunAnggaran' =>  $tahunAnggaran,
                         'tahun'         => $thn,
                         'isi'           =>  'admin/grafik_pencapaian/list'
                     );
