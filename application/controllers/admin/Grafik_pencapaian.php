@@ -20,6 +20,16 @@ class Grafik_pencapaian extends CI_Controller {
 
     public function index()
     {
+        $tahun = $this->input->post('tahun');
+
+		$thn = '';
+		if($tahun == ''){
+			$thn = date('Y');
+		}else{
+			$thn = $tahun;
+        }
+
+        $anggaran = $this->samsat_model->getAnggaran($thn);
         $konfigurasi = $this->konfigurasi_model->listing();
         $username = $this->session->userdata('username');
         $admin = $this->user_model->listing($username);
@@ -27,6 +37,8 @@ class Grafik_pencapaian extends CI_Controller {
         $data = array(  'title'         =>  'Grafik Pencapaian Samsat',
                         'konfigurasi'   =>  $konfigurasi,
                         'admin'         =>  $admin,
+                        'anggaran'      =>  $anggaran,
+                        'tahun'         => $thn,
                         'isi'           =>  'admin/grafik_pencapaian/list'
                     );
         $this->load->view('admin/layout/wrapper', $data, FALSE);
