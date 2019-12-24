@@ -1,3 +1,7 @@
+<p class="pull-right">
+    <?php include('import.php')?>
+</p>
+
 <?php
 // Notifikasi
 if($this->session->flashdata('sukses')) {
