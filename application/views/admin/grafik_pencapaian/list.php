@@ -1,8 +1,8 @@
 <p class="pull-right">
     <div class="btn-group">
-        <a href="" title="Cetak Grafik" id="printChart" class="btn btn-success btn-md">
+        <button title="Cetak Grafik" id="printChart" class="btn btn-success btn-md">
             <i class="fa fa-print"></i> Cetak Grafik
-        </a>
+        </button>
     </div>
 </p>
 
