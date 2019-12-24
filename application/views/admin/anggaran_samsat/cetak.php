@@ -55,6 +55,9 @@
                 <th>
                     <b>IWKL</b>
                 </th>
+                <th>
+                    <b>TOTAL</b>
+                </th>
             </tr>
             <?php $no=1; foreach($anggaran as $anggaran) { ?>
             <tr>
