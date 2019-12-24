@@ -38,7 +38,7 @@ class Anggaran_samsat extends CI_Controller {
         $username = $this->session->userdata('username');
         $admin = $this->user_model->listing($username);
 
-        $data = array(  'title'         =>  'Anggaran Tahunan Samsat'. $thn,
+        $data = array(  'title'         =>  'Anggaran Tahunan Samsat '. $thn,
                         'admin'         =>  $admin,
                         'konfigurasi'   =>  $konfigurasi,
                         'anggaran'      =>  $anggaran,
