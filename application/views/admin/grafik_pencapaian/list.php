@@ -1,5 +1,7 @@
 <p class="pull-right">
-    <?php include('cetak.php')?>
+    <button id="printChart" title="Cetak Grafik" class="btn btn-success btn-md">
+        <i class="fa fa-print"></i> Cetak Grafik
+    </button>
 </p>
 
 <div id="chartContainer" style="height: 275px; width: 100%;"></div>
