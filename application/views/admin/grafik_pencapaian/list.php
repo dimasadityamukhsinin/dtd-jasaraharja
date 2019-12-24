@@ -1,4 +1,4 @@
-<p class="pull-right">
+<p class="pull-left">
     <?php include('cetak.php')?>
 </p>
 
