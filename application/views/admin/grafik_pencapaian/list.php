@@ -7,7 +7,6 @@
 </p>
 
 <div id="chartContainer" style="height: 275px; width: 100%;"></div>
-  <button id="printChart">Print Chart</button>
 
 <script type="text/javascript">
 window.onload = function () {
