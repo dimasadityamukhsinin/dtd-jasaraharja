@@ -10,7 +10,9 @@
     <!-- Sales Chart Canvas -->
     <div id="chart" style="height: 380px;"></div>
 </div>
-
+<script src="<?php echo base_url() ?>assets/admin/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="<?php echo base_url() ?>assets/admin/bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/admin/highcharts/highcharts.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/admin/highcharts/modules/exporting.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/admin/highcharts/themes/dark-green.js"></script>
