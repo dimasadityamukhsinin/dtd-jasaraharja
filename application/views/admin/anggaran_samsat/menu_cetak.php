@@ -13,16 +13,9 @@
             <h4 class="modal-title">Menu Cetak</h4>
           </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="<?php echo base_url('admin/belum_diproses/cetak')?>" class="btn btn-warning btn-block" target="_blank">
-                        <h5>CETAK SEMUA</h5>
-                        </a>
-                    </div>
-                </div>
                 <?php
                     // Form Open
-                    echo form_open_multipart(base_url('admin/belum_diproses/cetak_akhir'), 'class="form-horizontal"');
+                    echo form_open_multipart(base_url('admin/anggaran_samsat/cetak'), 'class="form-horizontal"');
                 ?>
                 <p>
                     <div class="row">
@@ -47,7 +40,7 @@
                 <p>
                     <div class="row">
                         <div class="col-lg-12">
-                            <input type="submit" name="cetak_akhir" target="_blank" value="Cetak Masa Akhir" class="btn btn-info"/>
+                            <input type="submit" name="cetak" target="_blank" value="Cetak" class="btn btn-info"/>
                         </div>
                     </div>
                 </p>
