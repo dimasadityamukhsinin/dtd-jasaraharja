@@ -12,13 +12,13 @@
           </div>
             <?php
                 // Form Open
-                echo form_open_multipart(base_url('admin/belum_diproses/import'), 'class="form-horizontal"');
+                echo form_open_multipart(base_url('admin/anggaran_samsat/import'), 'class="form-horizontal"');
             ?>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="<?php echo base_url() ?>assets/excel/importexcel.xlsx" class="btn btn-warning btn-block">
-                        <h5>DOWNLOAD TEMPLATE EXCEL</h5>
+                        <a href="<?php echo base_url() ?>assets/excel/importanggaran.xlsx" class="btn btn-warning btn-block">
+                        <h5>DOWNLOAD TEMPLATE ANGGARAN</h5>
                         </a>
                     </div>
                 </div>

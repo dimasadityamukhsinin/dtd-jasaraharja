@@ -101,5 +101,36 @@ class Anggaran_samsat extends CI_Controller {
                     );
         $this->load->view('admin/layout/wrapper', $data, false);
     }
+
+    function import()
+    {
+        if(isset($_FILES["file"]["name"]))
+        {
+            $path = $_FILES["file"]["tmp_name"];
+            $object = PHPExcel_IOFactory::load($path);
+            foreach($object->getWorksheetIterator() as $worksheet)
+            {
+                $highestRow = $worksheet->getHighestRow();
+                $highestColumn = $worksheet->getHighestColumn();
+                for($row=4; $row<=$highestRow; $row++)
+                {
+                    $tahun = $worksheet->getCellByColumnAndRow(1, 1)->getValue();
+                    $wilayah = $worksheet->getCellByColumnAndRow(0, $row)->getValue();
+                    $iwkbu = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+                    $iwkl = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+                    $nol = 0;
+                    $data[] = array(
+                        'nama_samsat'      =>  $wilayah,
+                        'iwkbu'           =>  $iwkbu == null ? $nol : $iwkbu,
+                        'iwkl'              =>  $iwkl == null ? $nol : $iwkl,
+                        'tahun'        =>  $tahun,
+                    );
+                }
+            }
+            $this->samsat_model->insert($data);
+            $this->session->set_flashdata('sukses','Data telah diimport');
+            redirect(base_url('admin/anggaran_samsat'),'refresh');        
+        }  
+    }
 }
 ?>

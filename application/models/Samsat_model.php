@@ -51,5 +51,10 @@ class Samsat_model extends CI_Model {
         $this->db->where('id', $data['id']);
         $this->db->update('jr_samsat', $data);
     }
+
+    function insert($data)
+    {
+        $this->db->insert_batch('jr_samsat', $data);
+    }
 }
 ?>
