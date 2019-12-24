@@ -1,9 +1,3 @@
-<p>
-    <a href="<?php echo base_url('admin/belum_diproses/tambah') ?>" class="btn btn-success btn-lg">
-        <i class="fa fa-plus"></i> Tambah Baru
-    </a>
-</p>
-
 <?php
 // Notifikasi
 if($this->session->flashdata('sukses')) {
