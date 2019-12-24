@@ -19,7 +19,7 @@ window.onload = function () {
 		{
 			type: "column",
 			dataPoints: [
-				{ label: "apple",  x: 10  },
+				{ label: <?php echo json_encode($data1) ?>    ,  y: 10  },
 				{ label: "orange", y: 15  },
 				{ label: "banana", y: 25  },
 				{ label: "mango",  y: 30  },
