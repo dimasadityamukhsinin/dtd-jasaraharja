@@ -23,16 +23,8 @@ if($this->session->flashdata('sukses')) {
                             </div>
                             <select class="form-control" style="width: 100%;" name="tahun">
                             <?php foreach ($tahunAnggaran as $row) {?>
-                                <?php 
-                                $selected = ''; 
-                                if ($tahun == $row->tahun){
-                                    $selected = 'selected';
-                                } else {
-                                    $selected = '';
-                                } 
-                                ?>
-                                <option <?php echo $selected ?>><?php echo $row->tahun; ?></option>
-                                <?php } ?> 
+                                <option><?php echo $row->tahun; ?></option>
+                            <?php } ?> 
                             </select>
                         </div>
                     </div>
