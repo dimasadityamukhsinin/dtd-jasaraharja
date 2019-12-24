@@ -22,7 +22,6 @@ if($this->session->flashdata('sukses')) {
                                 <i class="fa fa-calendar"></i>
                             </div>
                             <select class="form-control" style="width: 100%;" name="tahun">
-                            <option selected><?php echo $thn = date('Y');?></option>
                             <?php foreach ($tahunAnggaran as $row) {?>
                                 <?php 
                                 $selected = ''; 
