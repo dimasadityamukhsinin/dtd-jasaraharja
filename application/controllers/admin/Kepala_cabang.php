@@ -48,6 +48,7 @@ class Kepala_cabang extends CI_Controller {
             $admin = $this->user_model->listing($username);
 
             $level = $this->level_model->listing();
+            $samsat = $this->samsat_model->samsat();
 
             //Validasi input
             $valid = $this->form_validation;
@@ -71,6 +72,7 @@ class Kepala_cabang extends CI_Controller {
                             'admin'    =>  $admin,
                             'level' =>  $level,
                             'konfigurasi'   =>  $konfigurasi,
+                            'samsat'    =>  $samsat,
                             'isi'      => 'admin/kepala_cabang/tambah');
             $this->load->view('admin/layout/wrapper',$data,FALSE);
             //Masuk Database
@@ -98,6 +100,7 @@ class Kepala_cabang extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'level' =>  $level,
+                            'samsat'    =>  $samsat,
                             'isi'      => 'admin/kepala_cabang/tambah');
             $this->load->view('admin/layout/wrapper',$data);
         }else{
@@ -117,6 +120,7 @@ class Kepala_cabang extends CI_Controller {
             $admin = $this->user_model->listing($username);
             
             $level = $this->level_model->listing();
+            $samsat = $this->samsat_model->samsat();
 
             //Ambil data yg akan diedit
             $kepala_cabang     = $this->kepala_cabang_model->detail($id);
@@ -140,6 +144,7 @@ class Kepala_cabang extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'level'  => $level,
+                            'samsat'    =>  $samsat,
                             'isi'       =>  'admin/kepala_cabang/edit'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
@@ -166,6 +171,7 @@ class Kepala_cabang extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'level'  => $level,
+                            'samsat'    =>  $samsat,
                             'isi'       =>  'admin/kepala_cabang/edit'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);

@@ -32,7 +32,7 @@ echo form_open_multipart(base_url('admin/kasubag/edit/'.$kasubag->id), 'class="f
                 <?= $samsat->nama_samsat?>
                 </option>
             <?php endforeach; ?>
-      </select>
+        </select>
     </div>
 </div>
 
