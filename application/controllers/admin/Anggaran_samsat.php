@@ -139,7 +139,7 @@ class Anggaran_samsat extends CI_Controller {
             $tahun = $this->input->post('tahun');
             $anggaran = $this->samsat_model->getAnggaran($tahun);
             $konfigurasi = $this->konfigurasi_model->listing();
-            $data = array(  'title' =>  'ANGGARAN SAMSAT '.$anggaran->nama_samsat.' '.$tahun,
+            $data = array(  'title' =>  'ANGGARAN SAMSAT '.$tahun,
                             'anggaran' =>  $anggaran,
                             'konfigurasi'   =>  $konfigurasi
                         );
