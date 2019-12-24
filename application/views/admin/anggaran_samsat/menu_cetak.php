@@ -27,8 +27,20 @@
                 <p>
                     <div class="row">
                         <div class="col-lg-12">
-                            <label>Cetak Berdasarkan Masa Akhir</label>
-                            <input type="date" name="masa_akhir" class="form-control" placeholder="Masa Akhir" value="<?php echo set_value('masa_akhir') ?>" required>
+                            <label>Cetak Berdasarkan Tahun</label>
+                            <select class="form-control" style="width: 100%;" name="tahun">
+                            <?php foreach ($tahunAnggaran as $row) {?>
+                                <?php 
+                                $selected = ''; 
+                                if ($tahun == $row->tahun){
+                                    $selected = 'selected';
+                                } else {
+                                    $selected = '';
+                                } 
+                                ?>
+                                <option <?php echo $selected ?>><?php echo $row->tahun; ?></option>
+                                <?php } ?> 
+                            </select>
                         </div>
                     </div>
                 </p>
