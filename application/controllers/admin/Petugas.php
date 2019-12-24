@@ -14,6 +14,7 @@ class Petugas extends CI_Controller {
         $this->load->model('status_model');
         $this->load->model('regional_model');
         $this->load->model('level_model');
+        $this->load->model('samsat_model');
         // Proteksi Halaman
         $this->simple_login->cek_login();
     }
@@ -50,6 +51,7 @@ class Petugas extends CI_Controller {
 
             $level = $this->level_model->listing();
             $regional = $this->regional_model->listing();
+            $samsat = $this->samsat_model->samsat();
 
             //Validasi input
             $valid = $this->form_validation;
@@ -86,6 +88,7 @@ class Petugas extends CI_Controller {
                             'level' =>  $level,
                             'regional'  =>  $regional,
                             'konfigurasi'   =>  $konfigurasi,
+                            'samsat'        =>  $samsat,
                             'isi'      => 'admin/petugas/tambah');
             $this->load->view('admin/layout/wrapper',$data,FALSE);
             //Masuk Database
@@ -115,6 +118,7 @@ class Petugas extends CI_Controller {
                             'admin'    =>  $admin,
                             'level' =>  $level,
                             'regional'  =>  $regional,
+                            'samsat'        =>  $samsat,
                             'isi'      => 'admin/petugas/tambah');
             $this->load->view('admin/layout/wrapper',$data);
         }else{
@@ -135,6 +139,7 @@ class Petugas extends CI_Controller {
             
             $regional = $this->regional_model->listing();
             $level = $this->level_model->listing();
+            $samsat = $this->samsat_model->samsat();
 
             //Ambil data yg akan diedit
             $petugas     = $this->petugas_model->detail($id);
@@ -171,6 +176,7 @@ class Petugas extends CI_Controller {
                             'admin'    =>  $admin,
                             'regional' => $regional,
                             'level'  => $level,
+                            'samsat'    =>  $samsat,
                             'isi'       =>  'admin/petugas/edit'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
@@ -202,6 +208,7 @@ class Petugas extends CI_Controller {
                             'admin'    =>  $admin,
                             'regional' => $regional,
                             'level'  => $level,
+                            'samsat'    =>  $samsat,
                             'isi'       =>  'admin/petugas/edit'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);

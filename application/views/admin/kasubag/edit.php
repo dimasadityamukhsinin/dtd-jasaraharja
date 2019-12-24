@@ -27,7 +27,7 @@ echo form_open_multipart(base_url('admin/kasubag/edit/'.$kasubag->id), 'class="f
         <select name="cabang" class="form-control">
             <?php foreach($samsat as $samsat):?>
                 <option value="<?= $samsat->nama_samsat?>"
-                    <?php if ($samsat->nama_samsat == $samsat->nama_samsat) : ?> selected<?php endif; ?>
+                    <?php if ($samsat->nama_samsat == $kasubag->cabang) : ?> selected<?php endif; ?>
             >
                 <?= $samsat->nama_samsat?>
                 </option>
