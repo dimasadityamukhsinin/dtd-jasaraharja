@@ -1,7 +1,7 @@
 <p class="pull-right">
-    <button id="printChart" title="Cetak Grafik" class="btn btn-success btn-md">
+    <a href="" title="Cetak Grafik" id="printChart" class="btn btn-success btn-md">
         <i class="fa fa-print"></i> Cetak Grafik
-    </button>
+    </a>
 </p>
 
 <div id="chartContainer" style="height: 275px; width: 100%;"></div>
