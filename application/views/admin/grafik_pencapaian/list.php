@@ -6,6 +6,27 @@
     </div>
 </p>
 
+<div class="row">
+    <form method="post" action="<?php echo base_url('admin/anggaran_samsat') ?>">
+        <div class="box-body">
+            <div class="form-group">
+                <label>Tahun Anggaran :</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <select class="form-control" style="width: 100%;" name="tahun">
+                    <?php foreach ($tahunAnggaran as $row) {?>
+                        <option><?php echo $row->tahun; ?></option>
+                    <?php } ?> 
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary pull-right" name="btn_search" id="btn_search">Cari</button>
+        </div>
+    </form>
+</div>
+
 <div id="chartContainer" style="height: 275px; width: 100%;"></div>
 
 <script type="text/javascript">
