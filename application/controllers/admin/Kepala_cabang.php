@@ -155,8 +155,11 @@ class Kepala_cabang extends CI_Controller {
                 $i = $this->input;
                 
                 $data = array(  'id'    =>  $id,
+                                'cabang'    =>  $i->post('cabang'),
+                                'alamat'    =>  $i->post('alamat'),
                                 'username'        =>  $i->post('username'),
                                 'nama'     =>  $i->post('nama'),
+                                'no_telpon' =>  $i->post('no_telpon'),
                                 'jabatan'     =>  $i->post('jabatan'),
                                 'id_level' =>  $i->post('level'),
                                 'status'         =>  $i->post('status')
