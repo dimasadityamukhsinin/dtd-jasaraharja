@@ -41,8 +41,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="<?php echo base_url('admin/grafik_pencapaian')?>"><i class="fa fa-angle-right"></i> Grafik Pencapaian</a></li>
-                <li><a href="<?php echo base_url('admin/anggaran_samsat')?>"><i class="fa fa-angle-right"></i> Anggaran Samsat</a></li>  
-                <li><a href="<?php echo base_url('admin/kategori_samsat')?>"><i class="fa fa-angle-right"></i> Kategori Samsat</a></li>
+                <li><a href="<?php echo base_url('admin/anggaran_samsat')?>"><i class="fa fa-angle-right"></i> Anggaran Samsat</a></li>
               </ul>
             </li>
             
