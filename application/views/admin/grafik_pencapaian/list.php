@@ -6,30 +6,56 @@
     </div>
 </p>
 
-<div id="chartContainer" style="height: 275px; width: 100%;"></div>
+<div class="chart">
+    <!-- Sales Chart Canvas -->
+    <div id="chart" style="height: 380px;"></div>
+</div>
+
+<script type="text/javascript" src="<?php echo base_url() ?>assets/admin/highcharts/highcharts.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/admin/highcharts/modules/exporting.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>assets/admin/highcharts/themes/dark-green.js"></script>
 
 <script type="text/javascript">
-window.onload = function () {
-	var chart = new CanvasJS.Chart("chartContainer", {
-		theme: "light2",
-		title:{
-			text: "Grafik Anggaran Tahunan"              
-		},
-		data: [              
-		{
-			type: "column",
-			dataPoints: [
-				{ label: <?php echo json_encode($data1) ?>    ,  y: <?php echo json_encode($iwkbu); ?>  },
-				{ label: <?php echo json_encode($data1) ?>    ,  y: <?php echo json_encode($iwkl); ?>  }
-			]
-		}
-		]
-	});
-  
-	chart.render();
-  	document.getElementById("printChart").addEventListener("click",function(){
-    	chart.print();
-    });  	
-}
+jQuery(function(){
+    new Highcharts.Chart({
+        chart: {
+            renderTo: 'chart',
+            type: 'column',
+        },
+        title: {
+            text: 'Perbandingan IWKBU dan IWKL Tahunan',
+            x: -20
+        },
+        subtitle: {
+            text: 'https://jasaraharja.co.id/',
+            x: -20
+        },
+        xAxis: {
+            categories: <?php echo json_encode($data1) ?>      
+        },
+        yAxis: {
+            title: {
+                text: 'Pendapatan (Rp)'
+            }
+        },
+        plotOptions: {
+            column: {
+                dataLabels: {
+                    enabled: true,
+                    style: {
+                    fontWeight: 'bold'
+                }
+                },
+                enableMouseTracking: false
+            }
+        },        
+        series: [{
+            name: 'IWKBU',
+            data: <?php echo json_encode($iwkbu); ?>
+        }, {
+            name: 'IWKL',
+            data: <?php echo json_encode($iwkl); ?>
+        }]
+    });
+}); 
 </script>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
