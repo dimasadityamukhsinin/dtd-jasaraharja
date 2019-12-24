@@ -34,6 +34,22 @@ class Samsat_model extends CI_Model {
 		$this->db->where('tahun',$tahun);
 		$query = $this->db->get();
 		return $query->result();
-	}
+    }
+    
+    public function detail($id)
+    {
+        $this->db->select('*');
+        $this->db->from('jr_samsat');
+        $this->db->where('id', $id);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    // Edit
+    public function edit($data)
+    {
+        $this->db->where('id', $data['id']);
+        $this->db->update('jr_samsat', $data);
+    }
 }
 ?>

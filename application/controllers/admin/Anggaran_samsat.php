@@ -47,5 +47,59 @@ class Anggaran_samsat extends CI_Controller {
                     );
         $this->load->view('admin/layout/wrapper', $data, false);
     }
+
+    //Edit Anggaran Samsat
+    public function edit($id = null)
+    {
+        if (!isset($id)) show_404();
+
+        $konfigurasi = $this->konfigurasi_model->listing();
+        $username = $this->session->userdata('username');
+        $admin = $this->user_model->listing($username);
+
+        //Ambil data yg akan diedit
+        $anggaran     = $this->samsat_model->detail($id);
+        //validasi input
+        $valid      = $this->form_validation;
+
+        $valid->set_rules('iwkbu', 'IWKBU', 'required',
+                    array('required'    =>  "%s Harus diisi"));
+
+        $valid->set_rules('iwkl', 'IWKL', 'required',
+                    array('required'    =>  "%s Harus diisi"));
+        
+        if($valid->run()===false){
+            //Akhir Validasi
+        
+        $data = array(  'title'     =>  'Edit Anggaran Samsat'.$anggaran->wilayah,
+                        'konfigurasi'   =>  $konfigurasi,
+                        'admin'    =>  $admin,
+                        'anggaran' => $anggaran,
+                        'isi'       =>  'admin/anggaran_samsat/edit'
+                    );
+        $this->load->view('admin/layout/wrapper', $data, false);
+        if(!$anggaran) show_404();
+        //masuk database
+        }else{
+            $i = $this->input;
+            
+            $data = array(  'id'    =>  $id,
+                            'iwkbu'         =>  $i->post('iwkbu'),
+                            'iwkl'       =>  $i->post('iwkl'),
+                        );
+            $this->samsat_model->edit($data);
+            $this->session->set_flashdata('sukses', 'Data telah diedit');
+            redirect(base_url('admin/anggaran_samsat'), 'refresh');
+        }
+        //akhir masuk database
+            
+        $data = array(  'title'     =>  'Edit Anggaran Samsat'. $anggaran->wilayah,
+                        'konfigurasi'   =>  $konfigurasi,
+                        'admin'    =>  $admin,
+                        'anggaran' => $anggaran,
+                        'isi'       =>  'admin/anggaran_samsat/edit'
+                    );
+        $this->load->view('admin/layout/wrapper', $data, false);
+    }
 }
 ?>
