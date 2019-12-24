@@ -31,14 +31,14 @@ echo form_open_multipart(base_url('admin/anggaran_samsat/edit/'.$anggaran->id), 
 <div class="form-group">
     <label class="col-md-2 control-label">IWKBU</label>
     <div class="col-md-5">
-        <input type="text" name="iwkbu" class="form-control" placeholder="IWKBU" value="<?php echo $anggaran->iwkbu ?>" required>
+        <input type="number" name="iwkbu" class="form-control" placeholder="IWKBU" value="<?php echo $anggaran->iwkbu ?>" required>
     </div>
 </div>
 
 <div class="form-group">
     <label class="col-md-2 control-label">IWKL</label>
     <div class="col-md-5">
-        <input type="text" name="iwkl" class="form-control" placeholder="IWKL" value="<?php echo $anggaran->iwkl ?>" required>
+        <input type="number" name="iwkl" class="form-control" placeholder="IWKL" value="<?php echo $anggaran->iwkl ?>" required>
     </div>
 </div>
 
