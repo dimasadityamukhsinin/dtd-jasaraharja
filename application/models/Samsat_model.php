@@ -39,7 +39,7 @@ class Samsat_model extends CI_Model {
     public function detail($id)
     {
         $this->db->select('*');
-        $this->db->from('jrsamsat');
+        $this->db->from('jr_samsat');
         $this->db->where('id', $id);
         $query = $this->db->get();
         return $query->row();
