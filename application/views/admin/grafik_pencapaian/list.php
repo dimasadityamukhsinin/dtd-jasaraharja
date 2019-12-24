@@ -1,11 +1,3 @@
-<p class="pull-right">
-    <div class="btn-group">
-        <button title="Cetak Grafik" id="printChart" class="btn btn-success btn-md">
-            <i class="fa fa-print"></i> Cetak Grafik
-        </button>
-    </div>
-</p>
-
 <div class="chart">
     <!-- Sales Chart Canvas -->
     <div id="chart" style="height: 380px;"></div>
