@@ -56,7 +56,8 @@ if($this->session->flashdata('sukses')) {
                 <td>Rp.<?php $hasil =
                         $anggaran->iwkbu + $anggaran->iwkl; 
                         echo number_format($hasil,'0',',','.')
-                        ?></td>
+                        ?>
+                </td>
                 <td>
                     <a href="<?php echo base_url('admin/anggaran_samsat/edit/'.$anggaran->id) ?>" class="btn btn-warning btn-xs">
                     <i class="fa fa-edit"></i> Edit</a>

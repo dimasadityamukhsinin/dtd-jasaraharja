@@ -136,14 +136,14 @@ class Anggaran_samsat extends CI_Controller {
 
     public function cetak()
     {
-            $tahun = $this->input->post('tahun');
-            $anggaran = $this->samsat_model->getAnggaran($tahun);
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $data = array(  'title' =>  'ANGGARAN SAMSAT '.$tahun,
-                            'anggaran' =>  $anggaran,
-                            'konfigurasi'   =>  $konfigurasi
-                        );
-            $this->load->view('admin/anggaran_samsat/cetak', $data, false);
+        $tahun = $this->input->post('tahun');
+        $anggaran = $this->samsat_model->getAnggaran($tahun);
+        $konfigurasi = $this->konfigurasi_model->listing();
+        $data = array(  'title' =>  'ANGGARAN SAMSAT '.$tahun,
+                        'anggaran' =>  $anggaran,
+                        'konfigurasi'   =>  $konfigurasi
+                    );
+        $this->load->view('admin/anggaran_samsat/cetak', $data, false);
     }
 }
 ?>
