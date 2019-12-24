@@ -14,6 +14,7 @@ class Kasubag extends CI_Controller {
         $this->load->model('status_model');
         $this->load->model('regional_model');
         $this->load->model('level_model');
+        $this->load->model('samsat_model');
         // Proteksi Halaman
         $this->simple_login->cek_login();
     }
@@ -72,6 +73,7 @@ class Kasubag extends CI_Controller {
 
             $level = $this->level_model->listing();
             $regional = $this->regional_model->listing();
+            $samsat = $this->samsat_model->samsat();
 
             //Validasi input
             $valid = $this->form_validation;
@@ -108,6 +110,7 @@ class Kasubag extends CI_Controller {
                             'level' =>  $level,
                             'regional'  =>  $regional,
                             'konfigurasi'   =>  $konfigurasi,
+                            'samsat'        =>  $samsat,
                             'isi'      => 'admin/kasubag/tambah');
             $this->load->view('admin/layout/wrapper',$data,FALSE);
             //Masuk Database
@@ -137,6 +140,7 @@ class Kasubag extends CI_Controller {
                             'admin'    =>  $admin,
                             'level' =>  $level,
                             'regional'  =>  $regional,
+                            'samsat'    =>  $samsat,
                             'isi'      => 'admin/kasubag/tambah');
             $this->load->view('admin/layout/wrapper',$data);
         }else{
