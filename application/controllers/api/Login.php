@@ -29,7 +29,6 @@ class Login extends REST_Controller
         			'id'	=>	$check->id,
         			'kode_samsat'	=>	$check->kode_samsat,
         			'cabang'	=>	$check->cabang,
-        			'nama_samsat'	=>	$check->nama_samsat,
         			'alamat'	=>	$check->alamat,
         			'username' => $check->username,
         			'nama'	=>	$check->nama,
