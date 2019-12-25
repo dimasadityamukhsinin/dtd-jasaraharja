@@ -21,6 +21,7 @@ class Profile extends CI_Controller {
             $username = $this->session->userdata('username');
             $kasubag = $this->user_model->listing($username);
             $profile = $this->profile_model->listing($username);
+            $samsat = $this->samsat_model->samsat();
 
             $konfigurasi = $this->konfigurasi_model->listing();
             // Validasi input
@@ -45,6 +46,7 @@ class Profile extends CI_Controller {
                                 'profile'       => $profile,
                                 'konfigurasi'   =>  $konfigurasi,
                                 'kasubag'         =>  $kasubag,
+                                'samsat'        =>  $samsat,
                                 'isi'           => 'kasubag/profile/list'  );
                 $this->load->view('kasubag/layout/wrapper',$data,FALSE);
                 // Masuk Database

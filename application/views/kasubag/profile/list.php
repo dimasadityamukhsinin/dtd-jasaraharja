@@ -31,9 +31,17 @@ echo form_open_multipart(base_url('kasubag/profile'), 'class="form-horizontal"')
 </div>
 
 <div class="form-group">
-    <label class="col-md-2 control-label">Cabang Riau</label>
+    <label class="col-md-2 control-label">Cabang</label>
     <div class="col-md-5">
-        <input type="text" name="cabang" class="form-control" placeholder="Cabang Riau" value="<?php echo $profile->cabang ?>" required>
+        <select name="cabang" class="form-control">
+            <?php foreach($samsat as $samsat):?>
+                <option value="<?= $samsat->nama_samsat?>"
+                    <?php if ($samsat->nama_samsat == $profile->cabang) : ?> selected<?php endif; ?>
+            >
+                <?= $samsat->nama_samsat?>
+                </option>
+            <?php endforeach; ?>
+        </select>
     </div>
 </div>
 

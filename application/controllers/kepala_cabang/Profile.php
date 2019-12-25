@@ -21,6 +21,7 @@ class Profile extends CI_Controller {
             $username = $this->session->userdata('username');
             $kepala_cabang = $this->user_model->listing($username);
             $profile = $this->profile_model->listing($username);
+            $samsat = $this->samsat_model->samsat();
 
             $konfigurasi = $this->konfigurasi_model->listing();
             // Validasi input
@@ -35,7 +36,8 @@ class Profile extends CI_Controller {
                 $data = array(  'title'         => 'Profile',
                                 'profile'       => $profile,
                                 'konfigurasi'   =>  $konfigurasi,
-                                'kepala_cabang'         =>  $kepala_cabang,
+                                'kepala_cabang' =>  $kepala_cabang,
+                                'samsat'        =>  $samsat,
                                 'isi'           => 'kepala_cabang/profile/list'  );
                 $this->load->view('kepala_cabang/layout/wrapper',$data,FALSE);
                 // Masuk Database

@@ -21,6 +21,7 @@ class Profile extends CI_Controller {
             $username = $this->session->userdata('username');
             $petugas = $this->user_model->listing($username);
             $profile = $this->profile_model->listing($username);
+            $samsat = $this->samsat_model->samsat();
 
             $konfigurasi = $this->konfigurasi_model->listing();
             // Validasi input
@@ -36,6 +37,7 @@ class Profile extends CI_Controller {
                                 'profile'       => $profile,
                                 'konfigurasi'   =>  $konfigurasi,
                                 'petugas'         =>  $petugas,
+                                'samsat'        =>  $samsat,
                                 'isi'           => 'petugas/profile/list'  );
                 $this->load->view('petugas/layout/wrapper',$data,FALSE);
                 // Masuk Database
