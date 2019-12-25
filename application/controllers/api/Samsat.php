@@ -21,7 +21,7 @@ class Samsat extends REST_Controller {
 	public function index_get()
     {
         $samsat = $this->samsat_model->samsat();
-        $this->response($samsat
+        $this->response(['samsat' => $samsat]
             , REST_Controller::HTTP_OK);
     }
 
