@@ -214,29 +214,7 @@ class Sudah_diproses extends CI_Controller {
             redirect(base_url('login'),'refresh');
         }
     }
-
-    // Data Meranti
-    public function meranti()
-    {
-        if($this->session->userdata('level') == '1') {
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $username = $this->session->userdata('username');
-            $admin = $this->user_model->listing($username);
-
-            $meranti = $this->data_model->data_sudah_meranti();
-            $data = array(  'title' =>  'Total On Progress Kabupaten Kepulauan Meranti',
-                            'admin' =>  $admin,
-                            'konfigurasi'   =>  $konfigurasi,
-                            'meranti'    =>  $meranti,
-                            'isi'   =>  'admin/sudah_diproses/meranti'
-                        );
-            $this->load->view('admin/layout/wrapper', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
+    
     // Data Kampar
     public function kampar()
     {
@@ -725,23 +703,6 @@ class Sudah_diproses extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi
                         );
             $this->load->view('admin/sudah_diproses/cetak_kuansing', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
-    // Cetak Meranti
-    public function cetak_meranti()
-    {
-        if($this->session->userdata('level') == '1') {
-            $meranti = $this->data_model->data_sudah_meranti();
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $data = array(  'title' =>  'DATA OUTSTANDING KEPULAUAN MERANTI YANG On Progress',
-                            'meranti' =>  $meranti,
-                            'konfigurasi'   =>  $konfigurasi
-                        );
-            $this->load->view('admin/sudah_diproses/cetak_meranti', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
