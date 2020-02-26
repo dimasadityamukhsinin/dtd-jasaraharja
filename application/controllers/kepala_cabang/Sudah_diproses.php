@@ -17,7 +17,7 @@ class Sudah_diproses extends CI_Controller {
         $this->simple_login->cek_login();
     }
 
-    // Data Sudah Diproses
+    // Data On Progress
     public function index()
     {
         if($this->session->userdata('level') == '5') {
@@ -26,7 +26,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $sudah_diproses = $this->data_model->data_sudah();
-            $data = array(  'title' =>  'Menu Sudah Diproses',
+            $data = array(  'title' =>  'Menu On Progress',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'sudah_diproses'    =>  $sudah_diproses,
@@ -39,7 +39,7 @@ class Sudah_diproses extends CI_Controller {
         }
     }
 
-    // Total Data Sudah Diproses
+    // Total Data On Progress
     public function total_sudah()
     {
         if($this->session->userdata('level') == '5') {
@@ -48,7 +48,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $total_sudah = $this->data_model->data_sudah();
-            $data = array(  'title' =>  'Menu Sudah Diproses',
+            $data = array(  'title' =>  'Menu On Progress',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'total_sudah'    =>  $total_sudah,
@@ -70,7 +70,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $pekanbaru = $this->data_model->data_sudah_pekanbaru();
-            $data = array(  'title' =>  'Total Sudah Diproses Kota Pekanbaru',
+            $data = array(  'title' =>  'Total On Progress Kota Pekanbaru',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'pekanbaru'    =>  $pekanbaru,
@@ -92,7 +92,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $dumai = $this->data_model->data_sudah_dumai();
-            $data = array(  'title' =>  'Total Sudah Diproses Kota Dumai',
+            $data = array(  'title' =>  'Total On Progress Kota Dumai',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'dumai'    =>  $dumai,
@@ -114,7 +114,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $siak = $this->data_model->data_sudah_siak();
-            $data = array(  'title' =>  'Total Sudah Diproses Kota Siak',
+            $data = array(  'title' =>  'Total On Progress Kota Siak',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'siak'    =>  $siak,
@@ -136,7 +136,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $rohul = $this->data_model->data_sudah_rohul();
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Rokan Hulu',
+            $data = array(  'title' =>  'Total On Progress Kabupaten Rokan Hulu',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'rohul'    =>  $rohul,
@@ -158,7 +158,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $rohil = $this->data_model->data_sudah_rohil();
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Rokan Hilir',
+            $data = array(  'title' =>  'Total On Progress Kabupaten Rokan Hilir',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'rohil'    =>  $rohil,
@@ -180,7 +180,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $pelalawan = $this->data_model->data_sudah_pelalawan();
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Pelalawan',
+            $data = array(  'title' =>  'Total On Progress Kabupaten Pelalawan',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'pelalawan'    =>  $pelalawan,
@@ -202,7 +202,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $kuansing = $this->data_model->data_sudah_kuansing();
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Kuantan Singingi',
+            $data = array(  'title' =>  'Total On Progress Kabupaten Kuantan Singingi',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'kuansing'    =>  $kuansing,
@@ -224,7 +224,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $meranti = $this->data_model->data_sudah_meranti();
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Kepulauan Meranti',
+            $data = array(  'title' =>  'Total On Progress Kabupaten Kepulauan Meranti',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'meranti'    =>  $meranti,
@@ -246,7 +246,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $kampar = $this->data_model->data_sudah_kampar();
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Kampar',
+            $data = array(  'title' =>  'Total On Progress Kabupaten Kampar',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'kampar'    =>  $kampar,
@@ -268,7 +268,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $inhu = $this->data_model->data_sudah_inhu();
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Indragiri Hulu',
+            $data = array(  'title' =>  'Total On Progress Kabupaten Indragiri Hulu',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'inhu'    =>  $inhu,
@@ -290,7 +290,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $inhil = $this->data_model->data_sudah_inhil();
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Indragiri Hilir',
+            $data = array(  'title' =>  'Total On Progress Kabupaten Indragiri Hilir',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'inhil'    =>  $inhil,
@@ -312,7 +312,7 @@ class Sudah_diproses extends CI_Controller {
             $kepala_cabang = $this->user_model->listing($username);
 
             $bengkalis = $this->data_model->data_sudah_bengkalis();
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Bengkalis',
+            $data = array(  'title' =>  'Total On Progress Kabupaten Bengkalis',
                             'kepala_cabang' =>  $kepala_cabang,
                             'konfigurasi'   =>  $konfigurasi,
                             'bengkalis'    =>  $bengkalis,
