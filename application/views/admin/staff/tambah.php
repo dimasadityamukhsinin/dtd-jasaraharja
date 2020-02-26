@@ -24,13 +24,7 @@ echo form_open_multipart(base_url('admin/staff/tambah'), 'class="form-horizontal
 <div class="form-group">
     <label class="col-md-2 control-label">Cabang</label>
     <div class="col-md-5">
-        <select name="cabang" class="form-control">
-            <?php foreach($samsat as $samsat) { ?>
-            <option value="<?php echo $samsat->nama_samsat ?>">
-                <?php echo $samsat->nama_samsat ?>
-            </option>
-            <?php } ?>
-        </select>
+        <input type="text" name="cabang" class="form-control" placeholder="Cabang" value="<?php echo set_value('cabang') ?>" required>
     </div>
 </div>
 

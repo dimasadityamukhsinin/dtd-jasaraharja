@@ -84,8 +84,9 @@ class Kasubag extends CI_Controller {
             $valid->set_rules('alamat', 'Alamat', 'required',
                         array('required'    =>  "%s Harus diisi"));
 
-            $valid->set_rules('username', 'Username', 'required',
-                        array('required'    =>  "%s Harus diisi"));
+            $valid->set_rules('username', 'Username', 'required|is_unique[jr_user.username]',
+                        array('required'    =>  "%s Harus diisi",
+                              'is_unique'   =>  "%s Username sudah ada. Mohon diganti"));
 
             $valid->set_rules('password', 'Password', 'required',
                         array('required'    =>  "%s Harus diisi"));

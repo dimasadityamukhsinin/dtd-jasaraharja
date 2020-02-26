@@ -24,15 +24,8 @@ echo form_open_multipart(base_url('admin/kepala_cabang/edit/'.$kepala_cabang->id
 <div class="form-group">
     <label class="col-md-2 control-label">Cabang</label>
     <div class="col-md-5">
-        <select name="cabang" class="form-control">
-            <?php foreach($samsat as $samsat):?>
-                <option value="<?= $samsat->nama_samsat?>"
-                    <?php if ($samsat->nama_samsat == $kepala_cabang->cabang) : ?> selected<?php endif; ?>
-            >
-                <?= $samsat->nama_samsat?>
-                </option>
-            <?php endforeach; ?>
-        </select>
+        
+    <input type="text" name="cabang" class="form-control" placeholder="Cabang" value="<?php echo $kepala_cabang->cabang ?>" required>
     </div>
 </div>
 
