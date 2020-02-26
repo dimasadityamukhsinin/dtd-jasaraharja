@@ -213,28 +213,6 @@ class Selesai extends CI_Controller {
         }
     }
 
-    // Data Meranti
-    public function meranti()
-    {
-        if($this->session->userdata('level') == '3') {
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $username = $this->session->userdata('username');
-            $staff = $this->user_model->listing($username);
-
-            $meranti = $this->data_model->data_selesai_meranti();
-            $data = array(  'title' =>  'Total Selesai Kabupaten Kepulauan Meranti',
-                            'staff' =>  $staff,
-                            'konfigurasi'   =>  $konfigurasi,
-                            'meranti'    =>  $meranti,
-                            'isi'   =>  'staff/selesai/meranti'
-                        );
-            $this->load->view('staff/layout/wrapper', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
     // Data Kampar
     public function kampar()
     {
@@ -664,23 +642,6 @@ class Selesai extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi
                         );
             $this->load->view('staff/selesai/cetak_kuansing', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
-    // Cetak Meranti
-    public function cetak_meranti()
-    {
-        if($this->session->userdata('level') == '3') {
-            $meranti = $this->data_model->data_selesai_meranti();
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $data = array(  'title' =>  'DATA OUTSTANDING KEPULAUAN MERANTI YANG SELESAI DILAKSANAN',
-                            'meranti' =>  $meranti,
-                            'konfigurasi'   =>  $konfigurasi
-                        );
-            $this->load->view('staff/selesai/cetak_meranti', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
