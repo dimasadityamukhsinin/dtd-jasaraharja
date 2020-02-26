@@ -215,28 +215,6 @@ class Sudah_diproses extends CI_Controller {
         }
     }
 
-    // Data Meranti
-    public function meranti()
-    {
-        if($this->session->userdata('level') == '5') {
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $username = $this->session->userdata('username');
-            $kepala_cabang = $this->user_model->listing($username);
-
-            $meranti = $this->data_model->data_sudah_meranti();
-            $data = array(  'title' =>  'Total On Progress Kabupaten Kepulauan Meranti',
-                            'kepala_cabang' =>  $kepala_cabang,
-                            'konfigurasi'   =>  $konfigurasi,
-                            'meranti'    =>  $meranti,
-                            'isi'   =>  'kepala_cabang/sudah_diproses/meranti'
-                        );
-            $this->load->view('kepala_cabang/layout/wrapper', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
     // Data Kampar
     public function kampar()
     {

@@ -69,14 +69,6 @@
         <div class="col-md-6">
             <!-- DONUT CHART -->
             <div class="box box-danger">
-                <h3 class="box-title">DATA KEPULAUAN MERANTI</h3>
-                <div class="box-body show_meranti">
-                </div><!-- /.box-body -->
-            </div><!-- /.box -->
-        </div>
-        <div class="col-md-6">
-            <!-- DONUT CHART -->
-            <div class="box box-danger">
                 <h3 class="box-title">DATA KAMPAR</h3>
                 <div class="box-body show_kampar">
                 </div><!-- /.box-body -->
@@ -142,8 +134,6 @@
             show_pelalawan();
             // CALL FUNCTION SHOW KUANSING
             show_kuansing();
-            // CALL FUNCTION SHOW MERANTI
-            show_meranti();
             // CALL FUNCTION SHOW KAMPAR
             show_kampar();
             // CALL FUNCTION SHOW INHU
@@ -175,7 +165,6 @@
                     show_rohil();
                     show_pelalawan();
                     show_kuansing();
-                    show_meranti();
                     show_kampar();
                     show_inhu();
                     show_inhil();
@@ -747,75 +736,6 @@
                           },
                           {
                             value: kuansing.selesai_kuansing,
-                            color: "#00a65a",
-                            highlight: "#00a65a",
-                            label: "Selesai"
-                          },
-                        ];
-                        var pieOptions = {
-                          //Boolean - Whether we should show a stroke on each segment
-                          segmentShowStroke: true,
-                          //String - The colour of each segment stroke
-                          segmentStrokeColor: "#fff",
-                          //Number - The width of each segment stroke
-                          segmentStrokeWidth: 2,
-                          //Number - The percentage of the chart that we cut out of the middle
-                          percentageInnerCutout: 50, // This is 0 for Pie charts
-                          //Number - Amount of animation steps
-                          animationSteps: 100,
-                          //String - Animation easing effect
-                          animationEasing: "easeOutBounce",
-                          //Boolean - Whether we animate the rotation of the Doughnut
-                          animateRotate: true,
-                          //Boolean - Whether we animate scaling the Doughnut from the centre
-                          animateScale: false,
-                          //Boolean - whether to make the chart responsive to window resizing
-                          responsive: true,
-                          // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-                          maintainAspectRatio: true,
-                          //String - A legend template
-                          legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
-                        };
-                        //Create pie or douhnut chart
-                        // You can switch between pie and douhnut using the method below.
-                        pieChart.Doughnut(PieData, pieOptions);
-                    }
-                });
-            }
-
-            // FUNCTION SHOW MERANTI
-            function show_meranti(){
-                $.ajax({
-                    url   : '<?php echo base_url("kasubag/dashboard/get_meranti");?>',
-                    type  : 'GET',
-                    async : true,
-                    dataType : 'json',
-                    success : function(meranti){
-                        var html = '';
-                            html += '<canvas id="pieChart-meranti" style="height:250px">' + '</canvas>';
-                        $('.show_meranti').html(html);
-
-                        //-------------
-                        //- PIE CHART-
-                        //-------------
-                        // Get context with jQuery - using jQuery's .get() method.
-                        var pieChartCanvas = $("#pieChart-meranti").get(0).getContext("2d");
-                        var pieChart = new Chart(pieChartCanvas);
-                        var PieData = [
-                          {
-                            value: meranti.belum_meranti,
-                            color: "#f56954",
-                            highlight: "#f56954",
-                            label: "Belum Diproses"
-                          },
-                          {
-                            value: meranti.sudah_meranti,
-                            color: "#FF7F00",
-                            highlight: "#FF7F00",
-                            label: "On Progress"
-                          },
-                          {
-                            value: meranti.selesai_meranti,
                             color: "#00a65a",
                             highlight: "#00a65a",
                             label: "Selesai"
