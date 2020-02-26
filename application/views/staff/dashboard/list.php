@@ -254,7 +254,7 @@
                                       '<div class="inner">' +
                                         '<div style="font-size: 22px; margin-top: 10px; margin-bottom: 10px;">' +
                                           '<b>' + sudah_diproses + '</b>' +
-                                          '<p>' + "Sudah Diproses" + '</p>' + 
+                                          '<p>' + "On Progress" + '</p>' + 
                                         '</div>' +
                                       '</div>' +
                                       '<div class="icon">' +
@@ -328,7 +328,7 @@
                             value: pekanbaru.sudah_pekanbaru,
                             color: "#FF7F00",
                             highlight: "#FF7F00",
-                            label: "Sudah Diproses"
+                            label: "On Progress"
                           },
                           {
                             value: pekanbaru.selesai_pekanbaru,
@@ -398,7 +398,7 @@
                             value: dumai.sudah_dumai,
                             color: "#FF7F00",
                             highlight: "#FF7F00",
-                            label: "Sudah Diproses"
+                            label: "On Progress"
                           },
                           {
                             value: dumai.selesai_dumai,
@@ -467,7 +467,7 @@
                             value: siak.sudah_siak,
                             color: "#FF7F00",
                             highlight: "#FF7F00",
-                            label: "Sudah Diproses"
+                            label: "On Progress"
                           },
                           {
                             value: siak.selesai_siak,
@@ -536,7 +536,7 @@
                             value: rohul.sudah_rohul,
                             color: "#FF7F00",
                             highlight: "#FF7F00",
-                            label: "Sudah Diproses"
+                            label: "On Progress"
                           },
                           {
                             value: rohul.selesai_rohul,
@@ -605,7 +605,7 @@
                             value: rohil.sudah_rohil,
                             color: "#FF7F00",
                             highlight: "#FF7F00",
-                            label: "Sudah Diproses"
+                            label: "On Progress"
                           },
                           {
                             value: rohil.selesai_rohil,
@@ -674,7 +674,7 @@
                             value: pelalawan.sudah_pelalawan,
                             color: "#FF7F00",
                             highlight: "#FF7F00",
-                            label: "Sudah Diproses"
+                            label: "On Progress"
                           },
                           {
                             value: pelalawan.selesai_pelalawan,
@@ -743,7 +743,7 @@
                             value: kuansing.sudah_kuansing,
                             color: "#FF7F00",
                             highlight: "#FF7F00",
-                            label: "Sudah Diproses"
+                            label: "On Progress"
                           },
                           {
                             value: kuansing.selesai_kuansing,
@@ -812,7 +812,7 @@
                             value: meranti.sudah_meranti,
                             color: "#FF7F00",
                             highlight: "#FF7F00",
-                            label: "Sudah Diproses"
+                            label: "On Progress"
                           },
                           {
                             value: meranti.selesai_meranti,
@@ -881,7 +881,7 @@
                             value: kampar.sudah_kampar,
                             color: "#FF7F00",
                             highlight: "#FF7F00",
-                            label: "Sudah Diproses"
+                            label: "On Progress"
                           },
                           {
                             value: kampar.selesai_kampar,
@@ -950,7 +950,7 @@
                             value: inhu.sudah_inhu,
                             color: "#FF7F00",
                             highlight: "#FF7F00",
-                            label: "Sudah Diproses"
+                            label: "On Progress"
                           },
                           {
                             value: inhu.selesai_inhu,
@@ -1019,7 +1019,7 @@
                             value: inhil.sudah_inhil,
                             color: "#FF7F00",
                             highlight: "#FF7F00",
-                            label: "Sudah Diproses"
+                            label: "On Progress"
                           },
                           {
                             value: inhil.selesai_inhil,
@@ -1088,7 +1088,7 @@
                             value: bengkalis.sudah_bengkalis,
                             color: "#FF7F00",
                             highlight: "#FF7F00",
-                            label: "Sudah Diproses"
+                            label: "On Progress"
                           },
                           {
                             value: bengkalis.selesai_bengkalis,

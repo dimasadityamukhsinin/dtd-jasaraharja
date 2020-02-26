@@ -17,7 +17,7 @@
               <ul class="treeview-menu">
                 <li><a href="<?php echo base_url('staff/total_data') ?>"><i class="fa fa-angle-right"></i> <span>Total Data</span></a></li>
                 <li><a href="<?php echo base_url('staff/belum_diproses') ?>"><i class="fa fa-angle-right"></i> <span>Belum Diproses</span></a></li>
-                <li><a href="<?php echo base_url('staff/sudah_diproses') ?>"><i class="fa fa-angle-right"></i> <span>Sudah Diproses</span></a></li>
+                <li><a href="<?php echo base_url('staff/sudah_diproses') ?>"><i class="fa fa-angle-right"></i> <span>On Progress</span></a></li>
                 <li><a href="<?php echo base_url('staff/selesai')?>"><i class="fa fa-angle-right"></i> Selesai</a></li>                
               </ul>
             </li>
