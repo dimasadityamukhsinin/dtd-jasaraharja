@@ -17,7 +17,7 @@
               <ul class="treeview-menu">
                 <li><a href="<?php echo base_url('petugas/total_data') ?>"><i class="fa fa-angle-right"></i> <span>Total Data</span></a></li>
                 <li><a href="<?php echo base_url('petugas/belum_diproses') ?>"><i class="fa fa-angle-right"></i> <span>Belum Diproses</span></a></li>
-                <li><a href="<?php echo base_url('petugas/sudah_diproses') ?>"><i class="fa fa-angle-right"></i> <span>Sudah Diproses</span></a></li>
+                <li><a href="<?php echo base_url('petugas/sudah_diproses') ?>"><i class="fa fa-angle-right"></i> <span>On Progress</span></a></li>
                 <li><a href="<?php echo base_url('petugas/selesai')?>"><i class="fa fa-angle-right"></i> Selesai</a></li>                
               </ul>
             </li>
