@@ -1,3 +1,9 @@
+<p class="pull-right">
+    <div class="btn-group ">
+        <?php include('menu_cetakdata.php')?>
+    </div>
+</p>
+
 <p class="pull-left">
     <div>
         <a href="<?php echo base_url('admin/selesai')?>" title="Kembali" class="btn btn-info btn-md">
