@@ -17,11 +17,7 @@ class Sudah_diproses extends CI_Controller {
         $this->simple_login->cek_login();
     }
 
-<<<<<<< HEAD
     // Data On Progress
-=======
-    // Data Sudah Diproses
->>>>>>> a
     public function index()
     {
         if($this->session->userdata('level') == '2') {
@@ -30,11 +26,7 @@ class Sudah_diproses extends CI_Controller {
             $kasubag = $this->user_model->listing($username);
 
             $sudah_diproses = $this->data_model->data_sudah();
-<<<<<<< HEAD
             $data = array(  'title' =>  'Menu On Progress',
-=======
-            $data = array(  'title' =>  'Menu Sudah Diproses',
->>>>>>> a
                             'kasubag' =>  $kasubag,
                             'konfigurasi'   =>  $konfigurasi,
                             'sudah_diproses'    =>  $sudah_diproses,
@@ -47,11 +39,7 @@ class Sudah_diproses extends CI_Controller {
         }
     }
 
-<<<<<<< HEAD
     // Total Data On Progress
-=======
-    // Total Data Sudah Diproses
->>>>>>> a
     public function total_sudah()
     {
         if($this->session->userdata('level') == '2') {
@@ -60,11 +48,7 @@ class Sudah_diproses extends CI_Controller {
             $kasubag = $this->user_model->listing($username);
 
             $total_sudah = $this->data_model->data_sudah();
-<<<<<<< HEAD
             $data = array(  'title' =>  'Menu On Progress',
-=======
-            $data = array(  'title' =>  'Menu Sudah Diproses',
->>>>>>> a
                             'kasubag' =>  $kasubag,
                             'konfigurasi'   =>  $konfigurasi,
                             'total_sudah'    =>  $total_sudah,
@@ -86,11 +70,7 @@ class Sudah_diproses extends CI_Controller {
             $kasubag = $this->user_model->listing($username);
 
             $pekanbaru = $this->data_model->data_sudah_pekanbaru();
-<<<<<<< HEAD
             $data = array(  'title' =>  'Total On Progress Kota Pekanbaru',
-=======
-            $data = array(  'title' =>  'Total Sudah Diproses Kota Pekanbaru',
->>>>>>> a
                             'kasubag' =>  $kasubag,
                             'konfigurasi'   =>  $konfigurasi,
                             'pekanbaru'    =>  $pekanbaru,
@@ -112,11 +92,7 @@ class Sudah_diproses extends CI_Controller {
             $kasubag = $this->user_model->listing($username);
 
             $dumai = $this->data_model->data_sudah_dumai();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'Total On Progress Kota Dumai',
-=======
-            $data = array(  'title' =>  'Total Sudah Diproses Kota Dumai',
->>>>>>> a
+            $data = array(  'title' =>  'Total On Progress Kota Dumai'
                             'kasubag' =>  $kasubag,
                             'konfigurasi'   =>  $konfigurasi,
                             'dumai'    =>  $dumai,
@@ -138,11 +114,7 @@ class Sudah_diproses extends CI_Controller {
             $kasubag = $this->user_model->listing($username);
 
             $siak = $this->data_model->data_sudah_siak();
-<<<<<<< HEAD
             $data = array(  'title' =>  'Total On Progress Kota Siak',
-=======
-            $data = array(  'title' =>  'Total Sudah Diproses Kota Siak',
->>>>>>> a
                             'kasubag' =>  $kasubag,
                             'konfigurasi'   =>  $konfigurasi,
                             'siak'    =>  $siak,
@@ -164,11 +136,7 @@ class Sudah_diproses extends CI_Controller {
             $kasubag = $this->user_model->listing($username);
 
             $rohul = $this->data_model->data_sudah_rohul();
-<<<<<<< HEAD
             $data = array(  'title' =>  'Total On Progress Kabupaten Rokan Hulu',
-=======
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Rokan Hulu',
->>>>>>> a
                             'kasubag' =>  $kasubag,
                             'konfigurasi'   =>  $konfigurasi,
                             'rohul'    =>  $rohul,
@@ -190,11 +158,7 @@ class Sudah_diproses extends CI_Controller {
             $kasubag = $this->user_model->listing($username);
 
             $rohil = $this->data_model->data_sudah_rohil();
-<<<<<<< HEAD
             $data = array(  'title' =>  'Total On Progress Kabupaten Rokan Hilir',
-=======
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Rokan Hilir',
->>>>>>> a
                             'kasubag' =>  $kasubag,
                             'konfigurasi'   =>  $konfigurasi,
                             'rohil'    =>  $rohil,
@@ -216,11 +180,7 @@ class Sudah_diproses extends CI_Controller {
             $kasubag = $this->user_model->listing($username);
 
             $pelalawan = $this->data_model->data_sudah_pelalawan();
-<<<<<<< HEAD
             $data = array(  'title' =>  'Total On Progress Kabupaten Pelalawan',
-=======
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Pelalawan',
->>>>>>> a
                             'kasubag' =>  $kasubag,
                             'konfigurasi'   =>  $konfigurasi,
                             'pelalawan'    =>  $pelalawan,
@@ -242,11 +202,7 @@ class Sudah_diproses extends CI_Controller {
             $kasubag = $this->user_model->listing($username);
 
             $kuansing = $this->data_model->data_sudah_kuansing();
-<<<<<<< HEAD
             $data = array(  'title' =>  'Total On Progress Kabupaten Kuantan Singingi',
-=======
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Kuantan Singingi',
->>>>>>> a
                             'kasubag' =>  $kasubag,
                             'konfigurasi'   =>  $konfigurasi,
                             'kuansing'    =>  $kuansing,
@@ -259,31 +215,6 @@ class Sudah_diproses extends CI_Controller {
         }
     }
 
-<<<<<<< HEAD
-=======
-    // Data Meranti
-    public function meranti()
-    {
-        if($this->session->userdata('level') == '2') {
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $username = $this->session->userdata('username');
-            $kasubag = $this->user_model->listing($username);
-
-            $meranti = $this->data_model->data_sudah_meranti();
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Kepulauan Meranti',
-                            'kasubag' =>  $kasubag,
-                            'konfigurasi'   =>  $konfigurasi,
-                            'meranti'    =>  $meranti,
-                            'isi'   =>  'kasubag/sudah_diproses/meranti'
-                        );
-            $this->load->view('kasubag/layout/wrapper', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
->>>>>>> a
     // Data Kampar
     public function kampar()
     {
@@ -293,11 +224,7 @@ class Sudah_diproses extends CI_Controller {
             $kasubag = $this->user_model->listing($username);
 
             $kampar = $this->data_model->data_sudah_kampar();
-<<<<<<< HEAD
             $data = array(  'title' =>  'Total On Progress Kabupaten Kampar',
-=======
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Kampar',
->>>>>>> a
                             'kasubag' =>  $kasubag,
                             'konfigurasi'   =>  $konfigurasi,
                             'kampar'    =>  $kampar,
@@ -319,11 +246,7 @@ class Sudah_diproses extends CI_Controller {
             $kasubag = $this->user_model->listing($username);
 
             $inhu = $this->data_model->data_sudah_inhu();
-<<<<<<< HEAD
             $data = array(  'title' =>  'Total On Progress Kabupaten Indragiri Hulu',
-=======
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Indragiri Hulu',
->>>>>>> a
                             'kasubag' =>  $kasubag,
                             'konfigurasi'   =>  $konfigurasi,
                             'inhu'    =>  $inhu,
@@ -345,11 +268,7 @@ class Sudah_diproses extends CI_Controller {
             $kasubag = $this->user_model->listing($username);
 
             $inhil = $this->data_model->data_sudah_inhil();
-<<<<<<< HEAD
             $data = array(  'title' =>  'Total On Progress Kabupaten Indragiri Hilir',
-=======
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Indragiri Hilir',
->>>>>>> a
                             'kasubag' =>  $kasubag,
                             'konfigurasi'   =>  $konfigurasi,
                             'inhil'    =>  $inhil,
@@ -371,11 +290,7 @@ class Sudah_diproses extends CI_Controller {
             $kasubag = $this->user_model->listing($username);
 
             $bengkalis = $this->data_model->data_sudah_bengkalis();
-<<<<<<< HEAD
             $data = array(  'title' =>  'Total On Progress Kabupaten Bengkalis',
-=======
-            $data = array(  'title' =>  'Total Sudah Diproses Kabupaten Bengkalis',
->>>>>>> a
                             'kasubag' =>  $kasubag,
                             'konfigurasi'   =>  $konfigurasi,
                             'bengkalis'    =>  $bengkalis,
@@ -433,12 +348,7 @@ class Sudah_diproses extends CI_Controller {
             
             if($valid->run()===false){
                 //End validasi
-                
-<<<<<<< HEAD
             $data = array(	'title' => 'Tambah On Progress',
-=======
-            $data = array(	'title' => 'Tambah Sudah Diproses',
->>>>>>> a
                             'kasubag'    =>  $kasubag,
                             'regional'  =>  $regional,
                             'konfigurasi'   =>  $konfigurasi,
@@ -478,11 +388,7 @@ class Sudah_diproses extends CI_Controller {
                 redirect(base_url('kasubag/sudah_diproses'),'refresh');
             }
             //Akhir masuk database
-<<<<<<< HEAD
             $data = array(	'title' => 'Tambah On Progress',
-=======
-            $data = array(	'title' => 'Tambah Sudah Diproses',
->>>>>>> a
                             'konfigurasi'   =>  $konfigurasi,
                             'kasubag'    =>  $kasubag,
                             'regional'  =>  $regional,
@@ -544,12 +450,7 @@ class Sudah_diproses extends CI_Controller {
             
             if($valid->run()===false){
                 //Akhir Validasi
-            
-<<<<<<< HEAD
             $data = array(  'title'     =>  'Edit On Progress',
-=======
-            $data = array(  'title'     =>  'Edit Sudah Diproses',
->>>>>>> a
                             'sudah_diproses'   =>  $sudah_diproses,
                             'konfigurasi'   =>  $konfigurasi,
                             'kasubag'    =>  $kasubag,
@@ -603,12 +504,7 @@ class Sudah_diproses extends CI_Controller {
                 }
             }
             //akhir masuk database
-                
-<<<<<<< HEAD
             $data = array(  'title'     =>  'Edit On Progress',
-=======
-            $data = array(  'title'     =>  'Edit Sudah Diproses',
->>>>>>> a
                             'sudah_diproses'   =>  $sudah_diproses,
                             'konfigurasi'   =>  $konfigurasi,
                             'kasubag'    =>  $kasubag,
@@ -666,11 +562,7 @@ class Sudah_diproses extends CI_Controller {
         if($this->session->userdata('level') == '2') {
             $sudah_diproses = $this->data_model->data_sudah();
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING YANG On Progress',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING YANG SUDAH DIPROSES',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING YANG ON PROGRESS',
                             'sudah_diproses' =>  $sudah_diproses,
                             'konfigurasi'   =>  $konfigurasi
                         );
@@ -687,11 +579,7 @@ class Sudah_diproses extends CI_Controller {
             $masa_akhir = $this->input->post('masa_akhir');
             $cetak_akhir = $this->data_model->cetak_akhir_sudah($masa_akhir);
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING YANG On Progress BERDASARKAN MASA AKHIR',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING YANG SUDAH DIPROSES BERDASARKAN MASA AKHIR',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING YANG ON PROGRESS BERDASARKAN MASA AKHIR',
                             'cetak_akhir' =>  $cetak_akhir,
                             'konfigurasi'   =>  $konfigurasi
                         );
@@ -708,11 +596,7 @@ class Sudah_diproses extends CI_Controller {
         if($this->session->userdata('level') == '2') {
             $pekanbaru = $this->data_model->data_sudah_pekanbaru();
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING PEKANBARU YANG On Progress',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING PEKANBARU YANG SUDAH DIPROSES',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING PEKANBARU YANG ON PROGRESS',
                             'pekanbaru' =>  $pekanbaru,
                             'konfigurasi'   =>  $konfigurasi
                         );
@@ -729,11 +613,7 @@ class Sudah_diproses extends CI_Controller {
         if($this->session->userdata('level') == '2') {
             $dumai = $this->data_model->data_sudah_dumai();
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING DUMAI YANG On Progress',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING DUMAI YANG SUDAH DIPROSES',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING DUMAI YANG ON PROGRESS',
                             'dumai' =>  $dumai,
                             'konfigurasi'   =>  $konfigurasi
                         );
@@ -750,11 +630,7 @@ class Sudah_diproses extends CI_Controller {
         if($this->session->userdata('level') == '2') {
             $siak = $this->data_model->data_sudah_siak();
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING SIAK YANG On Progress',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING SIAK YANG SUDAH DIPROSES',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING SIAK YANG ON PROGRESS',
                             'siak' =>  $siak,
                             'konfigurasi'   =>  $konfigurasi
                         );
@@ -771,11 +647,7 @@ class Sudah_diproses extends CI_Controller {
         if($this->session->userdata('level') == '2') {
             $rohul = $this->data_model->data_sudah_rohul();
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING ROKAN HULU YANG On Progress',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING ROKAN HULU YANG SUDAH DIPROSES',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING ROHUL YANG ON PROGRESS',
                             'rohul' =>  $rohul,
                             'konfigurasi'   =>  $konfigurasi
                         );
@@ -792,11 +664,7 @@ class Sudah_diproses extends CI_Controller {
         if($this->session->userdata('level') == '2') {
             $rohil = $this->data_model->data_sudah_rohil();
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING ROKAN HILIR YANG On Progress',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING ROKAN HILIR YANG SUDAH DIPROSES',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING ROHIL YANG ON PROGRESS',
                             'rohil' =>  $rohil,
                             'konfigurasi'   =>  $konfigurasi
                         );
@@ -813,11 +681,7 @@ class Sudah_diproses extends CI_Controller {
         if($this->session->userdata('level') == '2') {
             $pelalawan = $this->data_model->data_sudah_pelalawan();
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING PELALAWAN YANG On Progress',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING PELALAWAN YANG SUDAH DIPROSES',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING PELALAWAN YANG ON PROGRESS',
                             'pelalawan' =>  $pelalawan,
                             'konfigurasi'   =>  $konfigurasi
                         );
@@ -834,11 +698,7 @@ class Sudah_diproses extends CI_Controller {
         if($this->session->userdata('level') == '2') {
             $kuansing = $this->data_model->data_sudah_kuansing();
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING KUANTAN SINGINGI YANG On Progress',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING KUANTAN SINGINGI YANG SUDAH DIPROSES',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING KUANSING YANG ON PROGRESS',
                             'kuansing' =>  $kuansing,
                             'konfigurasi'   =>  $konfigurasi
                         );
@@ -849,37 +709,13 @@ class Sudah_diproses extends CI_Controller {
         }
     }
 
-<<<<<<< HEAD
-=======
-    // Cetak Meranti
-    public function cetak_meranti()
-    {
-        if($this->session->userdata('level') == '2') {
-            $meranti = $this->data_model->data_sudah_meranti();
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $data = array(  'title' =>  'DATA OUTSTANDING KEPULAUAN MERANTI YANG SUDAH DIPROSES',
-                            'meranti' =>  $meranti,
-                            'konfigurasi'   =>  $konfigurasi
-                        );
-            $this->load->view('kasubag/sudah_diproses/cetak_meranti', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
->>>>>>> a
     // Cetak Kampar
     public function cetak_kampar()
     {
         if($this->session->userdata('level') == '2') {
             $kampar = $this->data_model->data_sudah_kampar();
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING KAMPAR YANG On Progress',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING KAMPAR YANG SUDAH DIPROSES',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING KAMPAR YANG ON PROGRESS',
                             'kampar' =>  $kampar,
                             'konfigurasi'   =>  $konfigurasi
                         );
@@ -896,11 +732,7 @@ class Sudah_diproses extends CI_Controller {
         if($this->session->userdata('level') == '2') {
             $inhu = $this->data_model->data_sudah_inhu();
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
             $data = array(  'title' =>  'DATA OUTSTANDING INDRAGIRI HULU YANG On Progress',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING INDRAGIRI HULU YANG SUDAH DIPROSES',
->>>>>>> a
                             'inhu' =>  $inhu,
                             'konfigurasi'   =>  $konfigurasi
                         );
@@ -917,11 +749,7 @@ class Sudah_diproses extends CI_Controller {
         if($this->session->userdata('level') == '2') {
             $inhil = $this->data_model->data_sudah_inhil();
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING INDRAGIRI HILIR YANG On Progress',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING INDRAGIRI HILIR YANG SUDAH DIPROSES',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING INDRAGIRI HILIR YANG ON PROGRESS',
                             'inhil' =>  $inhil,
                             'konfigurasi'   =>  $konfigurasi
                         );
@@ -938,11 +766,7 @@ class Sudah_diproses extends CI_Controller {
         if($this->session->userdata('level') == '2') {
             $bengkalis = $this->data_model->data_sudah_bengkalis();
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING BENGKALIS YANG On Progress',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING BENGKALIS YANG SUDAH DIPROSES',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING BENGKALIS YANG ON PROGRESS',
                             'bengkalis' =>  $bengkalis,
                             'konfigurasi'   =>  $konfigurasi
                         );

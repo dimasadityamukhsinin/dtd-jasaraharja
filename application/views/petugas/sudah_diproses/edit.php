@@ -62,11 +62,7 @@ echo form_open_multipart(base_url('petugas/sudah_diproses/edit/'.$sudah_diproses
   <div class="col-md-5">
     <select name="status" class="form-control">
         <option value="Belum Diproses" <?php if($sudah_diproses->status=="Belum Diproses") { echo "selected"; } ?> >Belum Diproses</option>
-<<<<<<< HEAD
         <option value="Sudah Diproses" <?php if($sudah_diproses->status=="Sudah Diproses") { echo "selected"; } ?> >On Progress</option>
-=======
-        <option value="Sudah Diproses" <?php if($sudah_diproses->status=="Sudah Diproses") { echo "selected"; } ?> >Sudah Diproses</option>
->>>>>>> a
         <option value="Selesai" <?php if($sudah_diproses->status=="Selesai") { echo "selected"; } ?> >Selesai</option>
     </select>
   </div>

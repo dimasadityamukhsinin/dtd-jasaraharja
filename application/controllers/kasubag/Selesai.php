@@ -213,31 +213,6 @@ class Selesai extends CI_Controller {
         }
     }
 
-<<<<<<< HEAD
-=======
-    // Data Meranti
-    public function meranti()
-    {
-        if($this->session->userdata('level') == '2') {
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $username = $this->session->userdata('username');
-            $kasubag = $this->user_model->listing($username);
-
-            $meranti = $this->data_model->data_selesai_meranti();
-            $data = array(  'title' =>  'Total Selesai Kabupaten Kepulauan Meranti',
-                            'kasubag' =>  $kasubag,
-                            'konfigurasi'   =>  $konfigurasi,
-                            'meranti'    =>  $meranti,
-                            'isi'   =>  'kasubag/selesai/meranti'
-                        );
-            $this->load->view('kasubag/layout/wrapper', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
->>>>>>> a
     // Data Kampar
     public function kampar()
     {
@@ -804,27 +779,7 @@ class Selesai extends CI_Controller {
             redirect(base_url('login'),'refresh');
         }
     }
-
-<<<<<<< HEAD
-=======
-    // Cetak Meranti
-    public function cetak_meranti()
-    {
-        if($this->session->userdata('level') == '2') {
-            $meranti = $this->data_model->data_selesai_meranti();
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $data = array(  'title' =>  'DATA OUTSTANDING KEPULAUAN MERANTI YANG SELESAI DILAKSANAN',
-                            'meranti' =>  $meranti,
-                            'konfigurasi'   =>  $konfigurasi
-                        );
-            $this->load->view('kasubag/selesai/cetak_meranti', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
->>>>>>> a
+    
     // Cetak Kampar
     public function cetak_kampar()
     {

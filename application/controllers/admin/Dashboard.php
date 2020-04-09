@@ -105,16 +105,6 @@ class Dashboard extends CI_Controller {
                         ]);
     }
 
-    function get_meranti(){
-        $belum_meranti = $this->data_model->belum_diproses_meranti();
-        $sudah_meranti = $this->data_model->sudah_diproses_meranti();
-        $selesai_meranti = $this->data_model->selesai_meranti();
-        echo json_encode(['belum_meranti' => $belum_meranti,
-                          'sudah_meranti' => $sudah_meranti,
-                          'selesai_meranti' => $selesai_meranti
-                        ]);
-    }
-
     function get_kampar(){
         $belum_kampar = $this->data_model->belum_diproses_kampar();
         $sudah_kampar = $this->data_model->sudah_diproses_kampar();

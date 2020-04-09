@@ -213,31 +213,6 @@ class Selesai extends CI_Controller {
         }
     }
 
-<<<<<<< HEAD
-=======
-    // Data Meranti
-    public function meranti()
-    {
-        if($this->session->userdata('level') == '3') {
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $username = $this->session->userdata('username');
-            $staff = $this->user_model->listing($username);
-
-            $meranti = $this->data_model->data_selesai_meranti();
-            $data = array(  'title' =>  'Total Selesai Kabupaten Kepulauan Meranti',
-                            'staff' =>  $staff,
-                            'konfigurasi'   =>  $konfigurasi,
-                            'meranti'    =>  $meranti,
-                            'isi'   =>  'staff/selesai/meranti'
-                        );
-            $this->load->view('staff/layout/wrapper', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
->>>>>>> a
     // Data Kampar
     public function kampar()
     {
@@ -673,26 +648,6 @@ class Selesai extends CI_Controller {
         }
     }
 
-<<<<<<< HEAD
-=======
-    // Cetak Meranti
-    public function cetak_meranti()
-    {
-        if($this->session->userdata('level') == '3') {
-            $meranti = $this->data_model->data_selesai_meranti();
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $data = array(  'title' =>  'DATA OUTSTANDING KEPULAUAN MERANTI YANG SELESAI DILAKSANAN',
-                            'meranti' =>  $meranti,
-                            'konfigurasi'   =>  $konfigurasi
-                        );
-            $this->load->view('staff/selesai/cetak_meranti', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
->>>>>>> a
     // Cetak Kampar
     public function cetak_kampar()
     {

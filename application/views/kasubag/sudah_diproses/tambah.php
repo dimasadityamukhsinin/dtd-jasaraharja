@@ -59,11 +59,7 @@ echo form_open_multipart(base_url('kasubag/sudah_diproses/tambah'), 'class="form
 <div class="form-group">
     <label class="col-md-2 control-label">Status</label>
     <div class="col-md-5">
-<<<<<<< HEAD
         <input type="text" class="form-control" placeholder="Status" value="ON PROGRESS" readonly>
-=======
-        <input type="text" class="form-control" placeholder="Status" value="SUDAH DIPROSES" readonly>
->>>>>>> a
     </div>
 </div>
 

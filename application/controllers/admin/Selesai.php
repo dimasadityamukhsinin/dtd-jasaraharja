@@ -247,8 +247,6 @@ class Selesai extends CI_Controller {
         }
     }
 
-<<<<<<< HEAD
-=======
     // Data Meranti
     public function meranti()
     {
@@ -271,7 +269,6 @@ class Selesai extends CI_Controller {
         }
     }
 
->>>>>>> a
     // Data Kampar
     public function kampar()
     {
@@ -811,8 +808,6 @@ class Selesai extends CI_Controller {
         }
     }
 
-<<<<<<< HEAD
-=======
     // Cetak Meranti
     public function cetak_meranti()
     {
@@ -830,7 +825,6 @@ class Selesai extends CI_Controller {
         }
     }
 
->>>>>>> a
     // Cetak Kampar
     public function cetak_kampar()
     {

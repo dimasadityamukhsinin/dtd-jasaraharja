@@ -215,31 +215,6 @@ class Belum_diproses extends CI_Controller {
         }
     }
 
-<<<<<<< HEAD
-=======
-    // Data Meranti
-    public function meranti()
-    {
-        if($this->session->userdata('level') == '1') {
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $username = $this->session->userdata('username');
-            $admin = $this->user_model->listing($username);
-
-            $meranti = $this->data_model->data_belum_meranti();
-            $data = array(  'title' =>  'Total Belum Diproses Kabupaten Kepulauan Meranti',
-                            'admin' =>  $admin,
-                            'konfigurasi'   =>  $konfigurasi,
-                            'meranti'    =>  $meranti,
-                            'isi'   =>  'admin/belum_diproses/meranti'
-                        );
-            $this->load->view('admin/layout/wrapper', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
->>>>>>> a
     // Data Kampar
     public function kampar()
     {
@@ -733,26 +708,6 @@ class Belum_diproses extends CI_Controller {
         }
     }
 
-<<<<<<< HEAD
-=======
-    // Cetak Meranti
-    public function cetak_meranti()
-    {
-        if($this->session->userdata('level') == '1') {
-            $meranti = $this->data_model->data_belum_meranti();
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $data = array(  'title' =>  'DATA OUTSTANDING KEPULAUAN MERANTI YANG BELUM DILAKSANAN',
-                            'meranti' =>  $meranti,
-                            'konfigurasi'   =>  $konfigurasi
-                        );
-            $this->load->view('admin/belum_diproses/cetak_meranti', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
->>>>>>> a
     // Cetak Kampar
     public function cetak_kampar()
     {

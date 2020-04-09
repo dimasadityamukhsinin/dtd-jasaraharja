@@ -133,11 +133,7 @@
                                       '<div class="inner">' +
                                         '<div style="font-size: 22px; margin-top: 10px; margin-bottom: 10px;">' +
                                           '<b>' + sudah_diproses + '</b>' +
-<<<<<<< HEAD
                                           '<p>' + "On Progress" + '</p>' + 
-=======
-                                          '<p>' + "Sudah Diproses" + '</p>' + 
->>>>>>> a
                                         '</div>' +
                                       '</div>' +
                                       '<div class="icon">' +
@@ -211,11 +207,7 @@
                             value: regional.sudah_diproses,
                             color: "#FF7F00",
                             highlight: "#FF7F00",
-<<<<<<< HEAD
                             label: "On Progress"
-=======
-                            label: "Sudah Diproses"
->>>>>>> a
                           },
                           {
                             value: regional.selesai,

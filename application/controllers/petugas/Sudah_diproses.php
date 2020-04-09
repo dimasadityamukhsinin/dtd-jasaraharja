@@ -16,11 +16,7 @@ class Sudah_diproses extends CI_Controller {
         $this->simple_login->cek_login();
     }
 
-<<<<<<< HEAD
     // Data On Progress
-=======
-    // Data Sudah Diproses
->>>>>>> a
     public function index()
     {
         if($this->session->userdata('level') == '4') {
@@ -30,11 +26,7 @@ class Sudah_diproses extends CI_Controller {
 
             $regional = $this->session->userdata('regional');
             $sudah_diproses = $this->data_model->data_sudah_user($regional);
-<<<<<<< HEAD
             $data = array(  'title' =>  'Menu On Progress',
-=======
-            $data = array(  'title' =>  'Menu Sudah Diproses',
->>>>>>> a
                             'petugas' =>  $petugas,
                             'konfigurasi'   =>  $konfigurasi,
                             'sudah_diproses'    =>  $sudah_diproses,
@@ -97,12 +89,7 @@ class Sudah_diproses extends CI_Controller {
             
             if($valid->run()===false){
                 //Akhir Validasi
-            
-<<<<<<< HEAD
             $data = array(  'title'     =>  'Edit On Progress',
-=======
-            $data = array(  'title'     =>  'Edit Sudah Diproses',
->>>>>>> a
                             'sudah_diproses'   =>  $sudah_diproses,
                             'konfigurasi'   =>  $konfigurasi,
                             'petugas'    =>  $petugas,
@@ -156,12 +143,7 @@ class Sudah_diproses extends CI_Controller {
                 }
             }
             //akhir masuk database
-                
-<<<<<<< HEAD
             $data = array(  'title'     =>  'Edit On Progress',
-=======
-            $data = array(  'title'     =>  'Edit Sudah Diproses',
->>>>>>> a
                             'sudah_diproses'   =>  $sudah_diproses,
                             'konfigurasi'   =>  $konfigurasi,
                             'petugas'    =>  $petugas,
@@ -182,11 +164,7 @@ class Sudah_diproses extends CI_Controller {
             $regional = $this->session->userdata('regional');
             $sudah_diproses = $this->data_model->data_sudah_user($regional);
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING YANG On Progress',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING YANG SUDAH DIPROSES',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING YANG ON PROGRESS',
                             'sudah_diproses' =>  $sudah_diproses,
                             'konfigurasi'   =>  $konfigurasi
                         );
@@ -203,11 +181,7 @@ class Sudah_diproses extends CI_Controller {
             $masa_akhir = $this->input->post('masa_akhir');
             $cetak_akhir = $this->data_model->cetak_akhir_sudah_user($masa_akhir);
             $konfigurasi = $this->konfigurasi_model->listing();
-<<<<<<< HEAD
-            $data = array(  'title' =>  'DATA OUTSTANDING YANG On Progress BERDASARKAN MASA AKHIR',
-=======
-            $data = array(  'title' =>  'DATA OUTSTANDING YANG SUDAH DIPROSES BERDASARKAN MASA AKHIR',
->>>>>>> a
+            $data = array(  'title' =>  'DATA OUTSTANDING YANG ON PROGRESS BERDASARKAN MASA AKHIR',
                             'cetak_akhir' =>  $cetak_akhir,
                             'konfigurasi'   =>  $konfigurasi
                         );

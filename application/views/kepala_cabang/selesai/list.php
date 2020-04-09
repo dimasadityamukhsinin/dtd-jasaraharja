@@ -65,16 +65,6 @@ if($this->session->flashdata('sukses')) {
                 </td>
             </tr>
             <tr>
-<<<<<<< HEAD
-=======
-                <td>KABUPATEN KEPULAUAN MERANTI</td>
-                <td>
-                    <a href="<?php echo base_url('kepala_cabang/selesai/meranti') ?>" class="btn btn-success btn-xs">
-                    <i class="fa fa-eye"></i> Lihat</a>
-                </td>
-            </tr>
-            <tr>
->>>>>>> a
                 <td>KABUPATEN KAMPAR</td>
                 <td>
                     <a href="<?php echo base_url('kepala_cabang/selesai/kampar') ?>" class="btn btn-success btn-xs">
