@@ -21,6 +21,19 @@ class Data_model extends CI_Model {
         return $query->result();
     }
 
+    public function cek_duplikat()
+    {
+        $this->db->query("SELECT 
+                            nopol, 
+                            COUNT(nopol)
+                        FROM
+                            jr_data
+                        GROUP BY 
+                            nopol
+                        HAVING 
+                            COUNT(nopol) > 1");
+    }
+
     public function cetak_awal($masa_awal)
     {
         $this->db->select('jr_data.*,
