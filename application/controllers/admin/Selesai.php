@@ -608,7 +608,7 @@ class Selesai extends CI_Controller {
     public function cetak_datasemua()
     {
         if($this->session->userdata('level') == '1') {
-            $datasemua = $this->data_model->data_selesai();
+            $datasemua = $this->data_model->data_semua();
             $konfigurasi = $this->konfigurasi_model->listing();
             $kepalacabang = $this->kasubag_model->cek_laporan();
             $data = array(  'title' =>  'DATA OUTSTANDING YANG SUDAH DILAKSANAKAN',
