@@ -105,8 +105,6 @@ class Dashboard extends CI_Controller {
                         ]);
     }
 
-<<<<<<< HEAD
-=======
     function get_meranti(){
         $belum_meranti = $this->data_model->belum_diproses_meranti();
         $sudah_meranti = $this->data_model->sudah_diproses_meranti();
@@ -117,7 +115,6 @@ class Dashboard extends CI_Controller {
                         ]);
     }
 
->>>>>>> a
     function get_kampar(){
         $belum_kampar = $this->data_model->belum_diproses_kampar();
         $sudah_kampar = $this->data_model->sudah_diproses_kampar();
