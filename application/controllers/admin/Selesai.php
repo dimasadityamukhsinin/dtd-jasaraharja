@@ -247,28 +247,6 @@ class Selesai extends CI_Controller {
         }
     }
 
-    // Data Meranti
-    public function meranti()
-    {
-        if($this->session->userdata('level') == '1') {
-            $konfigurasi = $this->konfigurasi_model->listing();
-            $username = $this->session->userdata('username');
-            $admin = $this->user_model->listing($username);
-
-            $meranti = $this->data_model->data_selesai_meranti();
-            $data = array(  'title' =>  'Total Selesai Kabupaten Kepulauan Meranti',
-                            'admin' =>  $admin,
-                            'konfigurasi'   =>  $konfigurasi,
-                            'meranti'    =>  $meranti,
-                            'isi'   =>  'admin/selesai/meranti'
-                        );
-            $this->load->view('admin/layout/wrapper', $data, false);
-        }else{
-            $this->session->set_flashdata('warning','Anda belum login');
-            redirect(base_url('login'),'refresh');
-        }
-    }
-
     // Data Kampar
     public function kampar()
     {

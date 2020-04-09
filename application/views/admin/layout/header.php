@@ -1,10 +1,6 @@
 <header class="main-header">
         <!-- Logo -->
-<<<<<<< HEAD
         <a href="<?php echo base_url('admin/dashboard') ?>" class="logo">
-=======
-        <a href="<?php echo base_url('tata_usaha/dashboard') ?>" class="logo">
->>>>>>> a
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>JR</b></span>
           <!-- logo for regular state and mobile devices -->
