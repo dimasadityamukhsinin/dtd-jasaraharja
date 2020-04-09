@@ -667,6 +667,38 @@ class Data_model extends CI_Model {
         return $query->result();
     }
 
+    public function data_semuapelaksanaan($tanggal)
+    {
+        $status = "Selesai";
+        $tanggal_pelaksanaan = $tanggal;
+        $array = array('jr_data.status' => $status, 'jr_data.tanggal_pelaksanaan' => $tanggal_pelaksanaan);
+        $this->db->select('jr_data.id as data_id, jr_data.id_user, jr_data.nopol, jr_data.pemilik, jr_data.alamat, jr_data.no_telpon, jr_data.kondisi, jr_data.status, jr_data.masa_awal, jr_data.masa_akhir, jr_data.tarif, jr_data.ttd, jr_data.regional, jr_data.keterangan, jr_data.janji_bayar, jr_data.tanggal_pelaksanaan,
+                           jr_regional.*,
+                           jr_user.nama, jr_user.jabatan, jr_user.ttd as userttd');
+        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
+        $this->db->join('jr_user','jr_user.id = jr_data.id_user','inner');
+        $this->db->from('jr_data');
+        $this->db->where('jr_data.status', $status);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function data_semuabulan($bulan)
+    {
+        $status = "Selesai";
+        $bulan = $bulan;
+        $array = array('jr_data.status' => $status, 'jr_data.tanggal_pelaksanaan MONTH(Date)' => $tanggal_pelaksanaan);
+        $this->db->select('jr_data.id as data_id, jr_data.id_user, jr_data.nopol, jr_data.pemilik, jr_data.alamat, jr_data.no_telpon, jr_data.kondisi, jr_data.status, jr_data.masa_awal, jr_data.masa_akhir, jr_data.tarif, jr_data.ttd, jr_data.regional, jr_data.keterangan, jr_data.janji_bayar, jr_data.tanggal_pelaksanaan,
+                           jr_regional.*,
+                           jr_user.nama, jr_user.jabatan, jr_user.ttd as userttd');
+        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
+        $this->db->join('jr_user','jr_user.id = jr_data.id_user','inner');
+        $this->db->from('jr_data');
+        $this->db->where('jr_data.status', $status);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function data_selesai_pekanbaru()
     {
         $regional = "Pekanbaru";

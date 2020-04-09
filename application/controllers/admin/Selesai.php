@@ -623,6 +623,26 @@ class Selesai extends CI_Controller {
         }
     }
 
+    // Cetak Selesai 
+    public function cetak_datasemuapelaksanaan()
+    {
+        if($this->session->userdata('level') == '1') {
+            $tanggal = $this->input->post('tanggal');
+            $cetak_datasemuapelaksanaan = $this->data_model->data_semuapelaksanaan($tanggal);
+            $konfigurasi = $this->konfigurasi_model->listing();
+            $kepalacabang = $this->kasubag_model->cek_laporan();
+            $data = array(  'title' =>  'DATA OUTSTANDING YANG SUDAH DILAKSANAKAN',
+                            'cetak_datasemuapelaksanaan' =>  $cetak_datasemuapelaksanaan,
+                            'kepalacabang'  =>  $kepalacabang,
+                            'konfigurasi'   =>  $konfigurasi
+                        );
+            $this->load->view('admin/selesai/cetak_datasemuapelaksanaan', $data, false);
+        }else{
+            $this->session->set_flashdata('warning','Anda belum login');
+            redirect(base_url('login'),'refresh');
+        }
+    }
+
     // Cetak Data Selesai 
     public function cetak_data($id=null)
     {

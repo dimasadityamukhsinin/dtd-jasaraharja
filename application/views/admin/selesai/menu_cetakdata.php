@@ -22,20 +22,20 @@
                 </div>
                 <?php
                     // Form Open
-                    echo form_open_multipart(base_url('admin/selesai/cetak_awal'), 'class="form-horizontal"');
+                    echo form_open_multipart(base_url('admin/selesai/cetak_datasemuapelaksanaan'), 'class="form-horizontal"');
                 ?>
                 <p>
                     <div class="row">
                         <div class="col-lg-12">
-                            <label>Cetak Berdasarkan Masa Awal</label>
-                            <input type="date" name="masa_awal" class="form-control" placeholder="Masa Awal" value="<?php echo set_value('masa_awal') ?>" required>
+                            <label>Cetak Berdasarkan Tanggal Pelaksanaan</label>
+                            <input type="date" name="tanggal" class="form-control" placeholder="Tanggal Pelaksanaan" value="<?php echo set_value('tanggal') ?>" required>
                         </div>
                     </div>
                 </p>
                 <p>
                     <div class="row">
                         <div class="col-lg-12">
-                            <input type="submit" name="cetak_awal" target="_blank" value="Cetak Masa Awal" class="btn btn-info"/>
+                            <input type="submit" name="cetak_awal" target="_blank" value="Cetak Tanggal Pelaksanaan" class="btn btn-info"/>
                         </div>
                     </div>
                 </p>
