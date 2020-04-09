@@ -3,11 +3,7 @@
         <?php include('menu_cetak.php')?>
     </div>
 </p>
-<?php 
-    echo $cek_duplikat;
-    if ($cek_duplikat > 0) {
-    include('hapus_duplikat.php');
-} ?>
+<?php include('hapus_duplikat.php'); ?>
 
 <?php
 // Notifikasi

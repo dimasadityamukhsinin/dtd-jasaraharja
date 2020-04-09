@@ -23,12 +23,10 @@ class Total_data extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
             $total_data = $this->data_model->listing();
-            $cek_duplikat = $this->data_model->cek_duplikat();
             $data = array(  'title' =>  'Total Data',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'total_data'    =>  $total_data,
-                            'cek_duplikat'  =>  $cek_duplikat,
                             'isi'   =>  'admin/total_data/list'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
