@@ -3,8 +3,9 @@
         <?php include('menu_cetak.php')?>
     </div>
 </p>
-<?php if ($cek_duplikat > 0) {
+<?php 
     echo $cek_duplikat;
+    if ($cek_duplikat > 0) {
     include('hapus_duplikat.php');
 } ?>
 
