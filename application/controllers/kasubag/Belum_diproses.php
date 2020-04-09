@@ -215,6 +215,31 @@ class Belum_diproses extends CI_Controller {
         }
     }
 
+<<<<<<< HEAD
+=======
+    // Data Meranti
+    public function meranti()
+    {
+        if($this->session->userdata('level') == '2') {
+            $konfigurasi = $this->konfigurasi_model->listing();
+            $username = $this->session->userdata('username');
+            $kasubag = $this->user_model->listing($username);
+
+            $meranti = $this->data_model->data_belum_meranti();
+            $data = array(  'title' =>  'Total Belum Diproses Kabupaten Kepulauan Meranti',
+                            'kasubag' =>  $kasubag,
+                            'konfigurasi'   =>  $konfigurasi,
+                            'meranti'    =>  $meranti,
+                            'isi'   =>  'kasubag/belum_diproses/meranti'
+                        );
+            $this->load->view('kasubag/layout/wrapper', $data, false);
+        }else{
+            $this->session->set_flashdata('warning','Anda belum login');
+            redirect(base_url('login'),'refresh');
+        }
+    }
+
+>>>>>>> a
     // Data Kampar
     public function kampar()
     {

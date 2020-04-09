@@ -1586,6 +1586,12 @@ class Data_model extends CI_Model {
         $this->db->where('id', $data['id']);
         $this->db->delete('jr_data', $data);
     }
+
+    // Delete Duplikat
+    public function delete_duplikat()
+    {
+        $this->db->query("DELETE t1 FROM jr_data t1 INNER JOIN jr_data t2 WHERE t1.id < t2.id AND t1.nopol = t2.nopol");
+    }
     
     // Detail data
     public function detail_delete($id)

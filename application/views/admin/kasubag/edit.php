@@ -24,7 +24,19 @@ echo form_open_multipart(base_url('admin/kasubag/edit/'.$kasubag->id), 'class="f
 <div class="form-group">
     <label class="col-md-2 control-label">Cabang</label>
     <div class="col-md-5">
+<<<<<<< HEAD
         <input type="text" name="cabang" class="form-control" placeholder="Cabang" value="<?php echo $kasubag->cabang ?>" required>
+=======
+        <select name="cabang" class="form-control">
+            <?php foreach($samsat as $samsat):?>
+                <option value="<?= $samsat->nama_samsat?>"
+                    <?php if ($samsat->nama_samsat == $kasubag->cabang) : ?> selected<?php endif; ?>
+            >
+                <?= $samsat->nama_samsat?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+>>>>>>> a
     </div>
 </div>
 
