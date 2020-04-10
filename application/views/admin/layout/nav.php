@@ -22,6 +22,19 @@
               </ul>
             </li>
 
+            <!-- MENU MASTER DATA KAPAL -->
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-folder"></i> <span>MASTER DATA KAPAL</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="<?php echo base_url('admin/kapal/total_data') ?>"><i class="fa fa-angle-right"></i> <span>Total Data</span></a></li>
+                <li><a href="<?php echo base_url('admin/kapal/belum_diproses') ?>"><i class="fa fa-angle-right"></i> <span>Belum Diproses</span></a></li>
+                <li><a href="<?php echo base_url('admin/kapal/sudah_diproses') ?>"><i class="fa fa-angle-right"></i> <span>On Progress</span></a></li>
+                <li><a href="<?php echo base_url('admin/kapal/selesai')?>"><i class="fa fa-angle-right"></i> Selesai</a></li>                
+              </ul>
+            </li>
+
             <!-- MENU MASTER AKUN -->
             <li class="treeview">
               <a href="#">
