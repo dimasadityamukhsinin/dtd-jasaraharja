@@ -80,10 +80,12 @@ class Selesai extends CI_Controller {
             $admin = $this->user_model->listing($username);
 
             $selesai = $this->data_model->data_selesai();
+            $regional = $this->regional_model->listing();
             $data = array(  'title' =>  'Total Selesai',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'selesai'    =>  $selesai,
+                            'regional'  =>  $regional,
                             'isi'   =>  'admin/selesai/total_selesai'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
@@ -637,6 +639,46 @@ class Selesai extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi
                         );
             $this->load->view('admin/selesai/cetak_datasemuapelaksanaan', $data, false);
+        }else{
+            $this->session->set_flashdata('warning','Anda belum login');
+            redirect(base_url('login'),'refresh');
+        }
+    }
+
+    // Cetak Selesai 
+    public function cetak_databulantahun()
+    {
+        if($this->session->userdata('level') == '1') {
+            $tahun = $this->input->post('tahun');
+            $bulan = $this->input->post('bulan');
+            $cetak_databulantahun = $this->data_model->data_bulantahun($tahun,$bulan);
+            $konfigurasi = $this->konfigurasi_model->listing();
+            $kepalacabang = $this->kasubag_model->cek_laporan();
+            $data = array(  'title' =>  'DATA OUTSTANDING YANG SUDAH DILAKSANAKAN',
+                            'cetak_databulantahun' =>  $cetak_databulantahun,
+                            'kepalacabang'  =>  $kepalacabang,
+                            'konfigurasi'   =>  $konfigurasi
+                        );
+            $this->load->view('admin/selesai/cetak_databulantahun', $data, false);
+        }else{
+            $this->session->set_flashdata('warning','Anda belum login');
+            redirect(base_url('login'),'refresh');
+        }
+    }
+
+    public function cetak_regional()
+    {
+        if($this->session->userdata('level') == '1') {
+            $regional = $this->input->post('regional');
+            $cetak_regional = $this->data_model->data_regional($regional);
+            $konfigurasi = $this->konfigurasi_model->listing();
+            $kepalacabang = $this->kasubag_model->cek_laporan();
+            $data = array(  'title' =>  'DATA OUTSTANDING YANG SUDAH DILAKSANAKAN',
+                            'cetak_regional' =>  $cetak_regional,
+                            'kepalacabang'  =>  $kepalacabang,
+                            'konfigurasi'   =>  $konfigurasi
+                        );
+            $this->load->view('admin/selesai/cetak_regional', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');

@@ -35,7 +35,7 @@
                 <p>
                     <div class="row">
                         <div class="col-lg-12">
-                            <input type="submit" name="cetak_awal" target="_blank" value="Cetak Tanggal Pelaksanaan" class="btn btn-info"/>
+                            <input type="submit" value="Cetak Tanggal Pelaksanaan" class="btn btn-info"/>
                         </div>
                     </div>
                 </p>
@@ -43,20 +43,61 @@
 
                 <?php
                     // Form Open
-                    echo form_open_multipart(base_url('admin/selesai/cetak_tp'), 'class="form-horizontal"');
+                    echo form_open_multipart(base_url('admin/selesai/cetak_databulantahun'), 'class="form-horizontal"');
                 ?>
                 <p>
                     <div class="row">
                         <div class="col-lg-12">
-                            <label>Cetak Berdasarkan Tanggal Pelaksanaan</label>
-                            <input type="date" name="tanggal_pelaksanaan" class="form-control" placeholder="Masa Awal" value="<?php echo set_value('tanggal_pelaksanaan') ?>" required>
+                            <label>Cetak Berdasarkan Tahun Dan Bulan</label>
+                            <input type="number" name="tahun" class="form-control" min="1900" max="2099" step="1" value="<?php echo date("Y"); ?>" />
+                            <select name="bulan" class="form-control">
+                                <option value='1'>Januari</option>
+                                <option value='2'>Februari</option>
+                                <option value='3'>Maret</option>
+                                <option value='4'>April</option>
+                                <option value='5'>Mei</option>
+                                <option value='6'>Juni</option>
+                                <option value='7'>Juli</option>
+                                <option value='8'>Agustus</option>
+                                <option value='9'>September</option>
+                                <option value='10'>Oktober</option>
+                                <option value='11'>November</option>
+                                <option value='12'>Desember</option>
+                            </select>
                         </div>
                     </div>
                 </p>
                 <p>
                     <div class="row">
                         <div class="col-lg-12">
-                            <input type="submit" name="cetak_tp" value="Cetak Tanggal Pelaksanaan" class="btn btn-info" />
+                            <input type="submit" value="Cetak Bulan Dan Tahun" class="btn btn-info" />
+                        </div>
+                    </div>
+                </p>
+                <?php echo form_close(); ?>
+
+                <?php
+                    // Form Open
+                    echo form_open_multipart(base_url('admin/selesai/cetak_regional'), 'class="form-horizontal"');
+                ?>
+                <p>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <label>Cetak Berdasarkan Regional</label>
+                            <select name="regional" class="form-control">
+                                <?php foreach($regional as $regional) { ?>
+                                <option value="<?php echo $regional->regional ?>">
+                                    <?php echo $regional->nama_regional ?>
+                                </option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                </p>
+                <p>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="submit" value="Cetak Regional" class="btn btn-info" />
                         </div>
                     </div>
                 </p>
