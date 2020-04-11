@@ -1,6 +1,6 @@
 <p class="pull-right">
     <div class="btn-group pull-right">
-        <a href="<?php echo base_url('admin/selesai')?>" title="Kembali" class="btn btn-info btn-md">
+        <a href="<?php echo base_url('admin/kapal/selesai')?>" title="Kembali" class="btn btn-info btn-md">
             <i class="fa fa-backward"></i> Kembali
         </a>
     </div>
@@ -8,7 +8,7 @@
 
 <p class="pull-right">
     <div class="btn-group ">
-        <a href="<?php echo base_url('admin/selesai/cetak_siak')?>" title="Cetak" target="_blank" class="btn btn-success btn-lg">
+        <a href="<?php echo base_url('admin/kapal/selesai/cetak_siak')?>" title="Cetak" target="_blank" class="btn btn-success btn-lg">
             <i class="fa fa-print"></i> Cetak
         </a>
     </div>
@@ -27,11 +27,13 @@ if($this->session->flashdata('sukses')) {
         <thead>
             <tr>
                 <th>NO</th>
-                <th>NOMOR POLISI</th>
+                <th>NAMA PERUSAHAAN</th>
                 <th>PEMILIK</th>
                 <th>ALAMAT</th>
                 <th>NOMOR TELPON</th>
+                <th>NAMA KAPAL</th>
                 <th>KONDISI</th>
+                <th>JUMLAH KAPAL</th>
                 <th>STATUS</th>
                 <th>MASA BERLAKU AWAL</th>
                 <th>MASA BERLAKU AKHIR</th>
@@ -39,6 +41,7 @@ if($this->session->flashdata('sukses')) {
                 <th>OUTSTANDING</th>
                 <th>REGIONAL</th>
                 <th>JANJI BAYAR</th>
+                <th>TANGGAL PELAKSANAAN</th>
                 <th>TTD</th>
                 <th>AKSI</th>
             </tr>
@@ -47,7 +50,7 @@ if($this->session->flashdata('sukses')) {
             <?php $no=1; foreach($siak as $siak) { ?>
             <tr>
             <td><?php echo $no++ ?></td>
-                <td><?php echo $siak->nopol ?></td>
+                <td><?php echo $siak->nama_perusahaan ?></td>
                 <td><?php echo $siak->pemilik ?></td>
                 <td><?php echo $siak->alamat; 
                     if($siak->alamat != null) { ?>
@@ -56,7 +59,9 @@ if($this->session->flashdata('sukses')) {
                     <?php }?>
                 </td>
                 <td><?php echo $siak->no_telpon ?></td>
+                <td><?php echo $siak->nama_kapal ?></td>
                 <td><?php echo $siak->kondisi ?></td>
+                <td><?php echo $siak->jumlah_kapal ?></td>
                 <td><?php echo $siak->status ?></td>
                 <td><?php echo $siak->masa_awal ?></td>
                 <td><?php echo $siak->masa_akhir ?></td>
@@ -76,24 +81,25 @@ if($this->session->flashdata('sukses')) {
                 </td>
                 <td><?php echo $siak->nama_regional ?></td>
                 <td><?php echo $siak->janji_bayar ?></td>
+                <td><?php echo $siak->tanggal_pelaksanaan ?></td>
                 <td>
                     <?php if($siak->ttd != null) { ?>
-                        <img src="<?php echo base_url('assets/upload/image/thumbs/'.$siak->ttd)?>" class="img img-responsive img-thumbnail" width="60">
+                        <img src="<?php echo base_url('assets/upload/image/'.$siak->ttd)?>" class="img img-responsive img-thumbnail" width="60">
                     <?php } ?>
                 </td>
                 <td>
-                    <a href="<?php echo base_url('admin/selesai/gambar/'.$siak->id) ?>" class="btn btn-success btn-xs"><i class="fa fa-image"></i>Gambar</a>
-                    <a href="<?php echo base_url('admin/selesai/edit/'.$siak->id) ?>" class="btn btn-warning btn-xs">
+                    <a href="<?php echo base_url('admin/kapal/selesai/gambar/'.$siak->id) ?>" class="btn btn-success btn-xs"><i class="fa fa-image"></i>Gambar</a>
+                    <a href="<?php echo base_url('admin/kapal/selesai/edit/'.$siak->id) ?>" class="btn btn-warning btn-xs">
                     <i class="fa fa-edit"></i> Edit</a>
-                    <?php
-                        $gambar     = $this->data_model->detail_delete_gambar($siak->id);
+                    <?php 
+                        $gambar     = $this->datakapal_model->detail_delete_gambar($siak->id);
                         if($gambar == null) {
                             include('delete_siak.php');
                         } ?>
                     <?php 
-                        $gambar     = $this->data_model->detail_delete_gambar($siak->id);
+                        $gambar     = $this->datakapal_model->detail_delete_gambar($siak->id);
                         if($siak->ttd != null && $gambar != null) { ?>
-                            <a href="<?php echo base_url('admin/selesai/cetak_data/'.$siak->id) ?>" class="btn btn-info btn-xs" target="_blank">
+                            <a href="<?php echo base_url('admin/kapal/selesai/cetak_data/'.$siak->id) ?>" class="btn btn-info btn-xs" target="_blank">
                             <i class="fa fa-print"></i> Cetak Data</a>
                     <?php } ?>
                 </td>

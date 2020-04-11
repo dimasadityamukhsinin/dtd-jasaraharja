@@ -7,7 +7,7 @@ class Sudah_diproses extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('data_model');
+        $this->load->model('datakapal_model');
         $this->load->model('user_model');
         $this->load->model('konfigurasi_model');
         $this->load->model('status_model');
@@ -25,12 +25,12 @@ class Sudah_diproses extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $sudah_diproses = $this->data_model->data_sudah();
+            $sudah_diproses = $this->datakapal_model->data_sudah();
             $data = array(  'title' =>  'Menu On Progress',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'sudah_diproses'    =>  $sudah_diproses,
-                            'isi'   =>  'admin/sudah_diproses/list'
+                            'isi'   =>  'admin/kapal/sudah_diproses/list'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -47,12 +47,12 @@ class Sudah_diproses extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $total_sudah = $this->data_model->data_sudah();
+            $total_sudah = $this->datakapal_model->data_sudah();
             $data = array(  'title' =>  'Menu On Progress',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'total_sudah'    =>  $total_sudah,
-                            'isi'   =>  'admin/sudah_diproses/total_sudah'
+                            'isi'   =>  'admin/kapal/sudah_diproses/total_sudah'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -69,12 +69,12 @@ class Sudah_diproses extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $pekanbaru = $this->data_model->data_sudah_pekanbaru();
+            $pekanbaru = $this->datakapal_model->data_sudah_pekanbaru();
             $data = array(  'title' =>  'Total On Progress Kota Pekanbaru',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'pekanbaru'    =>  $pekanbaru,
-                            'isi'   =>  'admin/sudah_diproses/pekanbaru'
+                            'isi'   =>  'admin/kapal/sudah_diproses/pekanbaru'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -91,12 +91,12 @@ class Sudah_diproses extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $dumai = $this->data_model->data_sudah_dumai();
+            $dumai = $this->datakapal_model->data_sudah_dumai();
             $data = array(  'title' =>  'Total On Progress Kota Dumai',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'dumai'    =>  $dumai,
-                            'isi'   =>  'admin/sudah_diproses/dumai'
+                            'isi'   =>  'admin/kapal/sudah_diproses/dumai'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -113,12 +113,12 @@ class Sudah_diproses extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $siak = $this->data_model->data_sudah_siak();
+            $siak = $this->datakapal_model->data_sudah_siak();
             $data = array(  'title' =>  'Total On Progress Kota Siak',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'siak'    =>  $siak,
-                            'isi'   =>  'admin/sudah_diproses/siak'
+                            'isi'   =>  'admin/kapal/sudah_diproses/siak'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -135,12 +135,12 @@ class Sudah_diproses extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $rohul = $this->data_model->data_sudah_rohul();
+            $rohul = $this->datakapal_model->data_sudah_rohul();
             $data = array(  'title' =>  'Total On Progress Kabupaten Rokan Hulu',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'rohul'    =>  $rohul,
-                            'isi'   =>  'admin/sudah_diproses/rohul'
+                            'isi'   =>  'admin/kapal/sudah_diproses/rohul'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -157,12 +157,12 @@ class Sudah_diproses extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $rohil = $this->data_model->data_sudah_rohil();
+            $rohil = $this->datakapal_model->data_sudah_rohil();
             $data = array(  'title' =>  'Total On Progress Kabupaten Rokan Hilir',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'rohil'    =>  $rohil,
-                            'isi'   =>  'admin/sudah_diproses/rohil'
+                            'isi'   =>  'admin/kapal/sudah_diproses/rohil'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -179,12 +179,12 @@ class Sudah_diproses extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $pelalawan = $this->data_model->data_sudah_pelalawan();
+            $pelalawan = $this->datakapal_model->data_sudah_pelalawan();
             $data = array(  'title' =>  'Total On Progress Kabupaten Pelalawan',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'pelalawan'    =>  $pelalawan,
-                            'isi'   =>  'admin/sudah_diproses/pelalawan'
+                            'isi'   =>  'admin/kapal/sudah_diproses/pelalawan'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -201,12 +201,12 @@ class Sudah_diproses extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $kuansing = $this->data_model->data_sudah_kuansing();
+            $kuansing = $this->datakapal_model->data_sudah_kuansing();
             $data = array(  'title' =>  'Total On Progress Kabupaten Kuantan Singingi',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'kuansing'    =>  $kuansing,
-                            'isi'   =>  'admin/sudah_diproses/kuansing'
+                            'isi'   =>  'admin/kapal/sudah_diproses/kuansing'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -223,12 +223,12 @@ class Sudah_diproses extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $kampar = $this->data_model->data_sudah_kampar();
+            $kampar = $this->datakapal_model->data_sudah_kampar();
             $data = array(  'title' =>  'Total On Progress Kabupaten Kampar',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'kampar'    =>  $kampar,
-                            'isi'   =>  'admin/sudah_diproses/kampar'
+                            'isi'   =>  'admin/kapal/sudah_diproses/kampar'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -245,12 +245,12 @@ class Sudah_diproses extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $inhu = $this->data_model->data_sudah_inhu();
+            $inhu = $this->datakapal_model->data_sudah_inhu();
             $data = array(  'title' =>  'Total On Progress Kabupaten Indragiri Hulu',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'inhu'    =>  $inhu,
-                            'isi'   =>  'admin/sudah_diproses/inhu'
+                            'isi'   =>  'admin/kapal/sudah_diproses/inhu'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -267,12 +267,12 @@ class Sudah_diproses extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $inhil = $this->data_model->data_sudah_inhil();
+            $inhil = $this->datakapal_model->data_sudah_inhil();
             $data = array(  'title' =>  'Total On Progress Kabupaten Indragiri Hilir',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'inhil'    =>  $inhil,
-                            'isi'   =>  'admin/sudah_diproses/inhil'
+                            'isi'   =>  'admin/kapal/sudah_diproses/inhil'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -289,12 +289,12 @@ class Sudah_diproses extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $bengkalis = $this->data_model->data_sudah_bengkalis();
+            $bengkalis = $this->datakapal_model->data_sudah_bengkalis();
             $data = array(  'title' =>  'Total On Progress Kabupaten Bengkalis',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'bengkalis'    =>  $bengkalis,
-                            'isi'   =>  'admin/sudah_diproses/bengkalis'
+                            'isi'   =>  'admin/kapal/sudah_diproses/bengkalis'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -316,7 +316,7 @@ class Sudah_diproses extends CI_Controller {
             //Validasi input
             $valid = $this->form_validation;
             
-            $valid->set_rules('nopol', 'Nomor Polisi', 'required',
+            $valid->set_rules('nama_perusahaan', 'Nama Perusahaan', 'required',
                         array('required'    =>  "%s Harus diisi"));
 
             $valid->set_rules('pemilik', 'Pemilik', 'required',
@@ -328,7 +328,13 @@ class Sudah_diproses extends CI_Controller {
             $valid->set_rules('no_telpon', 'Nomor Telpon', 'required',
                         array('required'    =>  "%s Harus diisi"));
 
+            $valid->set_rules('nama_kapal', 'Nama Kapal', 'required',
+                        array('required'    =>  "%s Harus diisi"));
+
             $valid->set_rules('kondisi', 'Kondisi', 'required',
+                        array('required'    =>  "%s Harus diisi"));
+
+            $valid->set_rules('jumlah_kapal', 'Jumlah Kapal', 'required',
                         array('required'    =>  "%s Harus diisi"));
 
             $valid->set_rules('masa_awal', 'Masa Berlaku Awal', 'required',
@@ -352,18 +358,20 @@ class Sudah_diproses extends CI_Controller {
                             'admin'    =>  $admin,
                             'regional'  =>  $regional,
                             'konfigurasi'   =>  $konfigurasi,
-                            'isi'      => 'admin/sudah_diproses/tambah');
+                            'isi'      => 'admin/kapal/sudah_diproses/tambah');
             $this->load->view('admin/layout/wrapper',$data,FALSE);
             //Masuk Database
             }else{
             $i = $this->input;   
             $status = "Sudah Diproses";
                 
-                $data = array(  'nopol'         =>  $i->post('nopol'),
+                $data = array(  'nama_perusahaan'         =>  $i->post('nama_perusahaan'),
                                 'pemilik'       =>  $i->post('pemilik'),
                                 'alamat'        =>  $i->post('alamat'),
                                 'no_telpon'     =>  $i->post('no_telpon'),
+                                'nama_kapal'     =>  $i->post('nama_kapal'),
                                 'kondisi'       =>  $i->post('kondisi'),
+                                'jumlah_kapal'       =>  $i->post('jumlah_kapal'),
                                 'status'        =>  $status,
                                 'masa_awal'     =>  $i->post('masa_awal'),
                                 'masa_akhir'    =>  $i->post('masa_akhir'),
@@ -383,16 +391,16 @@ class Sudah_diproses extends CI_Controller {
                     $options
                 );
                 $pusher->trigger('my-channel', 'my-event', array('message' => 'success'));
-                $this->data_model->tambah($data);
+                $this->datakapal_model->tambah($data);
                 $this->session->set_flashdata('sukses','Data telah ditambah');
-                redirect(base_url('admin/sudah_diproses'),'refresh');
+                redirect(base_url('admin/kapal/sudah_diproses'),'refresh');
             }
             //Akhir masuk database
             $data = array(	'title' => 'Tambah On Progress',
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'regional'  =>  $regional,
-                            'isi'      => 'admin/sudah_diproses/tambah');
+                            'isi'      => 'admin/kapal/sudah_diproses/tambah');
             $this->load->view('admin/layout/wrapper',$data,FALSE);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
@@ -414,11 +422,11 @@ class Sudah_diproses extends CI_Controller {
             $regional = $this->regional_model->listing();
 
             //Ambil data yg akan diedit
-            $sudah_diproses     = $this->data_model->detail_sudah($id);
+            $sudah_diproses     = $this->datakapal_model->detail_sudah($id);
             //validasi input
             $valid      = $this->form_validation;
             
-            $valid->set_rules('nopol', 'Nomor Polisi', 'required',
+            $valid->set_rules('nama_perusahaan', 'Nama Perusahaan', 'required',
                         array('required'    =>  "%s Harus diisi"));
 
             $valid->set_rules('pemilik', 'Pemilik', 'required',
@@ -430,7 +438,13 @@ class Sudah_diproses extends CI_Controller {
             $valid->set_rules('no_telpon', 'Nomor Telepon', 'required',
                         array('required'    =>  "%s Harus diisi"));
 
+            $valid->set_rules('nama_kapal', 'Nama Kapal', 'required',
+                        array('required'    =>  "%s Harus diisi"));
+
             $valid->set_rules('kondisi', 'Kondisi', 'required',
+                        array('required'    =>  "%s Harus diisi"));
+
+            $valid->set_rules('jumlah_kapal', 'Jumlah Kapal', 'required',
                         array('required'    =>  "%s Harus diisi"));
 
             $valid->set_rules('masa_awal', 'Masa Berlaku Awal', 'required',
@@ -452,7 +466,7 @@ class Sudah_diproses extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'regional' => $regional,
-                            'isi'       =>  'admin/sudah_diproses/edit'
+                            'isi'       =>  'admin/kapal/sudah_diproses/edit'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
             
@@ -465,11 +479,13 @@ class Sudah_diproses extends CI_Controller {
 
                 if($i->post('status') == 'Selesai') {
                     $data = array(  'id'  =>  $id,
-                                    'nopol' =>  $i->post('nopol'),
+                                    'nama_perusahaan' =>  $i->post('nama_perusahaan'),
                                     'pemilik'       =>  $i->post('pemilik'),
                                     'alamat'           =>  $i->post('alamat'),
                                     'no_telpon'           =>  $i->post('no_telpon'),
+                                    'nama_kapal'           =>  $i->post('nama_kapal'),
                                     'kondisi'           =>  $i->post('kondisi'),
+                                    'jumlah_kapal'           =>  $i->post('jumlah_kapal'),
                                     'status'           =>  $i->post('status'),
                                     'masa_awal'           =>  $i->post('masa_awal'),
                                     'masa_akhir'           =>  $i->post('masa_akhir'),
@@ -478,16 +494,18 @@ class Sudah_diproses extends CI_Controller {
                                     'janji_bayar'           =>  $i->post('janji_bayar'),
                                     'tanggal_pelaksanaan'   =>  $waktu
                                 );
-                    $this->data_model->edit($data);
+                    $this->datakapal_model->edit($data);
                     $this->session->set_flashdata('sukses', 'Data telah diedit');
-                    redirect(base_url('admin/sudah_diproses'), 'refresh');
+                    redirect(base_url('admin/kapal/sudah_diproses'), 'refresh');
                 }else{
                     $data = array(  'id'  =>  $id,
-                                    'nopol' =>  $i->post('nopol'),
+                                    'nama_perusahaan' =>  $i->post('nama_perusahaan'),
                                     'pemilik'       =>  $i->post('pemilik'),
                                     'alamat'           =>  $i->post('alamat'),
                                     'no_telpon'           =>  $i->post('no_telpon'),
+                                    'nama_kapal'           =>  $i->post('nama_kapal'),
                                     'kondisi'           =>  $i->post('kondisi'),
+                                    'jumlah_kapal'           =>  $i->post('jumlah_kapal'),
                                     'status'           =>  $i->post('status'),
                                     'masa_awal'           =>  $i->post('masa_awal'),
                                     'masa_akhir'           =>  $i->post('masa_akhir'),
@@ -495,9 +513,9 @@ class Sudah_diproses extends CI_Controller {
                                     'regional'           =>  $i->post('regional'),
                                     'janji_bayar'           =>  $i->post('janji_bayar'),
                                 );
-                    $this->data_model->edit($data);
+                    $this->datakapal_model->edit($data);
                     $this->session->set_flashdata('sukses', 'Data telah diedit');
-                    redirect(base_url('admin/sudah_diproses'), 'refresh');
+                    redirect(base_url('admin/kapal/sudah_diproses'), 'refresh');
                 }
             }
             //akhir masuk database
@@ -506,7 +524,7 @@ class Sudah_diproses extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'regional' => $regional,
-                            'isi'       =>  'admin/sudah_diproses/edit'
+                            'isi'       =>  'admin/kapal/sudah_diproses/edit'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -526,7 +544,7 @@ class Sudah_diproses extends CI_Controller {
                 show_404();
             }else{
 
-                $sudah_diproses     = $this->data_model->detail_delete($id);
+                $sudah_diproses     = $this->datakapal_model->detail_delete($id);
 
                 if($sudah_diproses->ttd != null) {
                     unlink('assets/upload/image/'.$sudah_diproses->ttd);
@@ -543,9 +561,9 @@ class Sudah_diproses extends CI_Controller {
                     $options
                 );
                 $pusher->trigger('my-channel', 'my-event', array('message' => 'success'));
-                $this->data_model->delete($data);
+                $this->datakapal_model->delete($data);
                 $this->session->set_flashdata('sukses', 'Data telah dihapus');
-                redirect(base_url('admin/sudah_diproses'), 'refresh');
+                redirect(base_url('admin/kapal/sudah_diproses'), 'refresh');
             }
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
@@ -557,13 +575,13 @@ class Sudah_diproses extends CI_Controller {
     public function cetak()
     {
         if($this->session->userdata('level') == '1') {
-            $sudah_diproses = $this->data_model->data_sudah();
+            $sudah_diproses = $this->datakapal_model->data_sudah();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING YANG ON PROGRESS',
                             'sudah_diproses' =>  $sudah_diproses,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/sudah_diproses/cetak', $data, false);
+            $this->load->view('admin/kapal/sudah_diproses/cetak', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -574,13 +592,13 @@ class Sudah_diproses extends CI_Controller {
     {
         if($this->session->userdata('level') == '1') {
             $masa_akhir = $this->input->post('masa_akhir');
-            $cetak_akhir = $this->data_model->cetak_akhir_sudah($masa_akhir);
+            $cetak_akhir = $this->datakapal_model->cetak_akhir_sudah($masa_akhir);
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING YANG ON PROGRESS BERDASARKAN MASA AKHIR',
                             'cetak_akhir' =>  $cetak_akhir,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/sudah_diproses/cetak_akhir', $data, false);
+            $this->load->view('admin/kapal/sudah_diproses/cetak_akhir', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -591,13 +609,13 @@ class Sudah_diproses extends CI_Controller {
     public function cetak_pekanbaru()
     {
         if($this->session->userdata('level') == '1') {
-            $pekanbaru = $this->data_model->data_sudah_pekanbaru();
+            $pekanbaru = $this->datakapal_model->data_sudah_pekanbaru();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING PEKANBARU YANG ON PROGRESS',
                             'pekanbaru' =>  $pekanbaru,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/sudah_diproses/cetak_pekanbaru', $data, false);
+            $this->load->view('admin/kapal/sudah_diproses/cetak_pekanbaru', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -608,13 +626,13 @@ class Sudah_diproses extends CI_Controller {
     public function cetak_dumai()
     {
         if($this->session->userdata('level') == '1') {
-            $dumai = $this->data_model->data_sudah_dumai();
+            $dumai = $this->datakapal_model->data_sudah_dumai();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING DUMAI YANG ON PROGRESS',
                             'dumai' =>  $dumai,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/sudah_diproses/cetak_dumai', $data, false);
+            $this->load->view('admin/kapal/sudah_diproses/cetak_dumai', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -625,13 +643,13 @@ class Sudah_diproses extends CI_Controller {
     public function cetak_siak()
     {
         if($this->session->userdata('level') == '1') {
-            $siak = $this->data_model->data_sudah_siak();
+            $siak = $this->datakapal_model->data_sudah_siak();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING SIAK YANG ON PROGRESS',
                             'siak' =>  $siak,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/sudah_diproses/cetak_siak', $data, false);
+            $this->load->view('admin/kapal/sudah_diproses/cetak_siak', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -642,13 +660,13 @@ class Sudah_diproses extends CI_Controller {
     public function cetak_rohul()
     {
         if($this->session->userdata('level') == '1') {
-            $rohul = $this->data_model->data_sudah_rohul();
+            $rohul = $this->datakapal_model->data_sudah_rohul();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING ROKAN HULU YANG ON PROGRESS',
                             'rohul' =>  $rohul,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/sudah_diproses/cetak_rohul', $data, false);
+            $this->load->view('admin/kapal/sudah_diproses/cetak_rohul', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -659,13 +677,13 @@ class Sudah_diproses extends CI_Controller {
     public function cetak_rohil()
     {
         if($this->session->userdata('level') == '1') {
-            $rohil = $this->data_model->data_sudah_rohil();
+            $rohil = $this->datakapal_model->data_sudah_rohil();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING ROKAN HILIR YANG ON PROGRESS',
                             'rohil' =>  $rohil,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/sudah_diproses/cetak_rohil', $data, false);
+            $this->load->view('admin/kapal/sudah_diproses/cetak_rohil', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -676,13 +694,13 @@ class Sudah_diproses extends CI_Controller {
     public function cetak_pelalawan()
     {
         if($this->session->userdata('level') == '1') {
-            $pelalawan = $this->data_model->data_sudah_pelalawan();
+            $pelalawan = $this->datakapal_model->data_sudah_pelalawan();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING PELALAWAN YANG ON PROGRESS',
                             'pelalawan' =>  $pelalawan,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/sudah_diproses/cetak_pelalawan', $data, false);
+            $this->load->view('admin/kapal/sudah_diproses/cetak_pelalawan', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -693,13 +711,13 @@ class Sudah_diproses extends CI_Controller {
     public function cetak_kuansing()
     {
         if($this->session->userdata('level') == '1') {
-            $kuansing = $this->data_model->data_sudah_kuansing();
+            $kuansing = $this->datakapal_model->data_sudah_kuansing();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING KUANTAN SINGINGI YANG ON PROGRESS',
                             'kuansing' =>  $kuansing,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/sudah_diproses/cetak_kuansing', $data, false);
+            $this->load->view('admin/kapal/sudah_diproses/cetak_kuansing', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -710,13 +728,13 @@ class Sudah_diproses extends CI_Controller {
     public function cetak_kampar()
     {
         if($this->session->userdata('level') == '1') {
-            $kampar = $this->data_model->data_sudah_kampar();
+            $kampar = $this->datakapal_model->data_sudah_kampar();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING KAMPAR YANG ON PROGRESS',
                             'kampar' =>  $kampar,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/sudah_diproses/cetak_kampar', $data, false);
+            $this->load->view('admin/kapal/sudah_diproses/cetak_kampar', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -727,13 +745,13 @@ class Sudah_diproses extends CI_Controller {
     public function cetak_inhu()
     {
         if($this->session->userdata('level') == '1') {
-            $inhu = $this->data_model->data_sudah_inhu();
+            $inhu = $this->datakapal_model->data_sudah_inhu();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING INDRAGIRI HULU YANG ON PROGRESS',
                             'inhu' =>  $inhu,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/sudah_diproses/cetak_inhu', $data, false);
+            $this->load->view('admin/kapal/sudah_diproses/cetak_inhu', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -744,13 +762,13 @@ class Sudah_diproses extends CI_Controller {
     public function cetak_inhil()
     {
         if($this->session->userdata('level') == '1') {
-            $inhil = $this->data_model->data_sudah_inhil();
+            $inhil = $this->datakapal_model->data_sudah_inhil();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING INDRAGIRI HILIR YANG ON PROGRESS',
                             'inhil' =>  $inhil,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/sudah_diproses/cetak_inhil', $data, false);
+            $this->load->view('admin/kapal/sudah_diproses/cetak_inhil', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -761,13 +779,13 @@ class Sudah_diproses extends CI_Controller {
     public function cetak_bengkalis()
     {
         if($this->session->userdata('level') == '1') {
-            $bengkalis = $this->data_model->data_sudah_bengkalis();
+            $bengkalis = $this->datakapal_model->data_sudah_bengkalis();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING BENGKALIS YANG ON PROGRESS',
                             'bengkalis' =>  $bengkalis,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/sudah_diproses/cetak_bengkalis', $data, false);
+            $this->load->view('admin/kapal/sudah_diproses/cetak_bengkalis', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');

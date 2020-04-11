@@ -1,6 +1,6 @@
 <p class="pull-left">
     <div>
-        <a href="<?php echo base_url('admin/sudah_diproses')?>" title="Kembali" class="btn btn-info btn-md">
+        <a href="<?php echo base_url('admin/kapal/sudah_diproses')?>" title="Kembali" class="btn btn-info btn-md">
             <i class="fa fa-backward"></i> Kembali
         </a>
     </div>
@@ -19,11 +19,13 @@ if($this->session->flashdata('sukses')) {
         <thead>
             <tr>
                 <th>NO</th>
-                <th>NOMOR POLISI</th>
+                <th>NAMA PERUSAHAAN</th>
                 <th>PEMILIK</th>
                 <th>ALAMAT</th>
                 <th>NOMOR TELPON</th>
+                <th>NAMA KAPAL</th>
                 <th>KONDISI</th>
+                <th>JUMLAH KAPAL</th>
                 <th>STATUS</th>
                 <th>MASA BERLAKU AWAL</th>
                 <th>MASA BERLAKU AKHIR</th>
@@ -37,7 +39,7 @@ if($this->session->flashdata('sukses')) {
             <?php $no=1; foreach($total_sudah as $total_sudah) { ?>
             <tr>
             <td><?php echo $no++ ?></td>
-                <td><?php echo $total_sudah->nopol ?></td>
+                <td><?php echo $total_sudah->nama_perusahaan ?></td>
                 <td><?php echo $total_sudah->pemilik ?></td>
                 <td><?php echo $total_sudah->alamat; 
                     if($total_sudah->alamat != null) { ?>
@@ -46,7 +48,9 @@ if($this->session->flashdata('sukses')) {
                     <?php }?>
                 </td>
                 <td><?php echo $total_sudah->no_telpon ?></td>
+                <td><?php echo $total_sudah->nama_kapal ?></td>
                 <td><?php echo $total_sudah->kondisi ?></td>
+                <td><?php echo $total_sudah->jumlah_kapal ?></td>
                 <td><?php echo $total_sudah->status ?></td>
                 <td><?php echo $total_sudah->masa_awal ?></td>
                 <td><?php echo $total_sudah->masa_akhir ?></td>
@@ -61,12 +65,13 @@ if($this->session->flashdata('sukses')) {
                         // menghitung selisih bulan
                         $numBulan += date("m",$timeEnd)-date("m",$timeStart);
 
-                        $oustanding =  $total_sudah->tarif * $numBulan;
+                        $total =  $total_sudah->tarif * $numBulan;
+                        $oustanding = $total_sudah->jumlah_kapal * $total;
                         echo "Rp.", number_format($oustanding,'0',',','.');
                     ?>
                 </td>
                 <td>
-                    <a href="<?php echo base_url('admin/sudah_diproses/edit/'.$total_sudah->id) ?>" class="btn btn-warning btn-xs">
+                    <a href="<?php echo base_url('admin/kapal/sudah_diproses/edit/'.$total_sudah->id) ?>" class="btn btn-warning btn-xs">
                     <i class="fa fa-edit"></i> Edit</a>
                     <?php include('delete.php') ?>
                 </td>

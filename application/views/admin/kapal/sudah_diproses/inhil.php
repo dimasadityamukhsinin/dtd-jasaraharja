@@ -1,6 +1,6 @@
 <p class="pull-right">
     <div class="btn-group pull-right">
-        <a href="<?php echo base_url('admin/sudah_diproses')?>" title="Kembali" class="btn btn-info btn-md">
+        <a href="<?php echo base_url('admin/kapal/sudah_diproses')?>" title="Kembali" class="btn btn-info btn-md">
             <i class="fa fa-backward"></i> Kembali
         </a>
     </div>
@@ -8,7 +8,7 @@
 
 <p class="pull-right">
     <div class="btn-group ">
-        <a href="<?php echo base_url('admin/sudah_diproses/cetak_inhil')?>" title="Cetak" target="_blank" class="btn btn-success btn-lg">
+        <a href="<?php echo base_url('admin/kapal/sudah_diproses/cetak_inhil')?>" title="Cetak" target="_blank" class="btn btn-success btn-lg">
             <i class="fa fa-print"></i> Cetak
         </a>
     </div>
@@ -27,11 +27,13 @@ if($this->session->flashdata('sukses')) {
         <thead>
             <tr>
                 <th>NO</th>
-                <th>NOMOR POLISI</th>
+                <th>NAMA PERUSAHAAN</th>
                 <th>PEMILIK</th>
                 <th>ALAMAT</th>
                 <th>NOMOR TELPON</th>
+                <th>NAMA KAPAL</th>
                 <th>KONDISI</th>
+                <th>JUMLAH KAPAL</th>
                 <th>STATUS</th>
                 <th>MASA BERLAKU AWAL</th>
                 <th>MASA BERLAKU AKHIR</th>
@@ -45,7 +47,7 @@ if($this->session->flashdata('sukses')) {
             <?php $no=1; foreach($inhil as $inhil) { ?>
             <tr>
             <td><?php echo $no++ ?></td>
-                <td><?php echo $inhil->nopol ?></td>
+                <td><?php echo $inhil->nama_perusahaan ?></td>
                 <td><?php echo $inhil->pemilik ?></td>
                 <td><?php echo $inhil->alamat; 
                     if($inhil->alamat != null) { ?>
@@ -54,7 +56,9 @@ if($this->session->flashdata('sukses')) {
                     <?php }?>
                 </td>
                 <td><?php echo $inhil->no_telpon ?></td>
+                <td><?php echo $inhil->nama_kapal ?></td>
                 <td><?php echo $inhil->kondisi ?></td>
+                <td><?php echo $inhil->jumlah_kapal ?></td>
                 <td><?php echo $inhil->status ?></td>
                 <td><?php echo $inhil->masa_awal ?></td>
                 <td><?php echo $inhil->masa_akhir ?></td>
@@ -69,12 +73,13 @@ if($this->session->flashdata('sukses')) {
                         // menghitung selisih bulan
                         $numBulan += date("m",$timeEnd)-date("m",$timeStart);
 
-                        $oustanding =  $inhil->tarif * $numBulan;
+                        $total =  $inhil->tarif * $numBulan;
+                        $oustanding = $inhil->jumlah_kapal * $total;
                         echo "Rp.", number_format($oustanding,'0',',','.');
                     ?>
                 </td>
                 <td>
-                    <a href="<?php echo base_url('admin/sudah_diproses/edit/'.$inhil->id) ?>" class="btn btn-warning btn-xs">
+                    <a href="<?php echo base_url('admin/kapal/sudah_diproses/edit/'.$inhil->id) ?>" class="btn btn-warning btn-xs">
                     <i class="fa fa-edit"></i> Edit</a>
                     <?php include('delete_inhil.php') ?>
                 </td>

@@ -7,7 +7,7 @@ class Selesai extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('data_model');
+        $this->load->model('datakapal_model');
         $this->load->model('user_model');
         $this->load->model('konfigurasi_model');
         $this->load->model('regional_model');
@@ -23,12 +23,12 @@ class Selesai extends CI_Controller {
             $konfigurasi = $this->konfigurasi_model->listing();
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
-            $selesai = $this->data_model->data_selesai();
+            $selesai = $this->datakapal_model->data_selesai();
             $data = array(  'title' =>  'Menu Selesai ',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'selesai'    =>  $selesai,
-                            'isi'   =>  'admin/selesai/list'
+                            'isi'   =>  'admin/kapal/selesai/list'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -41,13 +41,13 @@ class Selesai extends CI_Controller {
     {
         if($this->session->userdata('level') == '1') {
             $masa_akhir = $this->input->post('masa_akhir');
-            $cetak_akhir = $this->data_model->cetak_akhir_selesai($masa_akhir);
+            $cetak_akhir = $this->datakapal_model->cetak_akhir_selesai($masa_akhir);
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING YANG TELAH DILAKSANAN BERDASARKAN MASA AKHIR',
                             'cetak_akhir' =>  $cetak_akhir,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_akhir', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_akhir', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -58,13 +58,13 @@ class Selesai extends CI_Controller {
     {
         if($this->session->userdata('level') == '1') {
             $tanggal_pelaksanaan = $this->input->post('tanggal_pelaksanaan');
-            $cetak_tp = $this->data_model->cetak_tp_selesai($tanggal_pelaksanaan);
+            $cetak_tp = $this->datakapal_model->cetak_tp_selesai($tanggal_pelaksanaan);
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING YANG TELAH DILAKSANAN BERDASARKAN TANGGAL PELAKSANAAN',
                             'cetak_tp' =>  $cetak_tp,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_tp', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_tp', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -79,14 +79,14 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $selesai = $this->data_model->data_selesai();
+            $selesai = $this->datakapal_model->data_selesai();
             $regional = $this->regional_model->listing();
             $data = array(  'title' =>  'Total Selesai',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'selesai'    =>  $selesai,
                             'regional'  =>  $regional,
-                            'isi'   =>  'admin/selesai/total_selesai'
+                            'isi'   =>  'admin/kapal/selesai/total_selesai'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -103,12 +103,12 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $pekanbaru = $this->data_model->data_selesai_pekanbaru();
+            $pekanbaru = $this->datakapal_model->data_selesai_pekanbaru();
             $data = array(  'title' =>  'Total Selesai Kota Pekanbaru',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'pekanbaru'    =>  $pekanbaru,
-                            'isi'   =>  'admin/selesai/pekanbaru'
+                            'isi'   =>  'admin/kapal/selesai/pekanbaru'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -125,12 +125,12 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $dumai = $this->data_model->data_selesai_dumai();
+            $dumai = $this->datakapal_model->data_selesai_dumai();
             $data = array(  'title' =>  'Total Selesai Kota Dumai',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'dumai'    =>  $dumai,
-                            'isi'   =>  'admin/selesai/dumai'
+                            'isi'   =>  'admin/kapal/selesai/dumai'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -147,12 +147,12 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $siak = $this->data_model->data_selesai_siak();
+            $siak = $this->datakapal_model->data_selesai_siak();
             $data = array(  'title' =>  'Total Selesai Kota Siak',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'siak'    =>  $siak,
-                            'isi'   =>  'admin/selesai/siak'
+                            'isi'   =>  'admin/kapal/selesai/siak'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -169,12 +169,12 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $rohul = $this->data_model->data_selesai_rohul();
+            $rohul = $this->datakapal_model->data_selesai_rohul();
             $data = array(  'title' =>  'Total Selesai Kabupaten Rokan Hulu',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'rohul'    =>  $rohul,
-                            'isi'   =>  'admin/selesai/rohul'
+                            'isi'   =>  'admin/kapal/selesai/rohul'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -191,12 +191,12 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $rohil = $this->data_model->data_selesai_rohil();
+            $rohil = $this->datakapal_model->data_selesai_rohil();
             $data = array(  'title' =>  'Total Selesai Kabupaten Rokan Hilir',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'rohil'    =>  $rohil,
-                            'isi'   =>  'admin/selesai/rohil'
+                            'isi'   =>  'admin/kapal/selesai/rohil'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -213,12 +213,12 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $pelalawan = $this->data_model->data_selesai_pelalawan();
+            $pelalawan = $this->datakapal_model->data_selesai_pelalawan();
             $data = array(  'title' =>  'Total Selesai Diproses Kabupaten Pelalawan',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'pelalawan'    =>  $pelalawan,
-                            'isi'   =>  'admin/selesai/pelalawan'
+                            'isi'   =>  'admin/kapal/selesai/pelalawan'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -235,12 +235,12 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $kuansing = $this->data_model->data_selesai_kuansing();
+            $kuansing = $this->datakapal_model->data_selesai_kuansing();
             $data = array(  'title' =>  'Total Selesai Kabupaten Kuantan Singingi',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'kuansing'    =>  $kuansing,
-                            'isi'   =>  'admin/selesai/kuansing'
+                            'isi'   =>  'admin/kapal/selesai/kuansing'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -257,12 +257,12 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $kampar = $this->data_model->data_selesai_kampar();
+            $kampar = $this->datakapal_model->data_selesai_kampar();
             $data = array(  'title' =>  'Total Selesai Kabupaten Kampar',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'kampar'    =>  $kampar,
-                            'isi'   =>  'admin/selesai/kampar'
+                            'isi'   =>  'admin/kapal/selesai/kampar'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -279,12 +279,12 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $inhu = $this->data_model->data_selesai_inhu();
+            $inhu = $this->datakapal_model->data_selesai_inhu();
             $data = array(  'title' =>  'Total Selesai Kabupaten Indragiri Hulu',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'inhu'    =>  $inhu,
-                            'isi'   =>  'admin/selesai/inhu'
+                            'isi'   =>  'admin/kapal/selesai/inhu'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -301,12 +301,12 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $inhil = $this->data_model->data_selesai_inhil();
+            $inhil = $this->datakapal_model->data_selesai_inhil();
             $data = array(  'title' =>  'Total Selesai Kabupaten Indragiri Hilir',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'inhil'    =>  $inhil,
-                            'isi'   =>  'admin/selesai/inhil'
+                            'isi'   =>  'admin/kapal/selesai/inhil'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -323,12 +323,12 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $bengkalis = $this->data_model->data_selesai_bengkalis();
+            $bengkalis = $this->datakapal_model->data_selesai_bengkalis();
             $data = array(  'title' =>  'Total Selesai Kabupaten Bengkalis',
                             'admin' =>  $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'bengkalis'    =>  $bengkalis,
-                            'isi'   =>  'admin/selesai/bengkalis'
+                            'isi'   =>  'admin/kapal/selesai/bengkalis'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -350,7 +350,7 @@ class Selesai extends CI_Controller {
             //Validasi input
             $valid = $this->form_validation;
             
-            $valid->set_rules('nopol', 'Nomor Polisi', 'required',
+            $valid->set_rules('nama_perusahaan', 'Nama Perusahaan', 'required',
                         array('required'    =>  "%s Harus diisi"));
 
             $valid->set_rules('pemilik', 'Pemilik', 'required',
@@ -362,7 +362,13 @@ class Selesai extends CI_Controller {
             $valid->set_rules('no_telpon', 'Nomor Telpon', 'required',
                         array('required'    =>  "%s Harus diisi"));
 
+            $valid->set_rules('nama_kapal', 'Nama Kapal', 'required',
+                        array('required'    =>  "%s Harus diisi"));
+
             $valid->set_rules('kondisi', 'Kondisi', 'required',
+                        array('required'    =>  "%s Harus diisi"));
+
+            $valid->set_rules('jumlah_kapal', 'Jumlah Kapal', 'required',
                         array('required'    =>  "%s Harus diisi"));
 
             $valid->set_rules('masa_awal', 'Masa Berlaku Awal', 'required',
@@ -384,7 +390,7 @@ class Selesai extends CI_Controller {
                             'admin'    =>  $admin,
                             'regional'  =>  $regional,
                             'konfigurasi'   =>  $konfigurasi,
-                            'isi'      => 'admin/selesai/tambah');
+                            'isi'      => 'admin/kapal/selesai/tambah');
             $this->load->view('admin/layout/wrapper',$data,FALSE);
             //Masuk Database
             }else{
@@ -393,11 +399,13 @@ class Selesai extends CI_Controller {
             $waktu = date("Y-m-d H:i");
                 
                 $data = array(  'id_user'       =>  $this->session->userdata('id'),
-                                'nopol'         =>  $i->post('nopol'),
+                                'nama_perusahaan'         =>  $i->post('nama_perusahaan'),
                                 'pemilik'       =>  $i->post('pemilik'),
                                 'alamat'        =>  $i->post('alamat'),
                                 'no_telpon'     =>  $i->post('no_telpon'),
+                                'nama_kapal'     =>  $i->post('nama_kapal'),
                                 'kondisi'       =>  $i->post('kondisi'),
+                                'jumlah_kapal'       =>  $i->post('jumlah_kapal'),
                                 'status'     =>  $status,
                                 'masa_awal'     =>  $i->post('masa_awal'),
                                 'masa_akhir'    =>  $i->post('masa_akhir'),
@@ -417,16 +425,16 @@ class Selesai extends CI_Controller {
                     $options
                 );
                 $pusher->trigger('my-channel', 'my-event', array('message' => 'success'));
-                $this->data_model->tambah($data);
+                $this->datakapal_model->tambah($data);
                 $this->session->set_flashdata('sukses','Data telah ditambah');
-                redirect(base_url('admin/selesai'),'refresh');
+                redirect(base_url('admin/kapal/selesai'),'refresh');
             }
             //Akhir masuk database
             $data = array(	'title' => 'Tambah Selesai',
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'regional'  =>  $regional,
-                            'isi'      => 'admin/selesai/tambah');
+                            'isi'      => 'admin/kapal/selesai/tambah');
             $this->load->view('admin/layout/wrapper',$data,FALSE);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
@@ -444,13 +452,13 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $selesai     = $this->data_model->detail($id);
+            $selesai     = $this->datakapal_model->detail($id);
 
             $regional = $this->regional_model->listing();
             //validasi input
             $valid      = $this->form_validation;
                 
-            $valid->set_rules('nopol', 'Nomor Polisi', 'required',
+            $valid->set_rules('nama_perusahaan', 'Nama Perusahaan', 'required',
                         array('required'    =>  "%s Harus diisi"));
 
             $valid->set_rules('pemilik', 'Pemilik', 'required',
@@ -462,7 +470,13 @@ class Selesai extends CI_Controller {
             $valid->set_rules('no_telpon', 'Nomor Telepon', 'required',
                         array('required'    =>  "%s Harus diisi"));
 
+            $valid->set_rules('nama_kapal', 'Nama Kapal', 'required',
+                        array('required'    =>  "%s Harus diisi"));
+
             $valid->set_rules('kondisi', 'Kondisi', 'required',
+                        array('required'    =>  "%s Harus diisi"));
+
+            $valid->set_rules('jumlah_kapal', 'Jumlah Kapal', 'required',
                         array('required'    =>  "%s Harus diisi"));
 
             $valid->set_rules('masa_awal', 'Masa Berlaku Awal', 'required',
@@ -498,7 +512,7 @@ class Selesai extends CI_Controller {
                                 'admin'    =>  $admin,
                                 'regional' => $regional,
                                 'error'       => $this->upload->display_errors(),
-                                'isi'       =>  'admin/selesai/edit'
+                                'isi'       =>  'admin/kapal/selesai/edit'
                             );
                 $this->load->view('admin/layout/wrapper', $data, false);
                 if (!$selesai) show_404();
@@ -532,11 +546,13 @@ class Selesai extends CI_Controller {
                 $data = array(  //Disimpan nama file gambar
                                 'ttd'          =>  $upload_gambar['upload_data']['file_name'],
                                 'id'  =>  $id,
-                                'nopol' =>  $i->post('nopol'),
+                                'nama_perusahaan' =>  $i->post('nama_perusahaan'),
                                 'pemilik'       =>  $i->post('pemilik'),
                                 'alamat'           =>  $i->post('alamat'),
                                 'no_telpon'           =>  $i->post('no_telpon'),
+                                'nama_kapal'           =>  $i->post('nama_kapal'),
                                 'kondisi'           =>  $i->post('kondisi'),
+                                'jumlah_kapal'           =>  $i->post('jumlah_kapal'),
                                 'status'           =>  $i->post('status'),
                                 'masa_awal'           =>  $i->post('masa_awal'),
                                 'masa_akhir'           =>  $i->post('masa_akhir'),
@@ -545,9 +561,9 @@ class Selesai extends CI_Controller {
                                 'janji_bayar'           =>  $i->post('janji_bayar'),
                                 'tanggal_pelaksanaan'   =>  $waktu
                             );
-                $this->data_model->edit($data);
+                $this->datakapal_model->edit($data);
                 $this->session->set_flashdata('sukses', 'Data telah diedit');
-                redirect(base_url('admin/selesai'), 'refresh');
+                redirect(base_url('admin/kapal/selesai'), 'refresh');
                 
             }}else{
                 //Edit produk tanpa ganti gambar
@@ -557,11 +573,13 @@ class Selesai extends CI_Controller {
                 $data = array(  //Disimpan nama file gambar(gambar tidak diganti)
                                 // 'foto'          =>  $upload_gambar['upload_data']['file_name'],
                                 'id'  =>  $id,
-                                'nopol' =>  $i->post('nopol'),
+                                'nama_perusahaan' =>  $i->post('nama_perusahaan'),
                                 'pemilik'       =>  $i->post('pemilik'),
                                 'alamat'           =>  $i->post('alamat'),
                                 'no_telpon'           =>  $i->post('no_telpon'),
+                                'nama_kapal'           =>  $i->post('nama_kapal'),
                                 'kondisi'           =>  $i->post('kondisi'),
+                                'jumlah_kapal'           =>  $i->post('jumlah_kapal'),
                                 'status'           =>  $i->post('status'),
                                 'masa_awal'           =>  $i->post('masa_awal'),
                                 'masa_akhir'           =>  $i->post('masa_akhir'),
@@ -570,9 +588,9 @@ class Selesai extends CI_Controller {
                                 'janji_bayar'           =>  $i->post('janji_bayar'),
                                 'tanggal_pelaksanaan'   =>  $waktu
                             );
-                $this->data_model->edit($data);
+                $this->datakapal_model->edit($data);
                 $this->session->set_flashdata('sukses', 'Data telah diedit');
-                redirect(base_url('admin/selesai'), 'refresh');
+                redirect(base_url('admin/kapal/selesai'), 'refresh');
             }}
             //akhir masuk database
             $data = array(  'title'     =>  'Edit Selesai',
@@ -580,7 +598,7 @@ class Selesai extends CI_Controller {
                             'konfigurasi'   =>  $konfigurasi,
                             'admin'    =>  $admin,
                             'regional' => $regional,
-                            'isi'       =>  'admin/selesai/edit'
+                            'isi'       =>  'admin/kapal/selesai/edit'
                         );
             $this->load->view('admin/layout/wrapper', $data, false);
         }else{
@@ -593,13 +611,13 @@ class Selesai extends CI_Controller {
     public function cetak()
     {
         if($this->session->userdata('level') == '1') {
-            $selesai = $this->data_model->data_selesai();
+            $selesai = $this->datakapal_model->data_selesai();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING YANG SUDAH DILAKSANAKAN',
                             'selesai' =>  $selesai,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -610,7 +628,7 @@ class Selesai extends CI_Controller {
     public function cetak_datasemua()
     {
         if($this->session->userdata('level') == '1') {
-            $datasemua = $this->data_model->data_semua();
+            $datasemua = $this->datakapal_model->data_semua();
             $konfigurasi = $this->konfigurasi_model->listing();
             $kepalacabang = $this->kasubag_model->cek_laporan();
             $data = array(  'title' =>  'DATA OUTSTANDING YANG SUDAH DILAKSANAKAN',
@@ -618,7 +636,7 @@ class Selesai extends CI_Controller {
                             'kepalacabang'  =>  $kepalacabang,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_datasemua', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_datasemua', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -630,7 +648,7 @@ class Selesai extends CI_Controller {
     {
         if($this->session->userdata('level') == '1') {
             $tanggal = $this->input->post('tanggal');
-            $cetak_datasemuapelaksanaan = $this->data_model->data_semuapelaksanaan($tanggal);
+            $cetak_datasemuapelaksanaan = $this->datakapal_model->data_semuapelaksanaan($tanggal);
             $konfigurasi = $this->konfigurasi_model->listing();
             $kepalacabang = $this->kasubag_model->cek_laporan();
             $data = array(  'title' =>  'DATA OUTSTANDING YANG SUDAH DILAKSANAKAN',
@@ -638,7 +656,7 @@ class Selesai extends CI_Controller {
                             'kepalacabang'  =>  $kepalacabang,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_datasemuapelaksanaan', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_datasemuapelaksanaan', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -651,7 +669,7 @@ class Selesai extends CI_Controller {
         if($this->session->userdata('level') == '1') {
             $tahun = $this->input->post('tahun');
             $bulan = $this->input->post('bulan');
-            $cetak_databulantahun = $this->data_model->data_bulantahun($tahun,$bulan);
+            $cetak_databulantahun = $this->datakapal_model->data_bulantahun($tahun,$bulan);
             $konfigurasi = $this->konfigurasi_model->listing();
             $kepalacabang = $this->kasubag_model->cek_laporan();
             $data = array(  'title' =>  'DATA OUTSTANDING YANG SUDAH DILAKSANAKAN',
@@ -659,7 +677,7 @@ class Selesai extends CI_Controller {
                             'kepalacabang'  =>  $kepalacabang,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_databulantahun', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_databulantahun', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -670,7 +688,7 @@ class Selesai extends CI_Controller {
     {
         if($this->session->userdata('level') == '1') {
             $regional = $this->input->post('regional');
-            $cetak_regional = $this->data_model->data_regional($regional);
+            $cetak_regional = $this->datakapal_model->data_regional($regional);
             $konfigurasi = $this->konfigurasi_model->listing();
             $kepalacabang = $this->kasubag_model->cek_laporan();
             $data = array(  'title' =>  'DATA OUTSTANDING YANG SUDAH DILAKSANAKAN',
@@ -678,7 +696,7 @@ class Selesai extends CI_Controller {
                             'kepalacabang'  =>  $kepalacabang,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_regional', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_regional', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -691,17 +709,17 @@ class Selesai extends CI_Controller {
         if (!isset($id)) show_404();
         
         if($this->session->userdata('level') == '1') {
-            $cetak_data     = $this->data_model->detail($id);
+            $cetak_data     = $this->datakapal_model->detail($id);
             $kepalacabang = $this->kasubag_model->cek_laporan();
-            $gambar = $this->data_model->gambar($id);
+            $gambar = $this->datakapal_model->gambar($id);
             $konfigurasi = $this->konfigurasi_model->listing();
-            $data = array(  'title' =>  'DATA '.$cetak_data->nopol,
+            $data = array(  'title' =>  'DATA '.$cetak_data->nama_perusahaan,
                             'cetak_data' =>  $cetak_data,
                             'kepalacabang'  =>  $kepalacabang,
                             'gambar'    =>  $gambar,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_data', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_data', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -720,7 +738,7 @@ class Selesai extends CI_Controller {
                 show_404();
             }else{
 
-                $selesai     = $this->data_model->detail_delete($id);
+                $selesai     = $this->datakapal_model->detail_delete($id);
 
                 if($selesai->ttd != null) {
                     unlink('assets/upload/image/'.$selesai->ttd);
@@ -738,9 +756,9 @@ class Selesai extends CI_Controller {
                     $options
                 );
                 $pusher->trigger('my-channel', 'my-event', array('message' => 'success'));
-                $this->data_model->delete($data);
+                $this->datakapal_model->delete($data);
                 $this->session->set_flashdata('sukses', 'Data telah dihapus');
-                redirect(base_url('admin/selesai'), 'refresh');
+                redirect(base_url('admin/kapal/selesai'), 'refresh');
             }
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
@@ -752,13 +770,13 @@ class Selesai extends CI_Controller {
     public function cetak_pekanbaru()
     {
         if($this->session->userdata('level') == '1') {
-            $pekanbaru = $this->data_model->data_selesai_pekanbaru();
+            $pekanbaru = $this->datakapal_model->data_selesai_pekanbaru();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING PEKANBARU YANG SUDAH DILAKSANAN',
                             'pekanbaru' =>  $pekanbaru,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_pekanbaru', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_pekanbaru', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -769,13 +787,13 @@ class Selesai extends CI_Controller {
     public function cetak_dumai()
     {
         if($this->session->userdata('level') == '1') {
-            $dumai = $this->data_model->data_selesai_dumai();
+            $dumai = $this->datakapal_model->data_selesai_dumai();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING DUMAI YANG SUDAH DILAKSANAN',
                             'dumai' =>  $dumai,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_dumai', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_dumai', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -786,13 +804,13 @@ class Selesai extends CI_Controller {
     public function cetak_siak()
     {
         if($this->session->userdata('level') == '1') {
-            $siak = $this->data_model->data_selesai_siak();
+            $siak = $this->datakapal_model->data_selesai_siak();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING SIAK YANG SUDAH DILAKSANAN',
                             'siak' =>  $siak,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_siak', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_siak', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -803,13 +821,13 @@ class Selesai extends CI_Controller {
     public function cetak_rohul()
     {
         if($this->session->userdata('level') == '1') {
-            $rohul = $this->data_model->data_selesai_rohul();
+            $rohul = $this->datakapal_model->data_selesai_rohul();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING ROKAN HULU YANG SUDAH DILAKSANAN',
                             'rohul' =>  $rohul,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_rohul', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_rohul', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -820,13 +838,13 @@ class Selesai extends CI_Controller {
     public function cetak_rohil()
     {
         if($this->session->userdata('level') == '1') {
-            $rohil = $this->data_model->data_selesai_rohil();
+            $rohil = $this->datakapal_model->data_selesai_rohil();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING ROKAN HILIR YANG SELESAI DILAKSANAN',
                             'rohil' =>  $rohil,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_rohil', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_rohil', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -837,13 +855,13 @@ class Selesai extends CI_Controller {
     public function cetak_pelalawan()
     {
         if($this->session->userdata('level') == '1') {
-            $pelalawan = $this->data_model->data_selesai_pelalawan();
+            $pelalawan = $this->datakapal_model->data_selesai_pelalawan();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING PELALAWAN YANG SELESAI DILAKSANAN',
                             'pelalawan' =>  $pelalawan,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_pelalawan', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_pelalawan', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -854,13 +872,13 @@ class Selesai extends CI_Controller {
     public function cetak_kuansing()
     {
         if($this->session->userdata('level') == '1') {
-            $kuansing = $this->data_model->data_selesai_kuansing();
+            $kuansing = $this->datakapal_model->data_selesai_kuansing();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING KUANTAN SINGINGI YANG SELESAI DILAKSANAN',
                             'kuansing' =>  $kuansing,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_kuansing', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_kuansing', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -888,13 +906,13 @@ class Selesai extends CI_Controller {
     public function cetak_kampar()
     {
         if($this->session->userdata('level') == '1') {
-            $kampar = $this->data_model->data_selesai_kampar();
+            $kampar = $this->datakapal_model->data_selesai_kampar();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING KAMPAR YANG SELESAI DILAKSANAN',
                             'kampar' =>  $kampar,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_kampar', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_kampar', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -905,13 +923,13 @@ class Selesai extends CI_Controller {
     public function cetak_inhil()
     {
         if($this->session->userdata('level') == '1') {
-            $inhil = $this->data_model->data_selesai_inhil();
+            $inhil = $this->datakapal_model->data_selesai_inhil();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING INDRAGIRI HILIR YANG SELESAI DILAKSANAN',
                             'inhil' =>  $inhil,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_inhil', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_inhil', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -922,13 +940,13 @@ class Selesai extends CI_Controller {
     public function cetak_inhu()
     {
         if($this->session->userdata('level') == '1') {
-            $inhu = $this->data_model->data_selesai_inhu();
+            $inhu = $this->datakapal_model->data_selesai_inhu();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING INDRAGIRI HULU YANG SELESAI DILAKSANAN',
                             'inhu' =>  $inhu,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_inhu', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_inhu', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -939,13 +957,13 @@ class Selesai extends CI_Controller {
     public function cetak_bengkalis()
     {
         if($this->session->userdata('level') == '1') {
-            $bengkalis = $this->data_model->data_selesai_bengkalis();
+            $bengkalis = $this->datakapal_model->data_selesai_bengkalis();
             $konfigurasi = $this->konfigurasi_model->listing();
             $data = array(  'title' =>  'DATA OUTSTANDING BENGKALIS YANG SELESAI DILAKSANAN',
                             'bengkalis' =>  $bengkalis,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/selesai/cetak_bengkalis', $data, false);
+            $this->load->view('admin/kapal/selesai/cetak_bengkalis', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -961,16 +979,16 @@ class Selesai extends CI_Controller {
             $username = $this->session->userdata('username');
             $admin = $this->user_model->listing($username);
 
-            $selesai = $this->data_model->detail($id);
+            $selesai = $this->datakapal_model->detail($id);
 
-            $gambar     = $this->data_model->gambar($id);
+            $gambar     = $this->datakapal_model->gambar($id);
             
             $data = array(  'title'       => 'Gambar',
                             'admin'       => $admin,
                             'konfigurasi'   =>  $konfigurasi,
                             'gambar'    =>  $gambar,
                             'selesai'   =>  $selesai,
-                            'isi'         => 'admin/selesai/gambar'  );
+                            'isi'         => 'admin/kapal/selesai/gambar'  );
             $this->load->view('admin/layout/wrapper',$data,FALSE);
             if (!$selesai) show_404();
         }else{
@@ -1012,7 +1030,7 @@ class Selesai extends CI_Controller {
                         'id_data'       =>  $id,
                         'foto'          =>  $filename,
                     );
-                    $this->data_model->tambah_gambar($data);
+                    $this->datakapal_model->tambah_gambar($data);
         
                     $data['totalFiles'][] = $filename;
                     }
@@ -1021,7 +1039,7 @@ class Selesai extends CI_Controller {
             }
     
             $this->session->set_flashdata('sukses', 'Gambar telah ditambah');
-            redirect(base_url('admin/selesai/gambar/'.$id), 'refresh');
+            redirect(base_url('admin/kapal/selesai/gambar/'.$id), 'refresh');
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');
@@ -1036,14 +1054,14 @@ class Selesai extends CI_Controller {
         if($this->session->userdata('level') == '1') {
 
             $data = array('id' => $id);
-            $gambar     = $this->data_model->detail_gambar($id);
+            $gambar     = $this->datakapal_model->detail_gambar($id);
             if (!$data) {
                 show_404();
             }else{
                 unlink('assets/upload/image/'.$gambar->foto);
-                $this->data_model->delete_gambar($data);
+                $this->datakapal_model->delete_gambar($data);
                 $this->session->set_flashdata('sukses', 'Data telah dihapus');
-                redirect(base_url('admin/selesai/gambar/'.$gambar->id_data), 'refresh');
+                redirect(base_url('admin/kapal/selesai/gambar/'.$gambar->id_data), 'refresh');
             }
         }else{
             $this->session->set_flashdata('warning','Anda belum login');

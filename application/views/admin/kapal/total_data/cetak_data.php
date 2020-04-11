@@ -42,7 +42,7 @@
   border: 0.5px solid;">
         </center>
         <p style="font-size: 17px">
-            <table>
+        <table>
                 <tr>
                     <td>
                         Pada Tanggal <?php echo $cetak_data->tanggal_pelaksanaan ?> Kami
@@ -69,20 +69,12 @@
                 </tr>
             </table>
             <br>
-            Telah Mengunjungi Pengusaha / Pemilik Angkutan Kendaraan Bermotor :
+            Telah mengunjungi/menemui Pemilik/Agen/Operator <?php echo $cetak_data->nama_perusahaan ?>, yaitu :
             <br>
             <table>
                 <tr>
                     <td>
-                        Nopol
-                    </td>
-                    <td>
-                        : <?php echo $cetak_data->nopol ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Nama Pemilik
+                        Nama
                     </td>
                     <td>
                         : <?php echo $cetak_data->pemilik ?>
@@ -90,10 +82,10 @@
                 </tr>
                 <tr>
                     <td>
-                        Alamat Pemilik
+                        Alamat
                     </td>
                     <td>
-                        : <?php echo $cetak_data->nopol ?>
+                        : <?php echo $cetak_data->alamat ?>
                     </td>
                 </tr>
                 <tr>
@@ -104,11 +96,19 @@
                         : <?php echo $cetak_data->no_telpon ?>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        Nama Kapal 
+                    </td>
+                    <td>
+                        : <?php echo $cetak_data->nama_kapal ?>
+                    </td>
+                </tr>
             </table>
             <br>
             Hasil Kegiatan<br>
-            1. Status Kendaraan : <b><?php echo $cetak_data->kondisi ?></b><br>
-            2. Tunggakan IWKBU periode <?php echo $cetak_data->masa_awal ?> s/d <?php echo $cetak_data->masa_akhir ?> Sebesar <?php $date = date("Y-m-d");
+            1. Status Kapal : <b><?php echo $cetak_data->kondisi ?> - <?php echo $cetak_data->jumlah_kapal ?> Kapal</b><br>
+            2. Tunggakan IWKL periode <?php echo $cetak_data->masa_awal ?> s/d <?php echo $cetak_data->masa_akhir ?> : <?php echo $cetak_data->jumlah_kapal ?> Kapal Dengan Nominal <?php $date = date("Y-m-d");
                         $akhir = $cetak_data->masa_akhir;
                         $timeStart = strtotime("$akhir");
                         $timeEnd = strtotime("$date");
@@ -117,12 +117,14 @@
                         // menghitung selisih bulan
                         $numBulan += date("m",$timeEnd)-date("m",$timeStart);
 
-                        $oustanding =  $cetak_data->tarif * $numBulan;
+                        $total =  $cetak_data->tarif * $numBulan;
+                        $oustanding = $cetak_data->jumlah_kapal * $total;
                         echo "Rp.", number_format($oustanding,'0',',','.');
                     ?><br>
             3. Pemilik berjanji membayar tanggal : <?php echo $cetak_data->janji_bayar ?><br>
-            Demikian Laporan hasil kunjungan kepada Pengusaha / Pemilik Angkutan Kendaraan <br>
-            Bermotor :
+            4. Keterangan : <?php echo $cetak_data->keterangan ?><br>
+            Demikian laporan hasil kunjungan kepada Pemilik/Agen/Operator <br>
+            Kapal :
                 <table class="table borderless">
                     <tr>
                         <td><center>

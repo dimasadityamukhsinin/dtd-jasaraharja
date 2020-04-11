@@ -47,7 +47,7 @@
                     <b>NO</b>
                 </th>
                 <th>
-                    <b>Nomor Polisi</b>
+                    <b>Nama Perusahaan</b>
                 </th>
                 <th>
                     <b>Pemilik</b>
@@ -59,7 +59,13 @@
                     <b>Nomor Telpon</b>
                 </th>
                 <th>
+                    <b>Nama Kapal</b>
+                </th>
+                <th>
                     <b>Kondisi</b>
+                </th>
+                <th>
+                    <b>Jumlah Kapal</b>
                 </th>
                 <th>
                     <b>Status</b>
@@ -86,7 +92,7 @@
                     <?php echo $no++; ?>
                 </td>
                 <td>
-                    <?php echo $rohul->nopol ?>
+                    <?php echo $rohul->nama_perusahaan ?>
                 </td>
                 <td>
                     <?php echo $rohul->pemilik ?>
@@ -98,7 +104,13 @@
                     <?php echo $rohul->no_telpon ?>
                 </td>
                 <td>
+                    <?php echo $rohul->nama_kapal ?>
+                </td>
+                <td>
                     <?php echo $rohul->kondisi ?>
+                </td>
+                <td>
+                    <?php echo $rohul->jumlah_kapal ?>
                 </td>
                 <td>
                     <?php echo $rohul->status ?>
@@ -116,7 +128,8 @@
                 <td>
                     <?php echo $rohul->nama_regional ?>
                 </td>
-                <td><?php $date = date("Y-m-d");
+                <td>
+                    <?php $date = date("Y-m-d");
                         $akhir = $rohul->masa_akhir;
                         $timeStart = strtotime("$akhir");
                         $timeEnd = strtotime("$date");
@@ -125,7 +138,8 @@
                         // menghitung selisih bulan
                         $numBulan += date("m",$timeEnd)-date("m",$timeStart);
 
-                        $oustanding =  $rohul->tarif * $numBulan;
+                        $total =  $rohul->tarif * $numBulan;
+                        $oustanding = $rohul->jumlah_kapal * $total;
                         echo "Rp.", number_format($oustanding,'0',',','.');
                     ?>
                 </td>

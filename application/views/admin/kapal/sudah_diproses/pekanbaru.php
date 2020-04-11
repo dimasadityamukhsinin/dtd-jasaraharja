@@ -1,6 +1,6 @@
 <p class="pull-right">
     <div class="btn-group pull-right">
-        <a href="<?php echo base_url('admin/sudah_diproses')?>" title="Kembali" class="btn btn-info btn-md">
+        <a href="<?php echo base_url('admin/kapal/sudah_diproses')?>" title="Kembali" class="btn btn-info btn-md">
             <i class="fa fa-backward"></i> Kembali
         </a>
     </div>
@@ -8,7 +8,7 @@
 
 <p class="pull-right">
     <div class="btn-group ">
-        <a href="<?php echo base_url('admin/sudah_diproses/cetak_pekanbaru')?>" title="Cetak" target="_blank" class="btn btn-success btn-lg">
+        <a href="<?php echo base_url('admin/kapal/sudah_diproses/cetak_pekanbaru')?>" title="Cetak" target="_blank" class="btn btn-success btn-lg">
             <i class="fa fa-print"></i> Cetak
         </a>
     </div>
@@ -23,15 +23,17 @@ if($this->session->flashdata('sukses')) {
 }
 ?>
 <div class="table-responsive">
-    <table class="table table-bordered" id="example1">
+<table class="table table-bordered" id="example1">
         <thead>
             <tr>
                 <th>NO</th>
-                <th>NOMOR POLISI</th>
+                <th>NAMA PERUSAHAAN</th>
                 <th>PEMILIK</th>
                 <th>ALAMAT</th>
                 <th>NOMOR TELPON</th>
+                <th>NAMA KAPAL</th>
                 <th>KONDISI</th>
+                <th>JUMLAH KAPAL</th>
                 <th>STATUS</th>
                 <th>MASA BERLAKU AWAL</th>
                 <th>MASA BERLAKU AKHIR</th>
@@ -45,7 +47,7 @@ if($this->session->flashdata('sukses')) {
             <?php $no=1; foreach($pekanbaru as $pekanbaru) { ?>
             <tr>
             <td><?php echo $no++ ?></td>
-                <td><?php echo $pekanbaru->nopol ?></td>
+                <td><?php echo $pekanbaru->nama_perusahaan ?></td>
                 <td><?php echo $pekanbaru->pemilik ?></td>
                 <td><?php echo $pekanbaru->alamat; 
                     if($pekanbaru->alamat != null) { ?>
@@ -54,7 +56,9 @@ if($this->session->flashdata('sukses')) {
                     <?php }?>
                 </td>
                 <td><?php echo $pekanbaru->no_telpon ?></td>
+                <td><?php echo $pekanbaru->nama_kapal ?></td>
                 <td><?php echo $pekanbaru->kondisi ?></td>
+                <td><?php echo $pekanbaru->jumlah_kapal ?></td>
                 <td><?php echo $pekanbaru->status ?></td>
                 <td><?php echo $pekanbaru->masa_awal ?></td>
                 <td><?php echo $pekanbaru->masa_akhir ?></td>
@@ -69,12 +73,13 @@ if($this->session->flashdata('sukses')) {
                         // menghitung selisih bulan
                         $numBulan += date("m",$timeEnd)-date("m",$timeStart);
 
-                        $oustanding =  $pekanbaru->tarif * $numBulan;
+                        $total =  $pekanbaru->tarif * $numBulan;
+                        $oustanding = $pekanbaru->jumlah_kapal * $total;
                         echo "Rp.", number_format($oustanding,'0',',','.');
                     ?>
                 </td>
                 <td>
-                    <a href="<?php echo base_url('admin/sudah_diproses/edit/'.$pekanbaru->id) ?>" class="btn btn-warning btn-xs">
+                    <a href="<?php echo base_url('admin/kapal/sudah_diproses/edit/'.$pekanbaru->id) ?>" class="btn btn-warning btn-xs">
                     <i class="fa fa-edit"></i> Edit</a>
                     <?php include('delete_pekanbaru.php') ?>
                 </td>

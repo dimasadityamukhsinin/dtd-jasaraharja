@@ -47,7 +47,7 @@
                     <b>NO</b>
                 </th>
                 <th>
-                    <b>Nomor Polisi</b>
+                    <b>Nama Perusahaan</b>
                 </th>
                 <th>
                     <b>Pemilik</b>
@@ -59,7 +59,13 @@
                     <b>Nomor Telpon</b>
                 </th>
                 <th>
+                    <b>Nama Kapal</b>
+                </th>
+                <th>
                     <b>Kondisi</b>
+                </th>
+                <th>
+                    <b>Jumlah Kapal</b>
                 </th>
                 <th>
                     <b>Status</b>
@@ -74,10 +80,10 @@
                     <b>Tarif</b>
                 </th>
                 <th>
-                    <b>Outstanding</b>
+                    <b>Regional</b>
                 </th>
                 <th>
-                    <b>Regional</b>
+                    <b>Outstanding</b>
                 </th>
             </tr>
             <?php $no=1; foreach($inhu as $inhu) { ?>
@@ -86,7 +92,7 @@
                     <?php echo $no++; ?>
                 </td>
                 <td>
-                    <?php echo $inhu->nopol ?>
+                    <?php echo $inhu->nama_perusahaan ?>
                 </td>
                 <td>
                     <?php echo $inhu->pemilik ?>
@@ -98,7 +104,13 @@
                     <?php echo $inhu->no_telpon ?>
                 </td>
                 <td>
+                    <?php echo $inhu->nama_kapal ?>
+                </td>
+                <td>
                     <?php echo $inhu->kondisi ?>
+                </td>
+                <td>
+                    <?php echo $inhu->jumlah_kapal ?>
                 </td>
                 <td>
                     <?php echo $inhu->status ?>
@@ -113,7 +125,11 @@
                 <td>
                     Rp<?php echo number_format($inhu->tarif,'0',',','.') ?>
                 </td>
-                <td><?php $date = date("Y-m-d");
+                <td>
+                    <?php echo $inhu->nama_regional ?>
+                </td>
+                <td>
+                    <?php $date = date("Y-m-d");
                         $akhir = $inhu->masa_akhir;
                         $timeStart = strtotime("$akhir");
                         $timeEnd = strtotime("$date");
@@ -122,12 +138,10 @@
                         // menghitung selisih bulan
                         $numBulan += date("m",$timeEnd)-date("m",$timeStart);
 
-                        $oustanding =  $inhu->tarif * $numBulan;
+                        $total =  $inhu->tarif * $numBulan;
+                        $oustanding = $inhu->jumlah_kapal * $total;
                         echo "Rp.", number_format($oustanding,'0',',','.');
                     ?>
-                </td>
-                <td>
-                    <?php echo $inhu->nama_regional ?>
                 </td>
             </tr>
             <?php } ?>

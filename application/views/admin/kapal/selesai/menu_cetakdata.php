@@ -15,14 +15,14 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="<?php echo base_url('admin/selesai/cetak_datasemua')?>" class="btn btn-warning btn-block" target="_blank">
+                        <a href="<?php echo base_url('admin/kapal/selesai/cetak_datasemua')?>" class="btn btn-warning btn-block" target="_blank">
                         <h5>CETAK SEMUA</h5>
                         </a>
                     </div>
                 </div>
                 <?php
                     // Form Open
-                    echo form_open_multipart(base_url('admin/selesai/cetak_datasemuapelaksanaan'), 'class="form-horizontal"');
+                    echo form_open_multipart(base_url('admin/kapal/selesai/cetak_datasemuapelaksanaan'), 'class="form-horizontal"');
                 ?>
                 <p>
                     <div class="row">
@@ -43,7 +43,7 @@
 
                 <?php
                     // Form Open
-                    echo form_open_multipart(base_url('admin/selesai/cetak_databulantahun'), 'class="form-horizontal"');
+                    echo form_open_multipart(base_url('admin/kapal/selesai/cetak_databulantahun'), 'class="form-horizontal"');
                 ?>
                 <p>
                     <div class="row">
@@ -78,7 +78,7 @@
 
                 <?php
                     // Form Open
-                    echo form_open_multipart(base_url('admin/selesai/cetak_regional'), 'class="form-horizontal"');
+                    echo form_open_multipart(base_url('admin/kapal/selesai/cetak_regional'), 'class="form-horizontal"');
                 ?>
                 <p>
                     <div class="row">

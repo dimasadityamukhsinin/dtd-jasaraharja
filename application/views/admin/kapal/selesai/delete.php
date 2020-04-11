@@ -18,7 +18,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-success" data-dismiss="modal"><i class="fa fa-times"></i>Close</button>
-            <a href="<?php echo base_url('admin/selesai/delete/'.$selesai->id) ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i>Ya, Hapus Data Ini</a>
+            <a href="<?php echo base_url('admin/kapal/selesai/delete/'.$selesai->id) ?>" class="btn btn-danger"><i class="fa fa-trash-o"></i>Ya, Hapus Data Ini</a>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->

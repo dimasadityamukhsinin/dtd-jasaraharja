@@ -47,7 +47,7 @@
                     <b>NO</b>
                 </th>
                 <th>
-                    <b>Nomor Polisi</b>
+                    <b>Nama Perusahaan</b>
                 </th>
                 <th>
                     <b>Pemilik</b>
@@ -59,7 +59,13 @@
                     <b>Nomor Telpon</b>
                 </th>
                 <th>
+                    <b>Nama Kapal</b>
+                </th>
+                <th>
                     <b>Kondisi</b>
+                </th>
+                <th>
+                    <b>Jumlah Kapal</b>
                 </th>
                 <th>
                     <b>Status</b>
@@ -86,7 +92,7 @@
                     <?php echo $no++; ?>
                 </td>
                 <td>
-                    <?php echo $bengkalis->nopol ?>
+                    <?php echo $bengkalis->nama_perusahaan ?>
                 </td>
                 <td>
                     <?php echo $bengkalis->pemilik ?>
@@ -98,7 +104,13 @@
                     <?php echo $bengkalis->no_telpon ?>
                 </td>
                 <td>
+                    <?php echo $bengkalis->nama_kapal ?>
+                </td>
+                <td>
                     <?php echo $bengkalis->kondisi ?>
+                </td>
+                <td>
+                    <?php echo $bengkalis->jumlah_kapal ?>
                 </td>
                 <td>
                     <?php echo $bengkalis->status ?>
@@ -116,7 +128,8 @@
                 <td>
                     <?php echo $bengkalis->nama_regional ?>
                 </td>
-                <td><?php $date = date("Y-m-d");
+                <td>
+                    <?php $date = date("Y-m-d");
                         $akhir = $bengkalis->masa_akhir;
                         $timeStart = strtotime("$akhir");
                         $timeEnd = strtotime("$date");
@@ -125,7 +138,8 @@
                         // menghitung selisih bulan
                         $numBulan += date("m",$timeEnd)-date("m",$timeStart);
 
-                        $oustanding =  $bengkalis->tarif * $numBulan;
+                        $total =  $bengkalis->tarif * $numBulan;
+                        $oustanding = $bengkalis->jumlah_kapal * $total;
                         echo "Rp.", number_format($oustanding,'0',',','.');
                     ?>
                 </td>

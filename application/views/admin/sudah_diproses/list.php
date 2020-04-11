@@ -103,11 +103,7 @@ if($this->session->flashdata('sukses')) {
                 </td>
             </tr>
             <tr>
-<<<<<<< HEAD
                 <td>TOTAL ON PROGRESS</td>
-=======
-                <td>TOTAL SUDAH DIPROSES</td>
->>>>>>> a
                 <td>
                     <a href="<?php echo base_url('admin/sudah_diproses/total_sudah') ?>" class="btn btn-success btn-xs">
                     <i class="fa fa-eye"></i> Lihat</a>

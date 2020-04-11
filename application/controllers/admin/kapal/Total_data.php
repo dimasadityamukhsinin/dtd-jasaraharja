@@ -93,17 +93,17 @@ class Total_data extends CI_Controller {
         if (!isset($id)) show_404();
         
         if($this->session->userdata('level') == '1') {
-            $cetak_data     = $this->data_model->detail($id);
-            $gambar = $this->data_model->gambar($id);
+            $cetak_data     = $this->datakapal_model->detail($id);
+            $gambar = $this->datakapal_model->gambar($id);
             $kepalacabang = $this->kasubag_model->cek_laporan();
             $konfigurasi = $this->konfigurasi_model->listing();
-            $data = array(  'title' =>  'DATA '.$cetak_data->nopol,
+            $data = array(  'title' =>  'DATA '.$cetak_data->nama_perusahaan,
                             'cetak_data' =>  $cetak_data,
                             'gambar'    =>  $gambar,
                             'kepalacabang'  =>  $kepalacabang,
                             'konfigurasi'   =>  $konfigurasi
                         );
-            $this->load->view('admin/total_data/cetak_data', $data, false);
+            $this->load->view('admin/kapal/total_data/cetak_data', $data, false);
         }else{
             $this->session->set_flashdata('warning','Anda belum login');
             redirect(base_url('login'),'refresh');

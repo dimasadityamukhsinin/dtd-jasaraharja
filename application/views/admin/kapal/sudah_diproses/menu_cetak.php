@@ -15,14 +15,14 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="<?php echo base_url('admin/sudah_diproses/cetak')?>" class="btn btn-warning btn-block" target="_blank">
+                        <a href="<?php echo base_url('admin/kapal/sudah_diproses/cetak')?>" class="btn btn-warning btn-block" target="_blank">
                         <h5>CETAK SEMUA</h5>
                         </a>
                     </div>
                 </div>
                 <?php
                     // Form Open
-                    echo form_open_multipart(base_url('admin/sudah_diproses/cetak_akhir'), 'class="form-horizontal"');
+                    echo form_open_multipart(base_url('admin/kapal/sudah_diproses/cetak_akhir'), 'class="form-horizontal"');
                 ?>
                 <p>
                     <div class="row">

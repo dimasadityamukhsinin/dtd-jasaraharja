@@ -121,10 +121,10 @@ class Datakapal_model extends CI_Model {
     public function cetak_akhir_sudah($masa_akhir)
     {
         $data = array('masa_akhir' => $masa_akhir, 'status' => "Sudah Diproses");
-        $this->db->select('jr_data.*,
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($data);
         $query = $this->db->get();
         return $query->result();
@@ -171,10 +171,10 @@ class Datakapal_model extends CI_Model {
     public function cetak_akhir_selesai($masa_akhir)
     {
         $data = array('masa_akhir' => $masa_akhir, 'status' => "Selesai");
-        $this->db->select('jr_data.*,
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($data);
         $query = $this->db->get();
         return $query->result();
@@ -233,10 +233,10 @@ class Datakapal_model extends CI_Model {
     public function cetak_tp_selesai($tanggal_pelaksanaan)
     {
         $data = array('tanggal_pelaksanaan' => $tanggal_pelaksanaan, 'status' => "Selesai");
-        $this->db->select('jr_data.*,
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($data);
         $query = $this->db->get();
         return $query->result();
@@ -270,10 +270,10 @@ class Datakapal_model extends CI_Model {
     public function data_sudah()
     {
         $status = "Sudah Diproses";
-        $this->db->select('jr_data.*,
+        $this->db->select('jr_datakapal.*,
                          jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where('status', $status);
         $query = $this->db->get();
         return $query->result();
@@ -310,11 +310,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Pekanbaru";
         $status = "Sudah Diproses";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -338,11 +338,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Dumai";
         $status = "Sudah Diproses";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -366,11 +366,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Siak";
         $status = "Sudah Diproses";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -394,11 +394,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "rohul";
         $status = "Sudah Diproses";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -422,11 +422,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "rohil";
         $status = "Sudah Diproses";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -450,11 +450,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Pelalawan";
         $status = "Sudah Diproses";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -478,11 +478,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Kuansing";
         $status = "Sudah Diproses";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -534,11 +534,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Kampar";
         $status = "Sudah Diproses";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -562,11 +562,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "inhu";
         $status = "Sudah Diproses";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -590,11 +590,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "inhil";
         $status = "Sudah Diproses";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -618,11 +618,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Bengkalis";
         $status = "Sudah Diproses";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -644,10 +644,10 @@ class Datakapal_model extends CI_Model {
     public function data_selesai()
     {
         $status = "Selesai";
-        $this->db->select('jr_data.*,
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where('status', $status);
         $query = $this->db->get();
         return $query->result();
@@ -656,13 +656,17 @@ class Datakapal_model extends CI_Model {
     public function data_semua()
     {
         $status = "Selesai";
-        $this->db->select('jr_data.id as data_id, jr_data.id_user, jr_data.nopol, jr_data.pemilik, jr_data.alamat, jr_data.no_telpon, jr_data.kondisi, jr_data.status, jr_data.masa_awal, jr_data.masa_akhir, jr_data.tarif, jr_data.ttd, jr_data.regional, jr_data.keterangan, jr_data.janji_bayar, jr_data.tanggal_pelaksanaan,
+        $this->db->select('jr_datakapal.id as data_id, jr_datakapal.id_user, jr_datakapal.nama_perusahaan, 
+                           jr_datakapal.pemilik, jr_datakapal.alamat, jr_datakapal.no_telpon, jr_datakapal.nama_kapal, 
+                           jr_datakapal.kondisi, jr_datakapal.jumlah_kapal, jr_datakapal.status, jr_datakapal.masa_awal, 
+                           jr_datakapal.masa_akhir, jr_datakapal.tarif, jr_datakapal.ttd, jr_datakapal.regional, jr_datakapal.keterangan, 
+                           jr_datakapal.janji_bayar, jr_datakapal.tanggal_pelaksanaan,
                            jr_regional.*,
                            jr_user.nama, jr_user.jabatan, jr_user.ttd as userttd');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->join('jr_user','jr_user.id = jr_data.id_user','inner');
-        $this->db->from('jr_data');
-        $this->db->where('jr_data.status', $status);
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->join('jr_user','jr_user.id = jr_datakapal.id_user','inner');
+        $this->db->from('jr_datakapal');
+        $this->db->where('jr_datakapal.status', $status);
         $query = $this->db->get();
         return $query->result();
     }
@@ -670,13 +674,17 @@ class Datakapal_model extends CI_Model {
     public function data_semuapelaksanaan($tanggal)
     {
         $status = "Selesai";
-        $array = array('jr_data.status' => $status, 'jr_data.tanggal_pelaksanaan' => $tanggal);
-        $this->db->select('jr_data.id as data_id, jr_data.id_user, jr_data.nopol, jr_data.pemilik, jr_data.alamat, jr_data.no_telpon, jr_data.kondisi, jr_data.status, jr_data.masa_awal, jr_data.masa_akhir, jr_data.tarif, jr_data.ttd, jr_data.regional, jr_data.keterangan, jr_data.janji_bayar, jr_data.tanggal_pelaksanaan,
+        $array = array('jr_datakapal.status' => $status, 'jr_datakapal.tanggal_pelaksanaan' => $tanggal);
+        $this->db->select('jr_datakapal.id as data_id, jr_datakapal.id_user, jr_datakapal.nama_perusahaan, jr_datakapal.pemilik, 
+                           jr_datakapal.alamat, jr_datakapal.no_telpon, jr_datakapal.nama_kapal, jr_datakapal.kondisi, jr_datakapal.jumlah_kapal, jr_datakapal.status, 
+                           jr_datakapal.masa_awal, jr_datakapal.masa_akhir, jr_datakapal.tarif, jr_datakapal.ttd, 
+                           jr_datakapal.regional, jr_datakapal.keterangan, jr_datakapal.janji_bayar, 
+                           jr_datakapal.tanggal_pelaksanaan,
                            jr_regional.*,
                            jr_user.nama, jr_user.jabatan, jr_user.ttd as userttd');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->join('jr_user','jr_user.id = jr_data.id_user','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->join('jr_user','jr_user.id = jr_datakapal.id_user','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -685,13 +693,18 @@ class Datakapal_model extends CI_Model {
     public function data_bulantahun($tahun,$bulan)
     {
         $status = "Selesai";
-        $array = array('jr_data.status' => $status, 'YEAR(tanggal_pelaksanaan)' => $tahun, 'MONTH(tanggal_pelaksanaan)' => $bulan);
-        $this->db->select('jr_data.id as data_id, jr_data.id_user, jr_data.nopol, jr_data.pemilik, jr_data.alamat, jr_data.no_telpon, jr_data.kondisi, jr_data.status, jr_data.masa_awal, jr_data.masa_akhir, jr_data.tarif, jr_data.ttd, jr_data.regional, jr_data.keterangan, jr_data.janji_bayar, jr_data.tanggal_pelaksanaan,
+        $array = array('jr_datakapal.status' => $status, 'YEAR(tanggal_pelaksanaan)' => $tahun, 'MONTH(tanggal_pelaksanaan)' => $bulan);
+        $this->db->select('jr_datakapal.id as data_id, jr_datakapal.id_user, jr_datakapal.nama_perusahaan, 
+                           jr_datakapal.pemilik, jr_datakapal.alamat, jr_datakapal.no_telpon, jr_datakapal.nama_kapal,
+                           jr_datakapal.kondisi, jr_datakapal.jumlah_kapal, jr_datakapal.status, jr_datakapal.masa_awal, 
+                           jr_datakapal.masa_akhir, jr_datakapal.tarif, jr_datakapal.ttd, jr_datakapal.regional, 
+                           jr_datakapal.keterangan, 
+                           jr_datakapal.janji_bayar, jr_datakapal.tanggal_pelaksanaan,
                            jr_regional.*,
                            jr_user.nama, jr_user.jabatan, jr_user.ttd as userttd');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->join('jr_user','jr_user.id = jr_data.id_user','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->join('jr_user','jr_user.id = jr_datakapal.id_user','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -700,13 +713,17 @@ class Datakapal_model extends CI_Model {
     public function data_regional($regional)
     {
         $status = "Selesai";
-        $array = array('jr_data.status' => $status, 'jr_data.regional' => $regional);
-        $this->db->select('jr_data.id as data_id, jr_data.id_user, jr_data.nopol, jr_data.pemilik, jr_data.alamat, jr_data.no_telpon, jr_data.kondisi, jr_data.status, jr_data.masa_awal, jr_data.masa_akhir, jr_data.tarif, jr_data.ttd, jr_data.regional, jr_data.keterangan, jr_data.janji_bayar, jr_data.tanggal_pelaksanaan,
+        $array = array('jr_datakapal.status' => $status, 'jr_datakapal.regional' => $regional);
+        $this->db->select('jr_datakapal.id as data_id, jr_datakapal.id_user, jr_datakapal.nama_perusahaan, 
+                           jr_datakapal.pemilik, jr_datakapal.alamat, jr_datakapal.no_telpon, jr_datakapal.nama_kapal, 
+                           jr_datakapal.kondisi, jr_datakapal.jumlah_kapal, jr_datakapal.status, jr_datakapal.masa_awal, 
+                           jr_datakapal.masa_akhir, jr_datakapal.tarif, jr_datakapal.ttd, jr_datakapal.regional, 
+                           jr_datakapal.keterangan, jr_datakapal.janji_bayar, jr_datakapal.tanggal_pelaksanaan,
                            jr_regional.*,
                            jr_user.nama, jr_user.jabatan, jr_user.ttd as userttd');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->join('jr_user','jr_user.id = jr_data.id_user','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->join('jr_user','jr_user.id = jr_datakapal.id_user','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -716,11 +733,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Pekanbaru";
         $status = "Selesai";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -730,11 +747,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Dumai";
         $status = "Selesai";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -744,11 +761,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Siak";
         $status = "Selesai";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -758,11 +775,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "rohul";
         $status = "Selesai";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -772,11 +789,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "rohil";
         $status = "Selesai";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -786,11 +803,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Pelalawan";
         $status = "Selesai";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -800,11 +817,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Kuansing";
         $status = "Selesai";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -828,11 +845,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Kampar";
         $status = "Selesai";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -842,11 +859,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "inhu";
         $status = "Selesai";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -856,11 +873,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "inhil";
         $status = "Selesai";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -870,11 +887,11 @@ class Datakapal_model extends CI_Model {
     {
         $regional = "Bengkalis";
         $status = "Selesai";
-        $array = array('jr_data.regional' => $regional, 'status' => $status);
-        $this->db->select('jr_data.*,
+        $array = array('jr_datakapal.regional' => $regional, 'status' => $status);
+        $this->db->select('jr_datakapal.*,
                            jr_regional.*');
-        $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
-        $this->db->from('jr_data');
+        $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
+        $this->db->from('jr_datakapal');
         $this->db->where($array);
         $query = $this->db->get();
         return $query->result();
@@ -1540,11 +1557,11 @@ class Datakapal_model extends CI_Model {
     // Detail data
     public function detail($id)
     {
-        $this->db->select('jr_data.*,
+        $this->db->select('jr_datakapal.*,
                            jr_user.nama, jr_user.jabatan, jr_user.ttd as userttd');
-        $this->db->join('jr_user','jr_user.id = jr_data.id_user','inner');
-        $this->db->from('jr_data');
-        $this->db->where('jr_data.id', $id);
+        $this->db->join('jr_user','jr_user.id = jr_datakapal.id_user','inner');
+        $this->db->from('jr_datakapal');
+        $this->db->where('jr_datakapal.id', $id);
         $query = $this->db->get();
         return $query->row();
     }
@@ -1573,7 +1590,7 @@ class Datakapal_model extends CI_Model {
     public function detail_sudah($id)
     {
         $this->db->select('*');
-        $this->db->from('jr_data');
+        $this->db->from('jr_datakapal');
         $this->db->where('id', $id);
         $query = $this->db->get();
         return $query->row();

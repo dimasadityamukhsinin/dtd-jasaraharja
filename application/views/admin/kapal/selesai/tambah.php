@@ -1,6 +1,6 @@
 <p class="pull-left">
     <div class="btn-group">
-        <a href="<?php echo base_url('admin/selesai')?>" title="Kembali" class="btn btn-info btn-md">
+        <a href="<?php echo base_url('admin/kapal/selesai')?>" title="Kembali" class="btn btn-info btn-md">
             <i class="fa fa-backward"></i> Kembali
         </a>
     </div>
@@ -18,13 +18,13 @@ if(isset($error)){
 echo validation_errors('<div class="alert alert-warning">','</div>');
 
 // Form Open
-echo form_open_multipart(base_url('admin/selesai/tambah'), 'class="form-horizontal"');
+echo form_open_multipart(base_url('admin/kapal/selesai/tambah'), 'class="form-horizontal"');
 ?>
 
 <div class="form-group">
-    <label class="col-md-2 control-label">Nomor Polisi</label>
+    <label class="col-md-2 control-label">Nama Perusahaan</label>
     <div class="col-md-5">
-        <input type="text" name="nopol" class="form-control" placeholder="Nomor Polisi" value="<?php echo set_value('nopol') ?>" required>
+        <input type="text" name="nama_perusahaan" class="form-control" placeholder="Nama Perusahaan" value="<?php echo set_value('nama_perusahaan') ?>" required>
     </div>
 </div>
 
@@ -36,7 +36,7 @@ echo form_open_multipart(base_url('admin/selesai/tambah'), 'class="form-horizont
 </div>
 
 <div class="form-group">
-    <label class="col-md-2 control-label">alamat</label>
+    <label class="col-md-2 control-label">Alamat</label>
     <div class="col-md-5">
         <textarea name="alamat" class="form-control" placeholder="Alamat"><?php echo set_value('alamat') ?></textarea>
     </div>
@@ -50,9 +50,23 @@ echo form_open_multipart(base_url('admin/selesai/tambah'), 'class="form-horizont
 </div>
 
 <div class="form-group">
+    <label class="col-md-2 control-label">Nama Kapal</label>
+    <div class="col-md-5">
+        <input type="text" name="nama_kapal" class="form-control" placeholder="Nama Kapal" value="<?php echo set_value('nama_kapal') ?>" required>
+    </div>
+</div>
+
+<div class="form-group">
     <label class="col-md-2 control-label">Kondisi</label>
     <div class="col-md-5">
         <input type="text" name="kondisi" class="form-control" placeholder="Kondisi" value="<?php echo set_value('kondisi') ?>" required>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-md-2 control-label">Jumlah Kapal</label>
+    <div class="col-md-5">
+        <input type="number" name="jumlah_kapal" class="form-control" placeholder="Jumlah Kapal" value="<?php echo set_value('jumlah_kapal') ?>" required>
     </div>
 </div>
 

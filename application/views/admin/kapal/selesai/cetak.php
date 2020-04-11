@@ -47,7 +47,7 @@
                     <b>NO</b>
                 </th>
                 <th>
-                    <b>Nomor Polisi</b>
+                    <b>Nama Perusahaan</b>
                 </th>
                 <th>
                     <b>Pemilik</b>
@@ -59,7 +59,13 @@
                     <b>Nomor Telpon</b>
                 </th>
                 <th>
+                    <b>Nama Kapal</b>
+                </th>
+                <th>
                     <b>Kondisi</b>
+                </th>
+                <th>
+                    <b>Jumlah Kapal</b>
                 </th>
                 <th>
                     <b>Status</b>
@@ -74,10 +80,10 @@
                     <b>Tarif</b>
                 </th>
                 <th>
-                    <b>Outstanding</b>
+                    <b>Regional</b>
                 </th>
                 <th>
-                    <b>Regional</b>
+                    <b>Outstanding</b>
                 </th>
             </tr>
             <?php $no=1; foreach($selesai as $selesai) { ?>
@@ -86,7 +92,7 @@
                     <?php echo $no++; ?>
                 </td>
                 <td>
-                    <?php echo $selesai->nopol ?>
+                    <?php echo $selesai->nama_perusahaan ?>
                 </td>
                 <td>
                     <?php echo $selesai->pemilik ?>
@@ -98,7 +104,13 @@
                     <?php echo $selesai->no_telpon ?>
                 </td>
                 <td>
+                    <?php echo $selesai->nama_kapal ?>
+                </td>
+                <td>
                     <?php echo $selesai->kondisi ?>
+                </td>
+                <td>
+                    <?php echo $selesai->jumlah_kapal ?>
                 </td>
                 <td>
                     <?php echo $selesai->status ?>
@@ -114,6 +126,9 @@
                     Rp<?php echo number_format($selesai->tarif,'0',',','.') ?>
                 </td>
                 <td>
+                    <?php echo $selesai->nama_regional ?>
+                </td>
+                <td>
                     <?php $date = date("Y-m-d");
                         $akhir = $selesai->masa_akhir;
                         $timeStart = strtotime("$akhir");
@@ -123,12 +138,10 @@
                         // menghitung selisih bulan
                         $numBulan += date("m",$timeEnd)-date("m",$timeStart);
 
-                        $oustanding =  $selesai->tarif * $numBulan;
+                        $total =  $selesai->tarif * $numBulan;
+                        $oustanding = $selesai->jumlah_kapal * $total;
                         echo "Rp.", number_format($oustanding,'0',',','.');
                     ?>
-                </td>
-                <td>
-                    <?php echo $selesai->nama_regional ?>
                 </td>
             </tr>
             <?php } ?>

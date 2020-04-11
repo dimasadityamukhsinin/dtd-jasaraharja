@@ -1,6 +1,6 @@
 <p class="pull-right">
     <div class="btn-group pull-right">
-        <a href="<?php echo base_url('admin/selesai')?>" title="Kembali" class="btn btn-info btn-md">
+        <a href="<?php echo base_url('admin/kapal/selesai')?>" title="Kembali" class="btn btn-info btn-md">
             <i class="fa fa-backward"></i> Kembali
         </a>
     </div>
@@ -8,7 +8,7 @@
 
 <p class="pull-right">
     <div class="btn-group ">
-        <a href="<?php echo base_url('admin/selesai/cetak_dumai')?>" title="Cetak" target="_blank" class="btn btn-success btn-lg">
+        <a href="<?php echo base_url('admin/kapal/selesai/cetak_dumai')?>" title="Cetak" target="_blank" class="btn btn-success btn-lg">
             <i class="fa fa-print"></i> Cetak
         </a>
     </div>
@@ -27,11 +27,13 @@ if($this->session->flashdata('sukses')) {
         <thead>
             <tr>
                 <th>NO</th>
-                <th>NOMOR POLISI</th>
+                <th>NAMA PERUSAHAAN</th>
                 <th>PEMILIK</th>
                 <th>ALAMAT</th>
                 <th>NOMOR TELPON</th>
+                <th>NAMA KAPAL</th>
                 <th>KONDISI</th>
+                <th>JUMLAH KAPAL</th>
                 <th>STATUS</th>
                 <th>MASA BERLAKU AWAL</th>
                 <th>MASA BERLAKU AKHIR</th>
@@ -48,7 +50,7 @@ if($this->session->flashdata('sukses')) {
             <?php $no=1; foreach($dumai as $dumai) { ?>
             <tr>
             <td><?php echo $no++ ?></td>
-                <td><?php echo $dumai->nopol ?></td>
+                <td><?php echo $dumai->nama_perusahaan ?></td>
                 <td><?php echo $dumai->pemilik ?></td>
                 <td><?php echo $dumai->alamat; 
                     if($dumai->alamat != null) { ?>
@@ -57,7 +59,9 @@ if($this->session->flashdata('sukses')) {
                     <?php }?>
                 </td>
                 <td><?php echo $dumai->no_telpon ?></td>
+                <td><?php echo $dumai->nama_kapal ?></td>
                 <td><?php echo $dumai->kondisi ?></td>
+                <td><?php echo $dumai->jumlah_kapal ?></td>
                 <td><?php echo $dumai->status ?></td>
                 <td><?php echo $dumai->masa_awal ?></td>
                 <td><?php echo $dumai->masa_akhir ?></td>
@@ -80,22 +84,22 @@ if($this->session->flashdata('sukses')) {
                 <td><?php echo $dumai->tanggal_pelaksanaan ?></td>
                 <td>
                     <?php if($dumai->ttd != null) { ?>
-                        <img src="<?php echo base_url('assets/upload/image/thumbs/'.$dumai->ttd)?>" class="img img-responsive img-thumbnail" width="60">
+                        <img src="<?php echo base_url('assets/upload/image/'.$dumai->ttd)?>" class="img img-responsive img-thumbnail" width="60">
                     <?php } ?>
                 </td>
                 <td>
-                    <a href="<?php echo base_url('admin/selesai/gambar/'.$dumai->id) ?>" class="btn btn-success btn-xs"><i class="fa fa-image"></i>Gambar</a>
-                    <a href="<?php echo base_url('admin/selesai/edit/'.$dumai->id) ?>" class="btn btn-warning btn-xs">
+                    <a href="<?php echo base_url('admin/kapal/selesai/gambar/'.$dumai->id) ?>" class="btn btn-success btn-xs"><i class="fa fa-image"></i>Gambar</a>
+                    <a href="<?php echo base_url('admin/kapal/selesai/edit/'.$dumai->id) ?>" class="btn btn-warning btn-xs">
                     <i class="fa fa-edit"></i> Edit</a>
                     <?php 
-                        $gambar     = $this->data_model->detail_delete_gambar($dumai->id);
+                        $gambar     = $this->datakapal_model->detail_delete_gambar($dumai->id);
                         if($gambar == null) {
                             include('delete_dumai.php');
                         } ?>
                     <?php 
-                        $gambar     = $this->data_model->detail_delete_gambar($dumai->id);
+                        $gambar     = $this->datakapal_model->detail_delete_gambar($dumai->id);
                         if($dumai->ttd != null && $gambar != null) { ?>
-                            <a href="<?php echo base_url('admin/selesai/cetak_data/'.$dumai->id) ?>" class="btn btn-info btn-xs" target="_blank">
+                            <a href="<?php echo base_url('admin/kapal/selesai/cetak_data/'.$dumai->id) ?>" class="btn btn-info btn-xs" target="_blank">
                             <i class="fa fa-print"></i> Cetak Data</a>
                     <?php } ?>
                 </td>

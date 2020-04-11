@@ -70,20 +70,12 @@
                 </tr>
             </table>
             <br>
-            Telah Mengunjungi Pengusaha / Pemilik Angkutan Kendaraan Bermotor :
+            Telah mengunjungi/menemui Pemilik/Agen/Operator <?php echo $datasemua->nama_perusahaan ?>, yaitu :
             <br>
             <table>
                 <tr>
                     <td>
-                        Nopol
-                    </td>
-                    <td>
-                        : <?php echo $datasemua->nopol ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Nama Pemilik
+                        Nama
                     </td>
                     <td>
                         : <?php echo $datasemua->pemilik ?>
@@ -91,10 +83,10 @@
                 </tr>
                 <tr>
                     <td>
-                        Alamat Pemilik
+                        Alamat
                     </td>
                     <td>
-                        : <?php echo $datasemua->nopol ?>
+                        : <?php echo $datasemua->alamat ?>
                     </td>
                 </tr>
                 <tr>
@@ -105,11 +97,19 @@
                         : <?php echo $datasemua->no_telpon ?>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        Nama Kapal 
+                    </td>
+                    <td>
+                        : <?php echo $datasemua->nama_kapal ?>
+                    </td>
+                </tr>
             </table>
             <br>
             Hasil Kegiatan<br>
-            1. Status Kendaraan : <b><?php echo $datasemua->kondisi ?></b><br>
-            2. Tunggakan IWKBU periode <?php echo $datasemua->masa_awal ?> s/d <?php echo $datasemua->masa_akhir ?> Sebesar <?php $date = date("Y-m-d");
+            1. Status Kapal : <b><?php echo $datasemua->kondisi ?> - <?php echo $datasemua->jumlah_kapal ?> Kapal</b><br>
+            2. Tunggakan IWKL periode <?php echo $datasemua->masa_awal ?> s/d <?php echo $datasemua->masa_akhir ?> : <?php echo $datasemua->jumlah_kapal ?> Kapal Dengan Nominal <?php $date = date("Y-m-d");
                         $akhir = $datasemua->masa_akhir;
                         $timeStart = strtotime("$akhir");
                         $timeEnd = strtotime("$date");
@@ -118,12 +118,14 @@
                         // menghitung selisih bulan
                         $numBulan += date("m",$timeEnd)-date("m",$timeStart);
 
-                        $oustanding =  $datasemua->tarif * $numBulan;
+                        $total =  $datasemua->tarif * $numBulan;
+                        $oustanding = $datasemua->jumlah_kapal * $total;
                         echo "Rp.", number_format($oustanding,'0',',','.');
                     ?><br>
             3. Pemilik berjanji membayar tanggal : <?php echo $datasemua->janji_bayar ?><br>
-            Demikian Laporan hasil kunjungan kepada Pengusaha / Pemilik Angkutan Kendaraan <br>
-            Bermotor :
+            4. Keterangan : <?php echo $datasemua->keterangan ?><br>
+            Demikian laporan hasil kunjungan kepada Pemilik/Agen/Operator <br>
+            Kapal :
                 <table class="table borderless">
                     <tr>
                         <td><center>
@@ -277,7 +279,7 @@
                             <td colspan="3">
                                 <center>
                                     <?php 
-                                    $gambar = $this->data_model->gambar($datasemua->data_id);
+                                    $gambar = $this->datakapal_model->gambar($datasemua->data_id);
                                     foreach($gambar as $gambar) { ?>
                                         <img src="<?php echo base_url('assets/upload/image/'.$gambar->foto) ?>" class="img img-responsive img-thumbnail" width="450px" height="450px"><br>
                                     <?php } ?>

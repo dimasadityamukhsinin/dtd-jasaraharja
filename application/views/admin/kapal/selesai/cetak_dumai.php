@@ -47,7 +47,7 @@
                     <b>NO</b>
                 </th>
                 <th>
-                    <b>Nomor Polisi</b>
+                    <b>Nama Perusahaan</b>
                 </th>
                 <th>
                     <b>Pemilik</b>
@@ -59,7 +59,13 @@
                     <b>Nomor Telpon</b>
                 </th>
                 <th>
+                    <b>Nama Kapal</b>
+                </th>
+                <th>
                     <b>Kondisi</b>
+                </th>
+                <th>
+                    <b>Jumlah Kapal</b>
                 </th>
                 <th>
                     <b>Status</b>
@@ -74,10 +80,10 @@
                     <b>Tarif</b>
                 </th>
                 <th>
-                    <b>Outstanding</b>
+                    <b>Regional</b>
                 </th>
                 <th>
-                    <b>Regional</b>
+                    <b>Outstanding</b>
                 </th>
             </tr>
             <?php $no=1; foreach($dumai as $dumai) { ?>
@@ -86,7 +92,7 @@
                     <?php echo $no++; ?>
                 </td>
                 <td>
-                    <?php echo $dumai->nopol ?>
+                    <?php echo $dumai->nama_perusahaan ?>
                 </td>
                 <td>
                     <?php echo $dumai->pemilik ?>
@@ -98,7 +104,13 @@
                     <?php echo $dumai->no_telpon ?>
                 </td>
                 <td>
+                    <?php echo $dumai->nama_kapal ?>
+                </td>
+                <td>
                     <?php echo $dumai->kondisi ?>
+                </td>
+                <td>
+                    <?php echo $dumai->jumlah_kapal ?>
                 </td>
                 <td>
                     <?php echo $dumai->status ?>
@@ -113,7 +125,11 @@
                 <td>
                     Rp<?php echo number_format($dumai->tarif,'0',',','.') ?>
                 </td>
-                <td><?php $date = date("Y-m-d");
+                <td>
+                    <?php echo $dumai->nama_regional ?>
+                </td>
+                <td>
+                    <?php $date = date("Y-m-d");
                         $akhir = $dumai->masa_akhir;
                         $timeStart = strtotime("$akhir");
                         $timeEnd = strtotime("$date");
@@ -122,12 +138,10 @@
                         // menghitung selisih bulan
                         $numBulan += date("m",$timeEnd)-date("m",$timeStart);
 
-                        $oustanding =  $dumai->tarif * $numBulan;
+                        $total =  $dumai->tarif * $numBulan;
+                        $oustanding = $dumai->jumlah_kapal * $total;
                         echo "Rp.", number_format($oustanding,'0',',','.');
                     ?>
-                </td>
-                <td>
-                    <?php echo $dumai->nama_regional ?>
                 </td>
             </tr>
             <?php } ?>

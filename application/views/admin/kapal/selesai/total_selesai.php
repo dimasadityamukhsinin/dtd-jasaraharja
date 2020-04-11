@@ -6,7 +6,7 @@
 
 <p class="pull-left">
     <div>
-        <a href="<?php echo base_url('admin/selesai')?>" title="Kembali" class="btn btn-info btn-md">
+        <a href="<?php echo base_url('admin/kapal/selesai')?>" title="Kembali" class="btn btn-info btn-md">
             <i class="fa fa-backward"></i> Kembali
         </a>
     </div>
@@ -28,11 +28,13 @@ echo validation_errors('<div class="alert alert-warning">','</div>');
         <thead>
             <tr>
                 <th>NO</th>
-                <th>NOMOR POLISI</th>
+                <th>NAMA PERUSAHAAN</th>
                 <th>PEMILIK</th>
                 <th>ALAMAT</th>
                 <th>NOMOR TELPON</th>
+                <th>NAMA KAPAL</th>
                 <th>KONDISI</th>
+                <th>JUMLAH KAPAL</th>
                 <th>STATUS</th>
                 <th>MASA BERLAKU AWAL</th>
                 <th>MASA BERLAKU AKHIR</th>
@@ -49,7 +51,7 @@ echo validation_errors('<div class="alert alert-warning">','</div>');
             <?php $no=1; foreach($selesai as $selesai) { ?>
             <tr>
             <td><?php echo $no++ ?></td>
-                <td><?php echo $selesai->nopol ?></td>
+                <td><?php echo $selesai->nama_perusahaan ?></td>
                 <td><?php echo $selesai->pemilik ?></td>
                 <td><?php echo $selesai->alamat; 
                     if($selesai->alamat != null) { ?>
@@ -58,7 +60,9 @@ echo validation_errors('<div class="alert alert-warning">','</div>');
                     <?php }?>
                 </td>
                 <td><?php echo $selesai->no_telpon ?></td>
+                <td><?php echo $selesai->nama_kapal ?></td>
                 <td><?php echo $selesai->kondisi ?></td>
+                <td><?php echo $selesai->jumlah_kapal ?></td>
                 <td><?php echo $selesai->status ?></td>
                 <td><?php echo $selesai->masa_awal ?></td>
                 <td><?php echo $selesai->masa_akhir ?></td>
@@ -85,18 +89,18 @@ echo validation_errors('<div class="alert alert-warning">','</div>');
                     <?php } ?>
                 </td>
                 <td>
-                    <a href="<?php echo base_url('admin/selesai/gambar/'.$selesai->id) ?>" class="btn btn-success btn-xs"><i class="fa fa-image"></i>Gambar</a>
-                    <a href="<?php echo base_url('admin/selesai/edit/'.$selesai->id) ?>" class="btn btn-warning btn-xs">
+                    <a href="<?php echo base_url('admin/kapal/selesai/gambar/'.$selesai->id) ?>" class="btn btn-success btn-xs"><i class="fa fa-image"></i>Gambar</a>
+                    <a href="<?php echo base_url('admin/kapal/selesai/edit/'.$selesai->id) ?>" class="btn btn-warning btn-xs">
                     <i class="fa fa-edit"></i> Edit</a>
                     <?php 
-                        $gambar     = $this->data_model->detail_delete_gambar($selesai->id);
+                        $gambar     = $this->datakapal_model->detail_delete_gambar($selesai->id);
                         if($gambar == null) {
                             include('delete.php');
                         } ?>
                     <?php 
-                        $gambar     = $this->data_model->detail_delete_gambar($selesai->id);
+                        $gambar     = $this->datakapal_model->detail_delete_gambar($selesai->id);
                         if($selesai->ttd != null && $gambar != null) { ?>
-                            <a href="<?php echo base_url('admin/selesai/cetak_data/'.$selesai->id) ?>" class="btn btn-info btn-xs" target="_blank">
+                            <a href="<?php echo base_url('admin/kapal/selesai/cetak_data/'.$selesai->id) ?>" class="btn btn-info btn-xs" target="_blank">
                             <i class="fa fa-print"></i> Cetak Data</a>
                     <?php } ?>
                 </td>

@@ -1,6 +1,6 @@
 <p class="pull-left">
     <div>
-        <a href="<?php echo base_url('admin/selesai')?>" title="Kembali" class="btn btn-info btn-md">
+        <a href="<?php echo base_url('admin/kapal/selesai')?>" title="Kembali" class="btn btn-info btn-md">
             <i class="fa fa-backward"></i> Kembali
         </a>
     </div>
@@ -18,7 +18,7 @@ if(isset($error)){
 echo validation_errors('<div class="alert alert-warning">','</div>');
 
 //Form Open
-echo form_open_multipart(base_url('admin/selesai/uploadImage/'.$selesai->id), 'class="form-horizontal"');
+echo form_open_multipart(base_url('admin/kapal/selesai/uploadImage/'.$selesai->id), 'class="form-horizontal"');
 ?>
 <div class="form-group">
   <label class="col-md-2 control-label">Unggah Gambar</label>

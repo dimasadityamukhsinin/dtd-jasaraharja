@@ -1,6 +1,6 @@
 <p class="pull-right">
     <div class="btn-group pull-right">
-        <a href="<?php echo base_url('admin/selesai')?>" title="Kembali" class="btn btn-info btn-md">
+        <a href="<?php echo base_url('admin/kapal/selesai')?>" title="Kembali" class="btn btn-info btn-md">
             <i class="fa fa-backward"></i> Kembali
         </a>
     </div>
@@ -8,7 +8,7 @@
 
 <p class="pull-right">
     <div class="btn-group ">
-        <a href="<?php echo base_url('admin/selesai/cetak_kampar')?>" title="Cetak" target="_blank" class="btn btn-success btn-lg">
+        <a href="<?php echo base_url('admin/kapal/selesai/cetak_kampar')?>" title="Cetak" target="_blank" class="btn btn-success btn-lg">
             <i class="fa fa-print"></i> Cetak
         </a>
     </div>
@@ -27,11 +27,13 @@ if($this->session->flashdata('sukses')) {
         <thead>
             <tr>
                 <th>NO</th>
-                <th>NOMOR POLISI</th>
+                <th>NAMA PERUSAHAAN</th>
                 <th>PEMILIK</th>
                 <th>ALAMAT</th>
                 <th>NOMOR TELPON</th>
+                <th>NAMA KAPAL</th>
                 <th>KONDISI</th>
+                <th>JUMLAH KAPAL</th>
                 <th>STATUS</th>
                 <th>MASA BERLAKU AWAL</th>
                 <th>MASA BERLAKU AKHIR</th>
@@ -48,7 +50,7 @@ if($this->session->flashdata('sukses')) {
             <?php $no=1; foreach($kampar as $kampar) { ?>
             <tr>
             <td><?php echo $no++ ?></td>
-                <td><?php echo $kampar->nopol ?></td>
+                <td><?php echo $kampar->nama_perusahaan ?></td>
                 <td><?php echo $kampar->pemilik ?></td>
                 <td><?php echo $kampar->alamat; 
                     if($kampar->alamat != null) { ?>
@@ -57,7 +59,9 @@ if($this->session->flashdata('sukses')) {
                     <?php }?>
                 </td>
                 <td><?php echo $kampar->no_telpon ?></td>
+                <td><?php echo $kampar->nama_kapal ?></td>
                 <td><?php echo $kampar->kondisi ?></td>
+                <td><?php echo $kampar->jumlah_kapal ?></td>
                 <td><?php echo $kampar->status ?></td>
                 <td><?php echo $kampar->masa_awal ?></td>
                 <td><?php echo $kampar->masa_akhir ?></td>
@@ -80,22 +84,22 @@ if($this->session->flashdata('sukses')) {
                 <td><?php echo $kampar->tanggal_pelaksanaan ?></td>
                 <td>
                     <?php if($kampar->ttd != null) { ?>
-                        <img src="<?php echo base_url('assets/upload/image/thumbs/'.$kampar->ttd)?>" class="img img-responsive img-thumbnail" width="60">
+                        <img src="<?php echo base_url('assets/upload/image/'.$kampar->ttd)?>" class="img img-responsive img-thumbnail" width="60">
                     <?php } ?>
                 </td>
                 <td>
-                    <a href="<?php echo base_url('admin/selesai/gambar/'.$kampar->id) ?>" class="btn btn-success btn-xs"><i class="fa fa-image"></i>Gambar</a>
-                    <a href="<?php echo base_url('admin/selesai/edit/'.$kampar->id) ?>" class="btn btn-warning btn-xs">
+                    <a href="<?php echo base_url('admin/kapal/selesai/gambar/'.$kampar->id) ?>" class="btn btn-success btn-xs"><i class="fa fa-image"></i>Gambar</a>
+                    <a href="<?php echo base_url('admin/kapal/selesai/edit/'.$kampar->id) ?>" class="btn btn-warning btn-xs">
                     <i class="fa fa-edit"></i> Edit</a>
-                    <?php
-                        $gambar     = $this->data_model->detail_delete_gambar($kampar->id);
+                    <?php 
+                        $gambar     = $this->datakapal_model->detail_delete_gambar($kampar->id);
                         if($gambar == null) {
                             include('delete_kampar.php');
                         } ?>
                     <?php 
-                        $gambar     = $this->data_model->detail_delete_gambar($kampar->id);
+                        $gambar     = $this->datakapal_model->detail_delete_gambar($kampar->id);
                         if($kampar->ttd != null && $gambar != null) { ?>
-                            <a href="<?php echo base_url('admin/selesai/cetak_data/'.$kampar->id) ?>" class="btn btn-info btn-xs" target="_blank">
+                            <a href="<?php echo base_url('admin/kapal/selesai/cetak_data/'.$kampar->id) ?>" class="btn btn-info btn-xs" target="_blank">
                             <i class="fa fa-print"></i> Cetak Data</a>
                     <?php } ?>
                 </td>

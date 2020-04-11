@@ -1,6 +1,6 @@
 <p class="pull-right">
     <div class="btn-group pull-right">
-        <a href="<?php echo base_url('admin/selesai')?>" title="Kembali" class="btn btn-info btn-md">
+        <a href="<?php echo base_url('admin/kapal/selesai')?>" title="Kembali" class="btn btn-info btn-md">
             <i class="fa fa-backward"></i> Kembali
         </a>
     </div>
@@ -8,7 +8,7 @@
 
 <p class="pull-right">
     <div class="btn-group ">
-        <a href="<?php echo base_url('admin/selesai/cetak_bengkalis')?>" title="Cetak" target="_blank" class="btn btn-success btn-lg">
+        <a href="<?php echo base_url('admin/kapal/selesai/cetak_bengkalis')?>" title="Cetak" target="_blank" class="btn btn-success btn-lg">
             <i class="fa fa-print"></i> Cetak
         </a>
     </div>
@@ -27,11 +27,13 @@ if($this->session->flashdata('sukses')) {
         <thead>
             <tr>
                 <th>NO</th>
-                <th>NOMOR POLISI</th>
+                <th>NAMA PERUSAHAAN</th>
                 <th>PEMILIK</th>
                 <th>ALAMAT</th>
                 <th>NOMOR TELPON</th>
+                <th>NAMA KAPAL</th>
                 <th>KONDISI</th>
+                <th>JUMLAH KAPAL</th>
                 <th>STATUS</th>
                 <th>MASA BERLAKU AWAL</th>
                 <th>MASA BERLAKU AKHIR</th>
@@ -48,7 +50,7 @@ if($this->session->flashdata('sukses')) {
             <?php $no=1; foreach($bengkalis as $bengkalis) { ?>
             <tr>
             <td><?php echo $no++ ?></td>
-                <td><?php echo $bengkalis->nopol ?></td>
+                <td><?php echo $bengkalis->nama_perusahaan ?></td>
                 <td><?php echo $bengkalis->pemilik ?></td>
                 <td><?php echo $bengkalis->alamat; 
                     if($bengkalis->alamat != null) { ?>
@@ -57,7 +59,9 @@ if($this->session->flashdata('sukses')) {
                     <?php }?>
                 </td>
                 <td><?php echo $bengkalis->no_telpon ?></td>
+                <td><?php echo $bengkalis->nama_kapal ?></td>
                 <td><?php echo $bengkalis->kondisi ?></td>
+                <td><?php echo $bengkalis->jumlah_kapal ?></td>
                 <td><?php echo $bengkalis->status ?></td>
                 <td><?php echo $bengkalis->masa_awal ?></td>
                 <td><?php echo $bengkalis->masa_akhir ?></td>
@@ -84,18 +88,18 @@ if($this->session->flashdata('sukses')) {
                     <?php } ?>
                 </td>
                 <td>
-                    <a href="<?php echo base_url('admin/selesai/gambar/'.$bengkalis->id) ?>" class="btn btn-success btn-xs"><i class="fa fa-image"></i>Gambar</a>
-                    <a href="<?php echo base_url('admin/selesai/edit/'.$bengkalis->id) ?>" class="btn btn-warning btn-xs">
+                    <a href="<?php echo base_url('admin/kapal/selesai/gambar/'.$bengkalis->id) ?>" class="btn btn-success btn-xs"><i class="fa fa-image"></i>Gambar</a>
+                    <a href="<?php echo base_url('admin/kapal/selesai/edit/'.$bengkalis->id) ?>" class="btn btn-warning btn-xs">
                     <i class="fa fa-edit"></i> Edit</a>
                     <?php 
-                        $gambar     = $this->data_model->detail_delete_gambar($bengkalis->id);
+                        $gambar     = $this->datakapal_model->detail_delete_gambar($bengkalis->id);
                         if($gambar == null) {
                             include('delete_bengkalis.php');
                         } ?>
                     <?php 
-                        $gambar     = $this->data_model->detail_delete_gambar($bengkalis->id);
+                        $gambar     = $this->datakapal_model->detail_delete_gambar($bengkalis->id);
                         if($bengkalis->ttd != null && $gambar != null) { ?>
-                            <a href="<?php echo base_url('admin/selesai/cetak_data/'.$bengkalis->id) ?>" class="btn btn-info btn-xs" target="_blank">
+                            <a href="<?php echo base_url('admin/kapal/selesai/cetak_data/'.$bengkalis->id) ?>" class="btn btn-info btn-xs" target="_blank">
                             <i class="fa fa-print"></i> Cetak Data</a>
                     <?php } ?>
                 </td>
