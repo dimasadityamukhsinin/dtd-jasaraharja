@@ -121,6 +121,7 @@
                         echo "Rp.", number_format($oustanding,'0',',','.');
                     ?><br>
             3. Pemilik berjanji membayar tanggal : <?php echo $cetak_data->janji_bayar ?><br>
+            4. Keterangan : <?php echo $cetak_data->keterangan ?><br>
             Demikian Laporan hasil kunjungan kepada Pengusaha / Pemilik Angkutan Kendaraan <br>
             Bermotor :
                 <table class="table borderless">
