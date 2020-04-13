@@ -15,10 +15,11 @@
     $regional = $_POST['regional'];
     $janji_bayar = $_POST['janji_bayar'];
     $tanggal_pelaksanaan = $_POST['tanggal_pelaksanaan'];
+    $keterangan = $_POST['keterangan'];
 
 
     $ttd = md5(time()) . '.' . $_POST['ext'];
-    mysqli_query($connect_to_db, "UPDATE jr_data set id_user='$id_user', nopol='$nopol', pemilik='$pemilik', alamat='$alamat', no_telpon='$no_telpon', kondisi='$kondisi', status='$status', masa_awal='$masa_awal', masa_akhir='$masa_akhir', tarif='$tarif', janji_bayar='$janji_bayar', ttd='$ttd', tanggal_pelaksanaan='$tanggal_pelaksanaan', regional='$regional' WHERE id='$id'");
+    mysqli_query($connect_to_db, "UPDATE jr_data set id_user='$id_user', nopol='$nopol', pemilik='$pemilik', alamat='$alamat', no_telpon='$no_telpon', kondisi='$kondisi', status='$status', masa_awal='$masa_awal', masa_akhir='$masa_akhir', tarif='$tarif', janji_bayar='$janji_bayar', ttd='$ttd', tanggal_pelaksanaan='$tanggal_pelaksanaan', regional='$regional', keterangan='$keterangan' WHERE id='$id'");
     
     // Make sure you have created this directory already
     $target_dir = "../assets/upload/image/";

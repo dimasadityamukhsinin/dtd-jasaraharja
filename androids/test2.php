@@ -14,10 +14,11 @@
     $regional = $_POST['regional'];
     $janji_bayar = $_POST['janji_bayar'];
     $tanggal_pelaksanaan = $_POST['tanggal_pelaksanaan'];
+    $keterangan = $_POST['keterangan'];
 
 
     $ttd = md5(time()) . '.' . $_POST['ext'];
-    mysqli_query($connect_to_db, "INSERT INTO jr_data value('$id_user','$nopol','$pemilik','$alamat','$no_telpon','$kondisi','$status','$masa_awal','$masa_akhir','$tarif','$janji_bayar','$ttd','$tanggal_pelaksanaan','$regional' ");
+    mysqli_query($connect_to_db, "INSERT INTO jr_data value('$id_user','$nopol','$pemilik','$alamat','$no_telpon','$kondisi','$status','$masa_awal','$masa_akhir','$tarif','$janji_bayar','$ttd','$tanggal_pelaksanaan','$regional', '$keterangan' ");
     
     // Make sure you have created this directory already
     $target_dir = "../assets/upload/image/";
