@@ -1486,7 +1486,7 @@ class Datakapal_model extends CI_Model {
     public function gambar($id)
     {
         $this->db->select('*');
-        $this->db->from('jr_gambar');
+        $this->db->from('jr_gambarkapal');
         $this->db->where('id_data', $id);
         $query = $this->db->get();
         return $query->result();
@@ -1515,7 +1515,7 @@ class Datakapal_model extends CI_Model {
     public function detail_gambar($id)
     {
         $this->db->select('*');
-        $this->db->from('jr_gambar');
+        $this->db->from('jr_gambarkapal');
         $this->db->where('id', $id);
         $query = $this->db->get();
         return $query->row();
@@ -1524,7 +1524,7 @@ class Datakapal_model extends CI_Model {
     public function detail_gambar2($id)
     {
         $this->db->select('*');
-        $this->db->from('jr_gambar');
+        $this->db->from('jr_gambarkapal');
         $this->db->where('id_data', $id);
         $query = $this->db->get();
         return $query->row();
@@ -1533,7 +1533,7 @@ class Datakapal_model extends CI_Model {
     public function detail_delete_gambar($id)
     {
         $this->db->select('*');
-        $this->db->from('jr_gambar');
+        $this->db->from('jr_gambarkapal');
         $this->db->where('id_data', $id);
         $query = $this->db->get();
         return $query->result();
@@ -1561,7 +1561,7 @@ class Datakapal_model extends CI_Model {
 
     public function tambah_gambar($data){
         
-        $this->db->insert('jr_gambar',$data);
+        $this->db->insert('jr_gambarkapal',$data);
     }
 
     // Edit
@@ -1599,14 +1599,14 @@ class Datakapal_model extends CI_Model {
     public function delete_gambar($data)
     {
         $this->db->where('id', $data['id']);
-        $this->db->delete('jr_gambar', $data);
+        $this->db->delete('jr_gambarkapal', $data);
     }
 
     // Delete
     public function delete_gambar2($id)
     {
         $this->db->where('id_data', $id);
-        $this->db->delete('jr_gambar');
+        $this->db->delete('jr_gambarkapal');
     }
 
     function insert($data)
