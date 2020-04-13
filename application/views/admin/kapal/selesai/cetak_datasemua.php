@@ -281,7 +281,7 @@
                                     <?php 
                                     $gambar = $this->datakapal_model->gambar($datasemua->data_id);
                                     foreach($gambar as $gambar) { ?>
-                                        <img src="<?php echo base_url('assets/upload/image/'.$gambar->foto) ?>" class="img img-responsive img-thumbnail" width="450px" height="450px"><br>
+                                        <img src="<?php echo base_url('assets/upload/image/'.$gambar->foto) ?>" class="img img-responsive img-thumbnail" width="400px" height="400px"><br>
                                     <?php } ?>
                                 </center>
                             </td>
