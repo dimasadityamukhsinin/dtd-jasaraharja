@@ -900,7 +900,7 @@ class Datakapal_model extends CI_Model {
 
     public function total_data_user3($regional)
     {
-        $array = array('jr_datakapal.regional' => $regional, 'status' => "Belum Diproses");
+        $array = array('jr_datakapal.regional' => $regional);
         $this->db->select('jr_datakapal.*,
                            jr_regional.*');
         $this->db->join('jr_regional','jr_regional.regional = jr_datakapal.regional','inner');
