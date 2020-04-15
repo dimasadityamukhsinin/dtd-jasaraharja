@@ -925,7 +925,7 @@ class Data_model extends CI_Model {
 
     public function total_data_user3($regional)
     {
-        $array = array('jr_data.regional' => $regional, 'status' => "Belum Diproses");
+        $array = array('jr_data.regional' => $regional);
         $this->db->select('jr_data.*,
                            jr_regional.*');
         $this->db->join('jr_regional','jr_regional.regional = jr_data.regional','inner');
