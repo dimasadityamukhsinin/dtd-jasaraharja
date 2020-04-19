@@ -37,6 +37,34 @@ class Selesai extends CI_Controller {
         }
     }
 
+    // Delete Semua
+    public function hapus_semua()
+    {
+        
+        if($this->session->userdata('level') == '1') {
+            
+            require_once(APPPATH.'views/vendor/autoload.php');
+            $options = array(
+                'cluster' => 'ap1',
+                'useTLS' => true
+            );
+            $pusher = new Pusher\Pusher(
+                'c451a8fcd656194f0e5b', //ganti dengan App_key pusher Anda
+                '8530a44ac5725f910579', //ganti dengan App_secret pusher Anda
+                '921567', //ganti dengan App_key pusher Anda
+                $options
+            );
+            $pusher->trigger('my-channel', 'my-event', array('message' => 'success'));
+
+            $this->datakapal_model->hapus_semuaselesai();
+            $this->session->set_flashdata('sukses', 'Data telah dihapus');
+            redirect(base_url('admin/kapal/selesai'), 'refresh');
+        }else{
+            $this->session->set_flashdata('warning','Anda belum login');
+            redirect(base_url('login'),'refresh');
+        }
+    }
+
     public function cetak_akhir()
     {
         if($this->session->userdata('level') == '1') {

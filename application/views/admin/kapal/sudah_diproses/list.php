@@ -1,7 +1,7 @@
 <p class="pull-right">
     <?php include('menu_cetak.php')?>
 </p>
-
+<?php include('hapus_semua.php')?>
 <p>
     <a href="<?php echo base_url('admin/kapal/sudah_diproses/tambah') ?>" class="btn btn-success btn-lg">
         <i class="fa fa-plus"></i> Tambah Baru

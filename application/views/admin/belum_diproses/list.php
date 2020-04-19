@@ -2,7 +2,7 @@
     <?php include('import.php')?>
     <?php include('menu_cetak.php')?>
 </p>
-
+<?php include('hapus_semua.php'); ?>
 <p>
     <a href="<?php echo base_url('admin/belum_diproses/tambah') ?>" class="btn btn-success btn-lg">
         <i class="fa fa-plus"></i> Tambah Baru

@@ -1579,6 +1579,30 @@ class Datakapal_model extends CI_Model {
         $this->db->delete('jr_datakapal', $data);
     }
 
+    // Delete Semua Belum
+    public function hapus_semuabelum()
+    {
+        $status = "Belum Diproses";
+        $this->db->where('status', $status);
+        $this->db->delete('jr_datakapal');
+    }
+
+    // Delete Semua Sudah
+    public function hapus_semuasudah()
+    {
+        $status = "Sudah Diproses";
+        $this->db->where('status', $status);
+        $this->db->delete('jr_datakapal');
+    }
+
+    // Delete Semua Selesai
+    public function hapus_semuaselesai()
+    {
+        $status = "Selesai";
+        $this->db->where('status', $status);
+        $this->db->delete('jr_datakapal');
+    }
+
     // Delete Duplikat
     public function delete_duplikat()
     {
